@@ -1,0 +1,19 @@
+USE [DBSK001]
+GO
+
+--DROP TABLE TB_ENDERECOS
+--DROP TABLE TB_CONTATOS
+--DROP TABLE Tb_FUNCIONARIOS
+--DROP TABLE Tb_CARGOS
+CREATE TABLE Tb_TipoContatos(
+	COD     int identity(1,1) NOT NULL,
+	TIPO   varchar(20)        NOT NULL,
+	ATIVO   int               NOT NULL,
+	CONSTRAINT PK_COD_TIPO_CONTATOS PRIMARY KEY (COD)
+)
+
+Insert Tb_TipoContatos (TIPO,ATIVO)
+VALUES ('Nenhum',0)
+	
+
+
