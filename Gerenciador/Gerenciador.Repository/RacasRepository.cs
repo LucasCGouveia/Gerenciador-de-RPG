@@ -3,65 +3,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-//using System.Threading.Tasks;
 using System.Data;//Importar ADO
 using System.Data.SqlClient; //Importar SQLusing System.Data;
 using System.Drawing;
+using Gerenciador.Entities;
 
 namespace Gerenciador.Repository
 {
     public class RacasRepository
     {
-
-        private int _COD;
-        private string _CARGO;
-        private string _SALARIO;
-        private int _ATIVO;
-        private int _linhas;
-        private int _excluir;//1 ativo, 0 desativado
-        //================================================================
-        public int COD
-        {
-            get { return _COD; }
-            set { _COD = value; }//Letras maiusculas
-
-        }
-        public string CARGO
-        {
-            get { return _CARGO; }
-            set { _CARGO = value.ToUpper(); }//Letras maiusculas
-        }
-        //================================================================
-        public string SALARIO
-        {
-            get { return _SALARIO; }
-            set { _SALARIO = value.ToUpper(); }//Letras maiusculas
-
-        }
-        public int ATIVO
-        {
-            get { return _ATIVO; }
-            set { _ATIVO = value; }//Letras maiusculas
-        }
-        //===============================================================
-        public int linhas
-        {
-            get { return _linhas; }//Controle nr das linhas
-            set { _linhas = value; }
-        }
-        //================================================================
-        public int excluir
-        {
-            get { return _excluir; }//Controle nr das linhas
-            set { _excluir = value; }
-        }
-        //================================================================
-        public IDataReader Listar()//Recebe a string do campo descrição, enviado por parâmetro, porém com retorno
+        Resultado resultado = new Resultado();
+        public DataSet ListarDataGrid()//Recebe a string do campo descrição, enviado por parâmetro, porém com retorno
         {
             string strQuery;
-            strQuery = "Select COD,LOGIN From TB_USUARIO";//String de pesquisa no BD, onde: Seleciona código, nome e telefone pesquisando por qualquer parte do campo nome somente os ativados(não foram excluidos)
+            strQuery = "Select COD,RACA,DESCRICAO From TB_RACAS WHERE ATIVO = 1";//String de pesquisa no BD, onde: Seleciona código, nome e telefone pesquisando por qualquer parte do campo nome somente os ativados(não foram excluidos)
             CldBancoDados ObjBancoDados = new CldBancoDados();//Instancia/cria objeto do BancoDeDados
-            return ObjBancoDados.RetornaDataReader(strQuery);//Envia a consulta por parâmetro para objeto e aguarda o retorno
+            return ObjBancoDados.RetornaDataSet(strQuery);//Envia a consulta por parâmetro para objeto e aguarda o retorno
         }
         //==================================================================================================================
         public DataSet ListarCargosCadCargos(string strDescricao)//Recebe a string do campo descrição, enviado por parâmetro, porém com retorno
@@ -69,41 +26,43 @@ namespace Gerenciador.Repository
             string strQuery;
             if (strDescricao != "")
             {
-                strQuery = "Select COD,CARGO,SALARIO From Tb_Cargos WHERE CARGO = '" + strDescricao + "' and ATIVO = 1";//String de pesquisa no BD, onde: Seleciona código, nome e telefone pesquisando por qualquer parte do campo nome somente os ativados(não foram excluidos)
+                strQuery = "Select COD,CARGO,SALARIO From TB_RACAS WHERE CARGO = '" + strDescricao + "' and ATIVO = 1";//String de pesquisa no BD, onde: Seleciona código, nome e telefone pesquisando por qualquer parte do campo nome somente os ativados(não foram excluidos)
             }
             else
             {
-                strQuery = "Select COD,Cargo,Salario From Tb_Cargos where ATIVO = 1";//String de pesquisa no BD, onde: Seleciona código, nome e telefone pesquisando por qualquer parte do campo nome somente os ativados(não foram excluidos)
+                strQuery = "Select COD,Cargo,Salario From TB_RACAS where ATIVO = 1";//String de pesquisa no BD, onde: Seleciona código, nome e telefone pesquisando por qualquer parte do campo nome somente os ativados(não foram excluidos)
 
             }
             CldBancoDados ObjBancoDados = new CldBancoDados();//Instancia/cria objeto do BancoDeDados
             return ObjBancoDados.RetornaDataSet(strQuery);//Envia a consulta por parâmetro para objeto e aguarda o retorno
         }
-        //==================================================================================================================
-        public DataSet ListarCargosCombo()//Recebe a string do campo descrição, enviado por parâmetro, porém com retorno
+        public DataSet ListarRacasCombo()//Recebe a string do campo descrição, enviado por parâmetro, porém com retorno
         {
             string strQuery;
-            strQuery = "Select COD,Cargo From Tb_Cargos";//String de pesquisa no BD, onde: Seleciona código, nome e telefone pesquisando por qualquer parte do campo nome somente os ativados(não foram excluidos)
+            strQuery = "Select COD,RACA From TB_RACAS";//String de pesquisa no BD, onde: Seleciona código, nome e telefone pesquisando por qualquer parte do campo nome somente os ativados(não foram excluidos)
             CldBancoDados ObjBancoDados = new CldBancoDados();//Instancia/cria objeto do BancoDeDados
             return ObjBancoDados.RetornaDataSet(strQuery);//Envia a consulta por parâmetro para objeto e aguarda o retorno
         }
-        //==================================================================================================================
-        public IDataReader ListarUsuario(string NOME_LOGIN, string SENHA_LOGIN) //Recebe o código p/ procura
+        public Resultado Desativar(int codRacas)
         {
-            string strQuery = "select * from tb_Usuario where LOGIN = '" + NOME_LOGIN + "' and SENHA ='" + SENHA_LOGIN + "'";
-            CldBancoDados ObjBancoDados = new CldBancoDados();//Instancia BancoDeDados, criar Obj
-            return ObjBancoDados.RetornaDataReader(strQuery);//Return a consulta tipo SqlDataReader
-        }
-        //===============================================================================================================
+            string strQuery;
+            strQuery = (" UPDATE TB_RACAS ");
+            strQuery += (" SET ");
+            strQuery += (" ATIVO = '" + 0 + "' ");
+            strQuery += (" WHERE ");
+            strQuery += (" COD = '" + codRacas + "' ;");
+            CldBancoDados ObjCldBancoDados = new CldBancoDados();
+            resultado = ObjCldBancoDados.Executar(strQuery);
 
+            return resultado;
+        }
         //Alterar o código informado para que o Ativo=0, não apresenta o dado
 
-        //public void ExcluirLogicamente()
+        //public void Excluir(int _COD)
         //{
         //    string strQuery;
-        //    strQuery = (" UPDATE JOGADOR ");
+        //    strQuery = ("UPDATE Tb_Cargos ");
         //    strQuery += (" SET ");
-        //    strQuery += ("'COD_JOG =' " + _COD);
         //    strQuery += (" Ativo = '" + 0 + "' ");
         //    strQuery += (" WHERE ");
         //    strQuery += (" cod = '" + _COD + "' ;");
@@ -113,53 +72,38 @@ namespace Gerenciador.Repository
 
         //================================================================
 
-        //Alterar o código informado para que o Ativo=0, não apresenta o dado
 
-        public void Excluir(int _COD)
-        {
-            string strQuery;
-            strQuery = ("UPDATE Tb_Cargos ");
-            strQuery += (" SET ");
-            strQuery += (" Ativo = '" + 0 + "' ");
-            strQuery += (" WHERE ");
-            strQuery += (" cod = '" + _COD + "' ;");
-            CldBancoDados ObjCldBancoDados = new CldBancoDados();
-            ObjCldBancoDados.ExecutaComando(strQuery);
-        }
-
-        //================================================================
-
-
-        public void Gravar()
+        public Resultado Gravar(Tb_Racas tb_Racas)
         {
             string strQuery; //Criar a String para inserir
-            strQuery = " INSERT INTO TB_CARGOS ";
+            strQuery = " INSERT INTO TB_RACAS ";
             strQuery += ("(");
-            strQuery += ("CARGO");
-            strQuery += (",SALARIO");
+            strQuery += ("RACA");
+            strQuery += (",DESCRICAO");
             strQuery += (",ATIVO");
             strQuery += (")");
             strQuery += (" VALUES (");
-            strQuery += ("'" + _CARGO + "'");
-            strQuery += (",'" + _SALARIO + "'");
+            strQuery += ("'" + tb_Racas.Raca + "'");
+            strQuery += (",'" + tb_Racas.Descricao + "'");
             strQuery += (",1");
             strQuery += (")");
             CldBancoDados ObjCldBancoDados = new CldBancoDados();
-            ObjCldBancoDados.ExecutaComando(strQuery);
-        }
-        //================================================================
+            resultado = ObjCldBancoDados.Executar(strQuery);
 
-        public void Alterar()
+            return resultado;
+        }
+        public Resultado Editar(Tb_Racas tb_Racas)
         {
             string strQuery; //Criar a String para alterar
-            strQuery = (" UPDATE TB_CARGOS ");
+            strQuery = (" UPDATE TB_RACAS ");
             strQuery += (" SET ");
-            strQuery += (" Cargo = '" + _CARGO + "' ");
-            strQuery += (" ,Salario = '" + _SALARIO + "' ");
+            strQuery += (" RACA = '" + tb_Racas.Raca + "' ");
+            strQuery += (" ,DESCRICAO = '" + tb_Racas.Descricao + "' ");
             strQuery += (" WHERE ");
-            strQuery += (" COD = " + _COD + " ");
+            strQuery += (" COD = " + tb_Racas.Codigo + " ");
             CldBancoDados ObjCldBancoDados = new CldBancoDados();
-            ObjCldBancoDados.ExecutaComando(strQuery);
+            resultado = ObjCldBancoDados.Executar(strQuery);
+            return resultado;
         }
 
 

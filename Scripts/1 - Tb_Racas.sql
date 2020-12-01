@@ -3,18 +3,15 @@ GO
 
 --DROP TABLE TB_ENDERECOS
 --DROP TABLE TB_CONTATOS
---DROP TABLE Tb_FUNCIONARIOS
---DROP TABLE Tb_CARGOS
+--DROP TABLE Tb_JOGADOR
 CREATE TABLE Tb_Racas(
-	COD     int identity(1,1) NOT NULL,
-	Raca   varchar(20)       NOT NULL,
-	SALARIO varchar(20)       NOT NULL,
-	ATIVO   int               NOT NULL,
-	CONSTRAINT PK_COD_CARGOS PRIMARY KEY (COD),
+	COD       int identity(1,1) NOT NULL,
+	Raca      varchar(20)       NOT NULL,
+	Descricao varchar(100)      NOT NULL,
+	ATIVO     int               NOT NULL,
+	CONSTRAINT PK_COD_RACAS PRIMARY KEY (COD),
 )
 
-Insert TB_Racas(Raca,SALARIO,ATIVO)
-VALUES ('Nenhum','R$1000,00',0)
 	
 
 

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Gerenciador;
+using System;
+
 using System.Windows.Forms;
 
-namespace Gerenciador.Secundarios
+namespace Gerenciador
 {
     public partial class FrmTrocaTelas : Form
     {
@@ -17,43 +12,37 @@ namespace Gerenciador.Secundarios
             InitializeComponent();
         }
 
-        private void BtnSim_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void BtnNao_Click(object sender, EventArgs e)
         {
-            FrmMenuPrincipal ObjMenu = new FrmMenuPrincipal();
-            ObjMenu.txtUsuarioCookie.Text = txtUsuarioCookie.Text;
-            ObjMenu.txtSenhaCookie.Text = txtSenhaCookie.Text;
-            ObjMenu.Show();
-            Close();
+            if (LblDeOndeVim.Text == "Mestre")
+            {
+                FrmMenuPrincipal ObjMenu = new FrmMenuPrincipal();
+                ObjMenu.LblUser.Text = LblUser.Text;
+                ObjMenu.Show();
+                Close();
+            }
+            else
+            {
+                FrmAreaJogador rrmAreaJogador = new FrmAreaJogador();
+                rrmAreaJogador.LblUser.Text = LblUser.Text;
+                rrmAreaJogador.Show();
+                Close();
+            }
         }
 
-        private void BtnDeslogar_Click(object sender, EventArgs e)
+        private void BtnDeslogar_Click_1(object sender, EventArgs e)
         {
             FrmLogin ObjLogin = new FrmLogin();
             ObjLogin.Show();
             Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void BtnSim_Click_1(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSenhaCookie_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsuarioCookie_TextChanged(object sender, EventArgs e)
+        private void FrmTrocaTelas_Load(object sender, EventArgs e)
         {
 
         }

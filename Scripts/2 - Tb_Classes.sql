@@ -1,20 +1,16 @@
-USE [DBSK001]
+USE [DBSK002]
 GO
 
 --DROP TABLE TB_ENDERECOS
 --DROP TABLE TB_CONTATOS
 --DROP TABLE Tb_FUNCIONARIOS
---DROP TABLE Tb_CARGOS
-CREATE TABLE Tb_Cargos(
-	COD     int identity(1,1) NOT NULL,
-	CARGO   varchar(20)       NOT NULL,
-	SALARIO varchar(20)       NOT NULL,
-	ATIVO   int               NOT NULL,
-	CONSTRAINT PK_COD_CARGOS PRIMARY KEY (COD),
+--DROP TABLE DBSK001..Tb_CLASSES
+CREATE TABLE Tb_Classes(
+	COD       int identity(1,1) NOT NULL,
+	CLASSE    varchar(20)       NOT NULL,
+	DESCRICAO varchar(100)      NOT NULL,
+	ATIVO     int               NOT NULL
 )
 
-Insert TB_CARGOS (Cargo,SALARIO,ATIVO)
-VALUES ('Nenhum','R$1000,00',0)
-	
 
 

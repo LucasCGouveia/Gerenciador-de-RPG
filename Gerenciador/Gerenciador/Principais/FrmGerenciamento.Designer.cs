@@ -1,4 +1,4 @@
-﻿namespace Gerenciador.Principais
+﻿namespace Gerenciador
 {
     partial class FrmGerenciamento
     {
@@ -32,18 +32,17 @@
             this.gpGerencia = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnAtribuirUsuarioaFunc = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.BtnDesbloquearUsuario = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCadastroDeUsuario = new System.Windows.Forms.Button();
-            this.btnCadastroDeRACA = new System.Windows.Forms.Button();
+            this.btnCadRacas = new System.Windows.Forms.Button();
             this.BtnBuscaDeFuncionario = new System.Windows.Forms.Button();
-            this.bntCadTipoContato = new System.Windows.Forms.Button();
+            this.bntCadClasses = new System.Windows.Forms.Button();
             this.BtnSair = new System.Windows.Forms.Button();
             this.btnAdicionarExcluirServico = new System.Windows.Forms.Button();
             this.btnCadastroDeFuncionario = new System.Windows.Forms.Button();
-            this.txtSenhaCookie = new System.Windows.Forms.TextBox();
-            this.txtUsuarioCookie = new System.Windows.Forms.TextBox();
+            this.LblMestre = new System.Windows.Forms.Label();
             this.gpGerencia.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,13 +53,13 @@
             this.gpGerencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.gpGerencia.Controls.Add(this.button1);
             this.gpGerencia.Controls.Add(this.button2);
-            this.gpGerencia.Controls.Add(this.btnAtribuirUsuarioaFunc);
+            this.gpGerencia.Controls.Add(this.button3);
             this.gpGerencia.Controls.Add(this.BtnDesbloquearUsuario);
             this.gpGerencia.Controls.Add(this.label1);
             this.gpGerencia.Controls.Add(this.btnCadastroDeUsuario);
-            this.gpGerencia.Controls.Add(this.btnCadastroDeRACA);
+            this.gpGerencia.Controls.Add(this.btnCadRacas);
             this.gpGerencia.Controls.Add(this.BtnBuscaDeFuncionario);
-            this.gpGerencia.Controls.Add(this.bntCadTipoContato);
+            this.gpGerencia.Controls.Add(this.bntCadClasses);
             this.gpGerencia.Controls.Add(this.BtnSair);
             this.gpGerencia.Controls.Add(this.btnAdicionarExcluirServico);
             this.gpGerencia.Controls.Add(this.btnCadastroDeFuncionario);
@@ -70,16 +69,17 @@
             this.gpGerencia.Size = new System.Drawing.Size(379, 511);
             this.gpGerencia.TabIndex = 115;
             this.gpGerencia.TabStop = false;
+            this.gpGerencia.Enter += new System.EventHandler(this.gpGerencia_Enter);
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(201, 271);
+            this.button1.Location = new System.Drawing.Point(203, 274);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(163, 57);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "Tornar Usuario Administrador";
+            this.button1.TabIndex = 33;
+            this.button1.Text = "Verificar Personagens excluidos";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -90,29 +90,29 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(163, 57);
             this.button2.TabIndex = 33;
-            this.button2.Text = "Verificar Funcionarios excluidos";
+            this.button2.Text = "Verificar Jogadores excluidos";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // btnAtribuirUsuarioaFunc
+            // button3
             // 
-            this.btnAtribuirUsuarioaFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtribuirUsuarioaFunc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAtribuirUsuarioaFunc.Location = new System.Drawing.Point(18, 271);
-            this.btnAtribuirUsuarioaFunc.Name = "btnAtribuirUsuarioaFunc";
-            this.btnAtribuirUsuarioaFunc.Size = new System.Drawing.Size(163, 57);
-            this.btnAtribuirUsuarioaFunc.TabIndex = 31;
-            this.btnAtribuirUsuarioaFunc.Text = "Atribuir Usuario a Funcionario";
-            this.btnAtribuirUsuarioaFunc.UseVisualStyleBackColor = true;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button3.Location = new System.Drawing.Point(18, 345);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(163, 57);
+            this.button3.TabIndex = 31;
+            this.button3.Text = "Verificar Jogadores";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // BtnDesbloquearUsuario
             // 
             this.BtnDesbloquearUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnDesbloquearUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnDesbloquearUsuario.Location = new System.Drawing.Point(18, 345);
+            this.BtnDesbloquearUsuario.Location = new System.Drawing.Point(18, 274);
             this.BtnDesbloquearUsuario.Name = "BtnDesbloquearUsuario";
             this.BtnDesbloquearUsuario.Size = new System.Drawing.Size(163, 57);
             this.BtnDesbloquearUsuario.TabIndex = 31;
-            this.BtnDesbloquearUsuario.Text = "Desbloquear Usuarios";
+            this.BtnDesbloquearUsuario.Text = "Verificar Personagens";
             this.BtnDesbloquearUsuario.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -135,30 +135,31 @@
             this.btnCadastroDeUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCadastroDeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastroDeUsuario.ForeColor = System.Drawing.Color.Black;
-            this.btnCadastroDeUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastroDeUsuario.Image")));
             this.btnCadastroDeUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastroDeUsuario.Location = new System.Drawing.Point(203, 198);
+            this.btnCadastroDeUsuario.Location = new System.Drawing.Point(18, 198);
             this.btnCadastroDeUsuario.Name = "btnCadastroDeUsuario";
             this.btnCadastroDeUsuario.Size = new System.Drawing.Size(163, 57);
             this.btnCadastroDeUsuario.TabIndex = 29;
-            this.btnCadastroDeUsuario.Text = "N/A";
+            this.btnCadastroDeUsuario.Text = "Verificar Usuario";
             this.btnCadastroDeUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCadastroDeUsuario.UseVisualStyleBackColor = false;
+            this.btnCadastroDeUsuario.Click += new System.EventHandler(this.btnCadastroDeUsuario_Click);
             // 
-            // btnCadastroDeRACA
+            // btnCadRacas
             // 
-            this.btnCadastroDeRACA.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCadastroDeRACA.BackColor = System.Drawing.Color.Transparent;
-            this.btnCadastroDeRACA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCadastroDeRACA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastroDeRACA.ForeColor = System.Drawing.Color.Black;
-            this.btnCadastroDeRACA.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCadastroDeRACA.Location = new System.Drawing.Point(18, 50);
-            this.btnCadastroDeRACA.Name = "btnCadastroDeRACA";
-            this.btnCadastroDeRACA.Size = new System.Drawing.Size(163, 57);
-            this.btnCadastroDeRACA.TabIndex = 10;
-            this.btnCadastroDeRACA.Text = "Cadastrar Cargos";
-            this.btnCadastroDeRACA.UseVisualStyleBackColor = false;
+            this.btnCadRacas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCadRacas.BackColor = System.Drawing.Color.Transparent;
+            this.btnCadRacas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCadRacas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadRacas.ForeColor = System.Drawing.Color.Black;
+            this.btnCadRacas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCadRacas.Location = new System.Drawing.Point(18, 50);
+            this.btnCadRacas.Name = "btnCadRacas";
+            this.btnCadRacas.Size = new System.Drawing.Size(163, 57);
+            this.btnCadRacas.TabIndex = 10;
+            this.btnCadRacas.Text = "Cadastrar Raças";
+            this.btnCadRacas.UseVisualStyleBackColor = false;
+            this.btnCadRacas.Click += new System.EventHandler(this.btnCadRacas_Click);
             // 
             // BtnBuscaDeFuncionario
             // 
@@ -167,30 +168,30 @@
             this.BtnBuscaDeFuncionario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnBuscaDeFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBuscaDeFuncionario.ForeColor = System.Drawing.Color.Black;
-            this.BtnBuscaDeFuncionario.Image = ((System.Drawing.Image)(resources.GetObject("BtnBuscaDeFuncionario.Image")));
             this.BtnBuscaDeFuncionario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnBuscaDeFuncionario.Location = new System.Drawing.Point(18, 198);
+            this.BtnBuscaDeFuncionario.Location = new System.Drawing.Point(203, 198);
             this.BtnBuscaDeFuncionario.Name = "BtnBuscaDeFuncionario";
             this.BtnBuscaDeFuncionario.Size = new System.Drawing.Size(163, 57);
             this.BtnBuscaDeFuncionario.TabIndex = 28;
-            this.BtnBuscaDeFuncionario.Text = "N/A";
+            this.BtnBuscaDeFuncionario.Text = "Verificar Usuario Excluidos";
             this.BtnBuscaDeFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnBuscaDeFuncionario.UseVisualStyleBackColor = false;
             // 
-            // bntCadTipoContato
+            // bntCadClasses
             // 
-            this.bntCadTipoContato.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bntCadTipoContato.BackColor = System.Drawing.Color.Transparent;
-            this.bntCadTipoContato.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bntCadTipoContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntCadTipoContato.ForeColor = System.Drawing.Color.Black;
-            this.bntCadTipoContato.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.bntCadTipoContato.Location = new System.Drawing.Point(203, 50);
-            this.bntCadTipoContato.Name = "bntCadTipoContato";
-            this.bntCadTipoContato.Size = new System.Drawing.Size(163, 57);
-            this.bntCadTipoContato.TabIndex = 9;
-            this.bntCadTipoContato.Text = "Cadastrar Tipo Contato";
-            this.bntCadTipoContato.UseVisualStyleBackColor = false;
+            this.bntCadClasses.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bntCadClasses.BackColor = System.Drawing.Color.Transparent;
+            this.bntCadClasses.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bntCadClasses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntCadClasses.ForeColor = System.Drawing.Color.Black;
+            this.bntCadClasses.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bntCadClasses.Location = new System.Drawing.Point(203, 50);
+            this.bntCadClasses.Name = "bntCadClasses";
+            this.bntCadClasses.Size = new System.Drawing.Size(163, 57);
+            this.bntCadClasses.TabIndex = 9;
+            this.bntCadClasses.Text = "Cadastrar Classes";
+            this.bntCadClasses.UseVisualStyleBackColor = false;
+            this.bntCadClasses.Click += new System.EventHandler(this.bntCadClasses_Click);
             // 
             // BtnSair
             // 
@@ -240,42 +241,32 @@
             this.btnCadastroDeFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCadastroDeFuncionario.UseVisualStyleBackColor = false;
             // 
-            // txtSenhaCookie
+            // LblMestre
             // 
-            this.txtSenhaCookie.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtSenhaCookie.Location = new System.Drawing.Point(246, 23);
-            this.txtSenhaCookie.MaxLength = 20;
-            this.txtSenhaCookie.Name = "txtSenhaCookie";
-            this.txtSenhaCookie.PasswordChar = '*';
-            this.txtSenhaCookie.Size = new System.Drawing.Size(199, 20);
-            this.txtSenhaCookie.TabIndex = 117;
-            this.txtSenhaCookie.Text = "txtSenhaCookie";
-            this.txtSenhaCookie.Visible = false;
-            // 
-            // txtUsuarioCookie
-            // 
-            this.txtUsuarioCookie.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtUsuarioCookie.Location = new System.Drawing.Point(39, 23);
-            this.txtUsuarioCookie.MaxLength = 20;
-            this.txtUsuarioCookie.Name = "txtUsuarioCookie";
-            this.txtUsuarioCookie.Size = new System.Drawing.Size(199, 20);
-            this.txtUsuarioCookie.TabIndex = 116;
-            this.txtUsuarioCookie.Text = "txtUsuarioCookie";
-            this.txtUsuarioCookie.Visible = false;
+            this.LblMestre.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LblMestre.AutoSize = true;
+            this.LblMestre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMestre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LblMestre.Location = new System.Drawing.Point(389, 9);
+            this.LblMestre.Name = "LblMestre";
+            this.LblMestre.Size = new System.Drawing.Size(65, 17);
+            this.LblMestre.TabIndex = 34;
+            this.LblMestre.Text = "MESTRE";
+            this.LblMestre.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FrmGerenciamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 565);
+            this.Controls.Add(this.LblMestre);
             this.Controls.Add(this.gpGerencia);
-            this.Controls.Add(this.txtSenhaCookie);
-            this.Controls.Add(this.txtUsuarioCookie);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmGerenciamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmGerenciamento";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmGerenciamento_Load);
             this.gpGerencia.ResumeLayout(false);
             this.gpGerencia.PerformLayout();
             this.ResumeLayout(false);
@@ -286,19 +277,18 @@
         #endregion
 
         internal System.Windows.Forms.GroupBox gpGerencia;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnAtribuirUsuarioaFunc;
         private System.Windows.Forms.Button BtnDesbloquearUsuario;
         private System.Windows.Forms.Label label1;
         internal System.Windows.Forms.Button btnCadastroDeUsuario;
-        internal System.Windows.Forms.Button btnCadastroDeRACA;
+        internal System.Windows.Forms.Button btnCadRacas;
         internal System.Windows.Forms.Button BtnBuscaDeFuncionario;
-        internal System.Windows.Forms.Button bntCadTipoContato;
+        internal System.Windows.Forms.Button bntCadClasses;
         internal System.Windows.Forms.Button BtnSair;
         internal System.Windows.Forms.Button btnAdicionarExcluirServico;
         internal System.Windows.Forms.Button btnCadastroDeFuncionario;
-        internal System.Windows.Forms.TextBox txtSenhaCookie;
-        public System.Windows.Forms.TextBox txtUsuarioCookie;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Label LblMestre;
     }
 }

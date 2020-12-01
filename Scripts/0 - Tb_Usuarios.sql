@@ -7,7 +7,7 @@ GO
 --DROP TABLE Tb_Usuarios
 CREATE TABLE Tb_Usuarios(
 	COD int identity(1,1) NOT NULL,
-	LOGIN varchar(20)     NOT NULL,
+	LOGIN varchar(20) identity(1,1)     NOT NULL,
 	SENHA varchar(20)     NOT NULL,
 	TIPOUSER char         NOT NULL,
 	ATIVO int             NOT NULL,
@@ -20,6 +20,7 @@ VALUES ('null','null','N',0)
 insert into Tb_Usuarios (LOGIN,SENHA,TIPOUSER,ATIVO) 
 VALUES ('ADM','123456','A',1)
 
-select * from Tb_Usuarios
+CREATE UNIQUE INDEX index_LOGIN
+ ON Tb_Usuarios (LOGIN);
 
 

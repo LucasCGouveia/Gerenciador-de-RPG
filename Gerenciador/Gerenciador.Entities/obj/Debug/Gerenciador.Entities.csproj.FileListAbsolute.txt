@@ -1,0 +1,6 @@
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Entities\bin\Debug\Gerenciador.Entities.dll
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Entities\bin\Debug\Gerenciador.Entities.pdb
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Entities\obj\Debug\Gerenciador.Entities.csprojAssemblyReference.cache
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Entities\obj\Debug\Gerenciador.Entities.csproj.CoreCompileInputs.cache
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Entities\obj\Debug\Gerenciador.Entities.dll
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Entities\obj\Debug\Gerenciador.Entities.pdb

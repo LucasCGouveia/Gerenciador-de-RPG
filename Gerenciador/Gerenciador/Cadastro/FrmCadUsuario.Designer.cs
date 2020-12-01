@@ -1,4 +1,4 @@
-﻿namespace Gerenciador.Cadastro
+﻿namespace Gerenciador
 {
     partial class FrmCadUsuario
     {
@@ -28,32 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSair = new System.Windows.Forms.Button();
-            this.dgv = new System.Windows.Forms.DataGridView();
-            this.TxtCod = new System.Windows.Forms.TextBox();
-            this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.LblPesquisar = new System.Windows.Forms.Label();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.gbCadastro = new System.Windows.Forms.GroupBox();
+            this.cBoxTipoUsuario = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtLogin = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
-            this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.cbUsuariosCadastrados = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
-            this.GroupBox1.SuspendLayout();
+            this.BtnSair = new System.Windows.Forms.Button();
             this.gbCadastro.SuspendLayout();
-            this.cbUsuariosCadastrados.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -64,113 +51,42 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(55, 25);
+            this.label1.Location = new System.Drawing.Point(50, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(386, 46);
             this.label1.TabIndex = 95;
             this.label1.Text = "Cadastro de Usuario";
             // 
-            // btnSair
+            // gbCadastro
             // 
-            this.btnSair.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSair.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.ForeColor = System.Drawing.Color.Black;
-            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSair.Location = new System.Drawing.Point(319, 23);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnSair.Size = new System.Drawing.Size(97, 59);
-            this.btnSair.TabIndex = 48;
-            this.btnSair.Text = "\r\n&Sair";
-            this.btnSair.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSair.UseVisualStyleBackColor = false;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            this.gbCadastro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbCadastro.BackColor = System.Drawing.Color.Transparent;
+            this.gbCadastro.Controls.Add(this.cBoxTipoUsuario);
+            this.gbCadastro.Controls.Add(this.label2);
+            this.gbCadastro.Controls.Add(this.txtSenha);
+            this.gbCadastro.Controls.Add(this.txtLogin);
+            this.gbCadastro.Controls.Add(this.lblNome);
+            this.gbCadastro.Controls.Add(this.lblSenha);
+            this.gbCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbCadastro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.gbCadastro.Location = new System.Drawing.Point(30, 87);
+            this.gbCadastro.Name = "gbCadastro";
+            this.gbCadastro.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.gbCadastro.Size = new System.Drawing.Size(438, 165);
+            this.gbCadastro.TabIndex = 0;
+            this.gbCadastro.TabStop = false;
+            this.gbCadastro.Text = "Cadastro de Usuario";
             // 
-            // dgv
+            // cBoxTipoUsuario
             // 
-            this.dgv.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgv.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgv.Location = new System.Drawing.Point(6, 20);
-            this.dgv.MultiSelect = false;
-            this.dgv.Name = "dgv";
-            this.dgv.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgv.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(432, 147);
-            this.dgv.TabIndex = 34;
-            // 
-            // TxtCod
-            // 
-            this.TxtCod.AcceptsReturn = true;
-            this.TxtCod.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TxtCod.BackColor = System.Drawing.SystemColors.Window;
-            this.TxtCod.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCod.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.TxtCod.Location = new System.Drawing.Point(128, 358);
-            this.TxtCod.MaxLength = 50;
-            this.TxtCod.Name = "TxtCod";
-            this.TxtCod.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TxtCod.Size = new System.Drawing.Size(207, 21);
-            this.TxtCod.TabIndex = 49;
-            this.TxtCod.Visible = false;
-            // 
-            // GroupBox1
-            // 
-            this.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.GroupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.GroupBox1.Controls.Add(this.TxtCod);
-            this.GroupBox1.Controls.Add(this.label2);
-            this.GroupBox1.Controls.Add(this.LblPesquisar);
-            this.GroupBox1.Controls.Add(this.txtPesquisa);
-            this.GroupBox1.Controls.Add(this.gbCadastro);
-            this.GroupBox1.Controls.Add(this.btnPesquisar);
-            this.GroupBox1.Controls.Add(this.btnGravar);
-            this.GroupBox1.Controls.Add(this.btnExcluir);
-            this.GroupBox1.Controls.Add(this.btnEditar);
-            this.GroupBox1.Controls.Add(this.cbUsuariosCadastrados);
-            this.GroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBox1.ForeColor = System.Drawing.Color.Transparent;
-            this.GroupBox1.Location = new System.Drawing.Point(37, 86);
-            this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(509, 450);
-            this.GroupBox1.TabIndex = 94;
-            this.GroupBox1.TabStop = false;
+            this.cBoxTipoUsuario.FormattingEnabled = true;
+            this.cBoxTipoUsuario.Items.AddRange(new object[] {
+            "Jogador",
+            "Mestre"});
+            this.cBoxTipoUsuario.Location = new System.Drawing.Point(170, 101);
+            this.cBoxTipoUsuario.Name = "cBoxTipoUsuario";
+            this.cBoxTipoUsuario.Size = new System.Drawing.Size(178, 23);
+            this.cBoxTipoUsuario.TabIndex = 48;
             // 
             // label2
             // 
@@ -179,58 +95,13 @@
             this.label2.Cursor = System.Windows.Forms.Cursors.Default;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(58, 358);
+            this.label2.Location = new System.Drawing.Point(71, 104);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(64, 21);
-            this.label2.TabIndex = 50;
-            this.label2.Tag = "&User Name:";
-            this.label2.Text = "Codigo:";
-            this.label2.Visible = false;
-            // 
-            // LblPesquisar
-            // 
-            this.LblPesquisar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LblPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.LblPesquisar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LblPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPesquisar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblPesquisar.Location = new System.Drawing.Point(61, 186);
-            this.LblPesquisar.Name = "LblPesquisar";
-            this.LblPesquisar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LblPesquisar.Size = new System.Drawing.Size(274, 27);
-            this.LblPesquisar.TabIndex = 49;
-            this.LblPesquisar.Tag = "&User Name:";
-            this.LblPesquisar.Text = "Pesquisar:";
-            // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPesquisa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPesquisa.Location = new System.Drawing.Point(61, 209);
-            this.txtPesquisa.MaxLength = 50;
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(265, 20);
-            this.txtPesquisa.TabIndex = 80;
-            // 
-            // gbCadastro
-            // 
-            this.gbCadastro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.gbCadastro.BackColor = System.Drawing.Color.Transparent;
-            this.gbCadastro.Controls.Add(this.txtSenha);
-            this.gbCadastro.Controls.Add(this.txtUsuario);
-            this.gbCadastro.Controls.Add(this.lblNome);
-            this.gbCadastro.Controls.Add(this.lblSenha);
-            this.gbCadastro.Controls.Add(this.btnSair);
-            this.gbCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbCadastro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.gbCadastro.Location = new System.Drawing.Point(34, 249);
-            this.gbCadastro.Name = "gbCadastro";
-            this.gbCadastro.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gbCadastro.Size = new System.Drawing.Size(432, 103);
-            this.gbCadastro.TabIndex = 0;
-            this.gbCadastro.TabStop = false;
-            this.gbCadastro.Text = "Incluir/Alterar/Excluir";
+            this.label2.Size = new System.Drawing.Size(104, 21);
+            this.label2.TabIndex = 47;
+            this.label2.Tag = "&Password:";
+            this.label2.Text = "Tipo de Usuario:";
             // 
             // txtSenha
             // 
@@ -241,7 +112,7 @@
             this.txtSenha.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtSenha.Location = new System.Drawing.Point(94, 62);
+            this.txtSenha.Location = new System.Drawing.Point(141, 74);
             this.txtSenha.MaxLength = 8;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
@@ -249,20 +120,20 @@
             this.txtSenha.Size = new System.Drawing.Size(207, 21);
             this.txtSenha.TabIndex = 3;
             // 
-            // txtUsuario
+            // txtLogin
             // 
-            this.txtUsuario.AcceptsReturn = true;
-            this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtUsuario.BackColor = System.Drawing.SystemColors.Window;
-            this.txtUsuario.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtUsuario.Location = new System.Drawing.Point(94, 35);
-            this.txtUsuario.MaxLength = 50;
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtUsuario.Size = new System.Drawing.Size(207, 21);
-            this.txtUsuario.TabIndex = 2;
+            this.txtLogin.AcceptsReturn = true;
+            this.txtLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtLogin.BackColor = System.Drawing.SystemColors.Window;
+            this.txtLogin.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLogin.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtLogin.Location = new System.Drawing.Point(141, 47);
+            this.txtLogin.MaxLength = 50;
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtLogin.Size = new System.Drawing.Size(207, 21);
+            this.txtLogin.TabIndex = 2;
             // 
             // lblNome
             // 
@@ -271,7 +142,7 @@
             this.lblNome.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNome.Location = new System.Drawing.Point(24, 35);
+            this.lblNome.Location = new System.Drawing.Point(71, 50);
             this.lblNome.Name = "lblNome";
             this.lblNome.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblNome.Size = new System.Drawing.Size(64, 21);
@@ -286,43 +157,26 @@
             this.lblSenha.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenha.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblSenha.Location = new System.Drawing.Point(24, 61);
+            this.lblSenha.Location = new System.Drawing.Point(71, 77);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSenha.Size = new System.Drawing.Size(277, 21);
+            this.lblSenha.Size = new System.Drawing.Size(64, 21);
             this.lblSenha.TabIndex = 45;
             this.lblSenha.Tag = "&Password:";
             this.lblSenha.Text = "Senha:";
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.ForeColor = System.Drawing.Color.Black;
-            this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPesquisar.Location = new System.Drawing.Point(338, 189);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(128, 56);
-            this.btnPesquisar.TabIndex = 46;
-            this.btnPesquisar.Text = "&Pesquisar";
-            this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPesquisar.UseVisualStyleBackColor = false;
             // 
             // btnGravar
             // 
             this.btnGravar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnGravar.BackColor = System.Drawing.Color.Transparent;
-            this.btnGravar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGravar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGravar.ForeColor = System.Drawing.Color.Black;
             this.btnGravar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGravar.Location = new System.Drawing.Point(305, 402);
+            this.btnGravar.Location = new System.Drawing.Point(252, 271);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnGravar.Size = new System.Drawing.Size(105, 42);
-            this.btnGravar.TabIndex = 50;
+            this.btnGravar.TabIndex = 100;
             this.btnGravar.Text = "&Gravar";
             this.btnGravar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGravar.UseVisualStyleBackColor = false;
@@ -336,15 +190,15 @@
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.ForeColor = System.Drawing.Color.Black;
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExcluir.Location = new System.Drawing.Point(194, 402);
+            this.btnExcluir.Location = new System.Drawing.Point(141, 271);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnExcluir.Size = new System.Drawing.Size(105, 42);
-            this.btnExcluir.TabIndex = 49;
+            this.btnExcluir.TabIndex = 98;
             this.btnExcluir.Text = "E&xcluir";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            this.btnExcluir.Visible = false;
             // 
             // btnEditar
             // 
@@ -354,50 +208,52 @@
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.Black;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditar.Location = new System.Drawing.Point(83, 402);
+            this.btnEditar.Location = new System.Drawing.Point(30, 271);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEditar.Size = new System.Drawing.Size(105, 42);
-            this.btnEditar.TabIndex = 47;
+            this.btnEditar.TabIndex = 96;
             this.btnEditar.Text = "&Editar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnEditar.Visible = false;
             // 
-            // cbUsuariosCadastrados
+            // BtnSair
             // 
-            this.cbUsuariosCadastrados.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbUsuariosCadastrados.BackColor = System.Drawing.Color.Transparent;
-            this.cbUsuariosCadastrados.Controls.Add(this.dgv);
-            this.cbUsuariosCadastrados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbUsuariosCadastrados.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cbUsuariosCadastrados.Location = new System.Drawing.Point(28, 10);
-            this.cbUsuariosCadastrados.Name = "cbUsuariosCadastrados";
-            this.cbUsuariosCadastrados.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbUsuariosCadastrados.Size = new System.Drawing.Size(444, 173);
-            this.cbUsuariosCadastrados.TabIndex = 45;
-            this.cbUsuariosCadastrados.TabStop = false;
-            this.cbUsuariosCadastrados.Text = "Listados usuarios não ADM e não atribuidos a funcionario";
+            this.BtnSair.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnSair.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSair.ForeColor = System.Drawing.Color.Black;
+            this.BtnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnSair.Location = new System.Drawing.Point(363, 271);
+            this.BtnSair.Name = "BtnSair";
+            this.BtnSair.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtnSair.Size = new System.Drawing.Size(105, 42);
+            this.BtnSair.TabIndex = 101;
+            this.BtnSair.Text = "&Sair";
+            this.BtnSair.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnSair.UseVisualStyleBackColor = false;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click_1);
             // 
             // FrmCadUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 561);
+            this.ClientSize = new System.Drawing.Size(487, 325);
+            this.Controls.Add(this.BtnSair);
+            this.Controls.Add(this.btnGravar);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.GroupBox1);
+            this.Controls.Add(this.gbCadastro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCadUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCadUsuario";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmCadUsuario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
-            this.GroupBox1.ResumeLayout(false);
-            this.GroupBox1.PerformLayout();
             this.gbCadastro.ResumeLayout(false);
             this.gbCadastro.PerformLayout();
-            this.cbUsuariosCadastrados.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,22 +262,16 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        internal System.Windows.Forms.Button btnSair;
-        internal System.Windows.Forms.DataGridView dgv;
-        public System.Windows.Forms.TextBox TxtCod;
-        internal System.Windows.Forms.GroupBox GroupBox1;
-        public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.Label LblPesquisar;
-        internal System.Windows.Forms.TextBox txtPesquisa;
         public System.Windows.Forms.GroupBox gbCadastro;
         public System.Windows.Forms.TextBox txtSenha;
-        public System.Windows.Forms.TextBox txtUsuario;
+        public System.Windows.Forms.TextBox txtLogin;
         public System.Windows.Forms.Label lblNome;
         public System.Windows.Forms.Label lblSenha;
-        internal System.Windows.Forms.Button btnPesquisar;
         internal System.Windows.Forms.Button btnGravar;
         internal System.Windows.Forms.Button btnExcluir;
         internal System.Windows.Forms.Button btnEditar;
-        public System.Windows.Forms.GroupBox cbUsuariosCadastrados;
+        private System.Windows.Forms.ComboBox cBoxTipoUsuario;
+        public System.Windows.Forms.Label label2;
+        internal System.Windows.Forms.Button BtnSair;
     }
 }

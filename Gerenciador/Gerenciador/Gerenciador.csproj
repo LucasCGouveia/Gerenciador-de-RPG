@@ -45,11 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Buscas\FrmBuscarUserDefinitivo.cs">
+    <Compile Include="Buscas\FrmBuscaJogador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Buscas\FrmBuscarUserDefinitivo.Designer.cs">
-      <DependentUpon>FrmBuscarUserDefinitivo.cs</DependentUpon>
+    <Compile Include="Buscas\FrmBuscaJogador.Designer.cs">
+      <DependentUpon>FrmBuscaJogador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Buscas\FrmBuscaPersonagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buscas\FrmBuscaPersonagem.Designer.cs">
+      <DependentUpon>FrmBuscaPersonagem.cs</DependentUpon>
     </Compile>
     <Compile Include="Buscas\FrmBuscaUserExcluido.cs">
       <SubType>Form</SubType>
@@ -57,23 +63,23 @@
     <Compile Include="Buscas\FrmBuscaUserExcluido.Designer.cs">
       <DependentUpon>FrmBuscaUserExcluido.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cadastro\FrmCadItens.cs">
+    <Compile Include="Buscas\FrmBuscaUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cadastro\FrmCadItens.Designer.cs">
-      <DependentUpon>FrmCadItens.cs</DependentUpon>
+    <Compile Include="Buscas\FrmBuscaUsuarios.Designer.cs">
+      <DependentUpon>FrmBuscaUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cadastro\FrmCadSkills.cs">
+    <Compile Include="Cadastro\FrmCadClasses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cadastro\FrmCadSkills.Designer.cs">
-      <DependentUpon>FrmCadSkills.cs</DependentUpon>
+    <Compile Include="Cadastro\FrmCadClasses.Designer.cs">
+      <DependentUpon>FrmCadClasses.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cadastro\FrmCadUserDefinitivo.cs">
+    <Compile Include="Cadastro\FrmCadJogador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cadastro\FrmCadUserDefinitivo.Designer.cs">
-      <DependentUpon>FrmCadUserDefinitivo.cs</DependentUpon>
+    <Compile Include="Cadastro\FrmCadJogador.Designer.cs">
+      <DependentUpon>FrmCadJogador.cs</DependentUpon>
     </Compile>
     <Compile Include="Cadastro\FrmCadUsuario.cs">
       <SubType>Form</SubType>
@@ -81,16 +87,64 @@
     <Compile Include="Cadastro\FrmCadUsuario.Designer.cs">
       <DependentUpon>FrmCadUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmLogin.cs">
+    <Compile Include="Cadastro\FrmCampanhas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLogin.Designer.cs">
+    <Compile Include="Cadastro\FrmCampanhas.Designer.cs">
+      <DependentUpon>FrmCampanhas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\FrmItens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\FrmItens.Designer.cs">
+      <DependentUpon>FrmItens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\FrmRacas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\FrmRacas.Designer.cs">
+      <DependentUpon>FrmRacas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\FrmSkills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\FrmSkills.Designer.cs">
+      <DependentUpon>FrmSkills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Jogador\FrmAreaJogador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Jogador\FrmAreaJogador.Designer.cs">
+      <DependentUpon>FrmAreaJogador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personagens\FrmAddAtributos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personagens\FrmAddAtributos.Designer.cs">
+      <DependentUpon>FrmAddAtributos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personagens\FrmCadPersongem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personagens\FrmCadPersongem.Designer.cs">
+      <DependentUpon>FrmCadPersongem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principais\FrmGerenciarMesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principais\FrmGerenciarMesa.Designer.cs">
+      <DependentUpon>FrmGerenciarMesa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principais\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principais\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMenuPrincipal.cs">
+    <Compile Include="Principais\FrmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMenuPrincipal.Designer.cs">
+    <Compile Include="Principais\FrmMenuPrincipal.Designer.cs">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Principais\FrmGerenciamento.cs">
@@ -101,40 +155,61 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Secundarios\FrmGenerico.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Secundarios\FrmGenerico.Designer.cs">
-      <DependentUpon>FrmGenerico.cs</DependentUpon>
-    </Compile>
     <Compile Include="Secundarios\FrmTrocaTelas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Secundarios\FrmTrocaTelas.Designer.cs">
       <DependentUpon>FrmTrocaTelas.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Buscas\FrmBuscarUserDefinitivo.resx">
-      <DependentUpon>FrmBuscarUserDefinitivo.cs</DependentUpon>
+    <EmbeddedResource Include="Buscas\FrmBuscaJogador.resx">
+      <DependentUpon>FrmBuscaJogador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Buscas\FrmBuscaPersonagem.resx">
+      <DependentUpon>FrmBuscaPersonagem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Buscas\FrmBuscaUserExcluido.resx">
       <DependentUpon>FrmBuscaUserExcluido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cadastro\FrmCadItens.resx">
-      <DependentUpon>FrmCadItens.cs</DependentUpon>
+    <EmbeddedResource Include="Buscas\FrmBuscaUsuarios.resx">
+      <DependentUpon>FrmBuscaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cadastro\FrmCadSkills.resx">
-      <DependentUpon>FrmCadSkills.cs</DependentUpon>
+    <EmbeddedResource Include="Cadastro\FrmCadClasses.resx">
+      <DependentUpon>FrmCadClasses.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cadastro\FrmCadUserDefinitivo.resx">
-      <DependentUpon>FrmCadUserDefinitivo.cs</DependentUpon>
+    <EmbeddedResource Include="Cadastro\FrmCadJogador.resx">
+      <DependentUpon>FrmCadJogador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastro\FrmCadUsuario.resx">
       <DependentUpon>FrmCadUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLogin.resx">
+    <EmbeddedResource Include="Cadastro\FrmCampanhas.resx">
+      <DependentUpon>FrmCampanhas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\FrmItens.resx">
+      <DependentUpon>FrmItens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\FrmRacas.resx">
+      <DependentUpon>FrmRacas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\FrmSkills.resx">
+      <DependentUpon>FrmSkills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Jogador\FrmAreaJogador.resx">
+      <DependentUpon>FrmAreaJogador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personagens\FrmAddAtributos.resx">
+      <DependentUpon>FrmAddAtributos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personagens\FrmCadPersongem.resx">
+      <DependentUpon>FrmCadPersongem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principais\FrmGerenciarMesa.resx">
+      <DependentUpon>FrmGerenciarMesa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principais\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMenuPrincipal.resx">
+    <EmbeddedResource Include="Principais\FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principais\FrmGerenciamento.resx">
@@ -149,9 +224,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Secundarios\FrmGenerico.resx">
-      <DependentUpon>FrmGenerico.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Secundarios\FrmTrocaTelas.resx">
       <DependentUpon>FrmTrocaTelas.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,11 +241,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gerenciador.Business\Gerenciador.Business.csproj">
+      <Project>{111D8877-B599-4CA2-B3EF-68227A345815}</Project>
+      <Name>Gerenciador.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gerenciador.Entities\Gerenciador.Entities.csproj">
+      <Project>{0A8CE0AC-F697-463F-972D-22BB366173C6}</Project>
+      <Name>Gerenciador.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gerenciador.Repository\Gerenciador.Repository.csproj">
       <Project>{C6E6F615-787E-47E8-8DF8-5800A96EE5A7}</Project>
       <Name>Gerenciador.Repository</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Imagens\Livro do Mestre.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

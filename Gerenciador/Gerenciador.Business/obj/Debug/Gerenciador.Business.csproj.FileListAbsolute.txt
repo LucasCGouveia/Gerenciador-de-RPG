@@ -1,0 +1,11 @@
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Business\bin\Debug\Gerenciador.Business.dll
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Business\bin\Debug\Gerenciador.Business.pdb
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Business\bin\Debug\Gerenciador.Entities.dll
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Business\bin\Debug\Gerenciador.Repository.dll
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Business\bin\Debug\Gerenciador.Entities.pdb
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Business\bin\Debug\Gerenciador.Repository.pdb
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Business\obj\Debug\Gerenciador.Business.csprojAssemblyReference.cache
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Business\obj\Debug\Gerenciador.Business.csproj.CoreCompileInputs.cache
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Business\obj\Debug\Gerenciador.Business.csproj.CopyComplete
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Business\obj\Debug\Gerenciador.Business.dll
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Business\obj\Debug\Gerenciador.Business.pdb

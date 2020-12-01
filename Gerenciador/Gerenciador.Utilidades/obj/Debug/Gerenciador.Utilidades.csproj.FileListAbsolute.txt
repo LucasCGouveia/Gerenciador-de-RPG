@@ -1,0 +1,5 @@
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Utilidades\bin\Debug\Gerenciador.Utilidades.dll
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Utilidades\bin\Debug\Gerenciador.Utilidades.pdb
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Utilidades\obj\Debug\Gerenciador.Utilidades.csproj.CoreCompileInputs.cache
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Utilidades\obj\Debug\Gerenciador.Utilidades.dll
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Utilidades\obj\Debug\Gerenciador.Utilidades.pdb

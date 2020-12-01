@@ -35,8 +35,15 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EPPlus.Core, Version=1.5.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Core.1.5.4\lib\net45\EPPlus.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,14 +52,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtributosRepository.cs" />
     <Compile Include="BancoDados\CldBancoDados.cs" />
     <Compile Include="BancoDados\ClnFuncoesGerais.cs" />
+    <Compile Include="CampanhasRepository.cs" />
+    <Compile Include="ClassesRepository.cs" />
     <Compile Include="ItensRepository.cs" />
+    <Compile Include="JogadoresRepository.cs" />
+    <Compile Include="PersonagensRepository.cs" />
     <Compile Include="RacasRepository.cs" />
     <Compile Include="SkillsRepository.cs" />
     <Compile Include="UsuarioRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserDefinitivoRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gerenciador.Entities\Gerenciador.Entities.csproj">
+      <Project>{0A8CE0AC-F697-463F-972D-22BB366173C6}</Project>
+      <Name>Gerenciador.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

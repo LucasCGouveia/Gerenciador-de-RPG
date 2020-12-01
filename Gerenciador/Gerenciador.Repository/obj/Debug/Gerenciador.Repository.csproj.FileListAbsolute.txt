@@ -1,6 +1,11 @@
 C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Repository\bin\Debug\Gerenciador.Repository.dll
 C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Repository\bin\Debug\Gerenciador.Repository.pdb
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Repository\bin\Debug\EPPlus.Core.dll
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Repository\bin\Debug\Gerenciador.Entities.dll
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Repository\bin\Debug\Gerenciador.Entities.pdb
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Repository\bin\Debug\EPPlus.Core.xml
 C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Repository\obj\Debug\Gerenciador.Repository.csprojAssemblyReference.cache
 C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Repository\obj\Debug\Gerenciador.Repository.csproj.CoreCompileInputs.cache
+C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Repository\obj\Debug\Gerenciador.Repository.csproj.CopyComplete
 C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Repository\obj\Debug\Gerenciador.Repository.dll
 C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Repository\obj\Debug\Gerenciador.Repository.pdb

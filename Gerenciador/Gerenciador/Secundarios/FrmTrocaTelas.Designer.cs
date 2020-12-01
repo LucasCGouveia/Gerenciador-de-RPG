@@ -1,4 +1,4 @@
-﻿namespace Gerenciador.Secundarios
+﻿namespace Gerenciador
 {
     partial class FrmTrocaTelas
     {
@@ -29,36 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTrocaTelas));
-            this.txtSenhaCookie = new System.Windows.Forms.TextBox();
-            this.txtUsuarioCookie = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnSim = new System.Windows.Forms.Button();
             this.BtnDeslogar = new System.Windows.Forms.Button();
             this.BtnNao = new System.Windows.Forms.Button();
+            this.LblUser = new System.Windows.Forms.Label();
+            this.LblDeOndeVim = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtSenhaCookie
-            // 
-            this.txtSenhaCookie.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtSenhaCookie.Location = new System.Drawing.Point(58, 51);
-            this.txtSenhaCookie.MaxLength = 20;
-            this.txtSenhaCookie.Name = "txtSenhaCookie";
-            this.txtSenhaCookie.PasswordChar = '*';
-            this.txtSenhaCookie.Size = new System.Drawing.Size(199, 20);
-            this.txtSenhaCookie.TabIndex = 121;
-            this.txtSenhaCookie.Text = "txtSenhaCookie";
-            // 
-            // txtUsuarioCookie
-            // 
-            this.txtUsuarioCookie.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtUsuarioCookie.Location = new System.Drawing.Point(58, 19);
-            this.txtUsuarioCookie.MaxLength = 20;
-            this.txtUsuarioCookie.Name = "txtUsuarioCookie";
-            this.txtUsuarioCookie.Size = new System.Drawing.Size(199, 20);
-            this.txtUsuarioCookie.TabIndex = 120;
-            this.txtUsuarioCookie.Text = "txtUsuarioCookie";
             // 
             // pictureBox1
             // 
@@ -95,6 +74,7 @@
             this.BtnSim.TabIndex = 115;
             this.BtnSim.Text = "Sim";
             this.BtnSim.UseVisualStyleBackColor = true;
+            this.BtnSim.Click += new System.EventHandler(this.BtnSim_Click_1);
             // 
             // BtnDeslogar
             // 
@@ -106,6 +86,7 @@
             this.BtnDeslogar.TabIndex = 116;
             this.BtnDeslogar.Text = "Deslogar-se";
             this.BtnDeslogar.UseVisualStyleBackColor = true;
+            this.BtnDeslogar.Click += new System.EventHandler(this.BtnDeslogar_Click_1);
             // 
             // BtnNao
             // 
@@ -119,13 +100,41 @@
             this.BtnNao.UseVisualStyleBackColor = true;
             this.BtnNao.Click += new System.EventHandler(this.BtnNao_Click);
             // 
+            // LblUser
+            // 
+            this.LblUser.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblUser.AutoSize = true;
+            this.LblUser.BackColor = System.Drawing.Color.Transparent;
+            this.LblUser.Font = new System.Drawing.Font("Goudy Old Style", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUser.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LblUser.Location = new System.Drawing.Point(520, 9);
+            this.LblUser.Name = "LblUser";
+            this.LblUser.Size = new System.Drawing.Size(96, 23);
+            this.LblUser.TabIndex = 120;
+            this.LblUser.Text = "USUARIO";
+            this.LblUser.Visible = false;
+            // 
+            // LblDeOndeVim
+            // 
+            this.LblDeOndeVim.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblDeOndeVim.AutoSize = true;
+            this.LblDeOndeVim.BackColor = System.Drawing.Color.Transparent;
+            this.LblDeOndeVim.Font = new System.Drawing.Font("Goudy Old Style", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDeOndeVim.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LblDeOndeVim.Location = new System.Drawing.Point(482, 39);
+            this.LblDeOndeVim.Name = "LblDeOndeVim";
+            this.LblDeOndeVim.Size = new System.Drawing.Size(134, 23);
+            this.LblDeOndeVim.TabIndex = 121;
+            this.LblDeOndeVim.Text = "DE ONDE VIM";
+            this.LblDeOndeVim.Visible = false;
+            // 
             // FrmTrocaTelas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(628, 257);
-            this.Controls.Add(this.txtSenhaCookie);
-            this.Controls.Add(this.txtUsuarioCookie);
+            this.Controls.Add(this.LblDeOndeVim);
+            this.Controls.Add(this.LblUser);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnSim);
@@ -136,6 +145,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTrocaTelas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmTrocaTelas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -143,13 +153,12 @@
         }
 
         #endregion
-
-        internal System.Windows.Forms.TextBox txtSenhaCookie;
-        public System.Windows.Forms.TextBox txtUsuarioCookie;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnSim;
         private System.Windows.Forms.Button BtnDeslogar;
         private System.Windows.Forms.Button BtnNao;
+        public System.Windows.Forms.Label LblUser;
+        public System.Windows.Forms.Label LblDeOndeVim;
     }
 }

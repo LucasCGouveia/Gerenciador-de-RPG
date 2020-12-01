@@ -1,19 +1,11 @@
-﻿using Gerenciador.Cadastro;
-using Gerenciador.Secundarios;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-//using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
-namespace Gerenciador.Principais
+namespace Gerenciador
 {
     public partial class FrmGerenciamento : Form
     {
+        FrmCadClasses frmCadClasses = new FrmCadClasses();
         public FrmGerenciamento()
         {
             InitializeComponent();
@@ -32,8 +24,7 @@ namespace Gerenciador.Principais
         private void BtnSair_Click(object sender, EventArgs e)
         {
             FrmMenuPrincipal ObjFMP = new FrmMenuPrincipal();
-            ObjFMP.txtUsuarioCookie.Text = txtUsuarioCookie.Text;
-            ObjFMP.txtSenhaCookie.Text = txtSenhaCookie.Text;
+            ObjFMP.LblUser.Text = LblMestre.Text;
             ObjFMP.Show();
             this.Close();
 
@@ -86,19 +77,11 @@ namespace Gerenciador.Principais
             //this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void bntCadClasses_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnCadastroDeUsuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnBuscaDeFuncionario_Click(object sender, EventArgs e)
-        {
-
+            frmCadClasses.LblMestre.Text = LblMestre.Text;
+            frmCadClasses.Show();
+            Close();
         }
 
         private void gpGerencia_Enter(object sender, EventArgs e)
@@ -106,22 +89,23 @@ namespace Gerenciador.Principais
 
         }
 
-        private void btnAdicionarExcluirServico_Click(object sender, EventArgs e)
+        private void btnCadRacas_Click(object sender, EventArgs e)
         {
-
+            FrmRacas frmRacas = new FrmRacas();
+            frmRacas.LblMestre.Text = LblMestre.Text;
+            frmRacas.Show();
+            Close();
         }
 
-        private void btnCadastroDeFuncionario_Click(object sender, EventArgs e)
+        private void btnCadastroDeUsuario_Click(object sender, EventArgs e)
         {
-
+            FrmBuscaUsuarios frmBuscaUsuarios = new FrmBuscaUsuarios();
+            frmBuscaUsuarios.LblMestre.Text = LblMestre.Text;
+            frmBuscaUsuarios.Show();
+            Close();
         }
 
-        private void txtSenhaCookie_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsuarioCookie_TextChanged(object sender, EventArgs e)
+        private void FrmGerenciamento_Load(object sender, EventArgs e)
         {
 
         }

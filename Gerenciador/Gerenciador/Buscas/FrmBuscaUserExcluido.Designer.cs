@@ -257,7 +257,6 @@
             this.btnSair.TabIndex = 126;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnGerContato
             // 
@@ -294,7 +293,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmBuscaUserExcluido";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmFuncExcluidos_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.gbResultadoDaPesquisa.ResumeLayout(false);
             this.gbResultadoDaPesquisa.PerformLayout();

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient; //Importar SQL
+using Gerenciador.Entities;
+using OfficeOpenXml.FormulaParsing.Excel.Functions.Text;
 //using System.Threading.Tasks;
 
 
@@ -11,6 +13,7 @@ namespace Gerenciador.Repository.BancoDados
 {
     public class CldBancoDados
     {
+        Resultado resultado = new Resultado();
         public static ClnFuncoesGerais.Operacao ObjOperacao;//Variável Enum Cep
         public ClnFuncoesGerais.Operacao EnumProperty//Propriedade p guardar Cep
         {
@@ -90,6 +93,66 @@ namespace Gerenciador.Repository.BancoDados
             //}
         }
         //================================================================
+        //================================================================
+        public DataTable RetornaDataTable(string strQuery)
+        {
+            try
+            {
+                SqlCommand command;
+                SqlDataAdapter dataAdapter;
+
+                //Aqui você abre a conexão com o banco
+
+                //Consulta
+                command = new SqlCommand(strQuery, AbreBanco());
+
+                //Intermediario recebe a respota do comandos sql enviado  
+                dataAdapter = new SqlDataAdapter(command);
+
+                //Estrutura da tabela 
+                DataTable objDataTable = new DataTable();
+
+                //Preencher com a estrutura do select enviado com as tuplas
+                dataAdapter.Fill(objDataTable);
+
+                return objDataTable;
+            }
+            catch (Exception e)
+            {
+                throw e;//or MessageBox(e.Message);
+            }
+        }
+
+        //public IEnumerable<T> RetornaLista(string strQuery)
+        //{
+        //    try
+        //    {
+        //        SqlCommand command;
+        //        SqlDataAdapter dataAdapter;
+
+        //        //Aqui você abre a conexão com o banco
+
+        //        //Consulta
+        //        command = new SqlCommand(strQuery, AbreBanco());
+
+        //        //Intermediario recebe a respota do comandos sql enviado  
+        //        dataAdapter = new SqlDataAdapter(command);
+
+        //        //Estrutura da tabela 
+        //        List<Tb_Usuarios> objDataTable = new List<Tb_Usuarios>();
+
+                
+        //        return objDataTable;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        throw e;//or MessageBox(e.Message);
+        //    }
+        //    //finally
+        //    //{
+        //    // //FechaBanco(conn);
+        //    //}
+        //}
         public void ExecutaComando(string strQuery)
         {
             SqlConnection conn;
@@ -107,6 +170,28 @@ namespace Gerenciador.Repository.BancoDados
             {
                 FechaBanco(conn);
             }
+        }
+
+        public Resultado Executar(string strQuery)
+        {
+            SqlConnection conn;
+            conn = AbreBanco();
+            try
+            {
+                SqlCommand sqlComm = new SqlCommand(strQuery, conn);
+                sqlComm.ExecuteNonQuery();
+                resultado.sucesso = true;
+            }
+            catch (Exception ex)
+            {
+                resultado.sucesso = false;
+                resultado.exception = ex;
+            }
+            finally //Em caso de erro ou não, o finally é executado para fechar a conexao com bd
+            {
+                FechaBanco(conn);
+            }
+            return resultado;
         }
 
 
