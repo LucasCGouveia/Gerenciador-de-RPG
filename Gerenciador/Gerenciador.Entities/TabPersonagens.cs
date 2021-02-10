@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gerenciador.Entities
 {
-    public class Tb_Personagens
+    public class TabPersonagens
     {
         public int COD { get; set; }
         public string NOME { get; set; } = string.Empty;
@@ -32,7 +32,7 @@ namespace Gerenciador.Entities
         public int COD_JOGADOR { get; set; }
         public int COD_CAMPANHA { get; set; }
         public int ATIVO { get; set; }
-        public Tb_Personagens()
+        public TabPersonagens()
         { }
     }
 }

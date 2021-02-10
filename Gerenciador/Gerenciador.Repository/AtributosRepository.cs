@@ -10,14 +10,14 @@ namespace Gerenciador.Repository
         public DataTable GetCodAtributos()
         {
             string strQuery;
-            strQuery = ("SELECT COD,COD_PERSONAGEM from TB_ATRIBUTOS ");
-            CldBancoDados ObjBancoDados = new CldBancoDados();
+            strQuery = ("SELECT COD,COD_PERSONAGEM from TabAtributos ");
+            ConexaoDB ObjBancoDados = new ConexaoDB();
             return ObjBancoDados.RetornaDataTable(strQuery);
         }
-        public Resultado Gravar(Tb_Atributos tb_Atributos)
+        public Resultado Gravar(TabAtributos tb_Atributos)
         {
             string strQuery; //Criar a String para inserir
-            strQuery = " INSERT INTO TB_ATRIBUTOS ";
+            strQuery = " INSERT INTO TabAtributos ";
             strQuery += ("(");
             strQuery += ("FORC");
             strQuery += (",DEST");
@@ -40,15 +40,15 @@ namespace Gerenciador.Repository
             strQuery += ("," + tb_Atributos.CodigoPersonagem);
             strQuery += (",1");
             strQuery += (")");
-            CldBancoDados ObjCldBancoDados = new CldBancoDados();
+            ConexaoDB ObjCldBancoDados = new ConexaoDB();
             resultado = ObjCldBancoDados.Executar(strQuery);
 
             return resultado;
         }
-        public Resultado Editar(Tb_Atributos tb_Atributos)
+        public Resultado Editar(TabAtributos tb_Atributos)
         {
             string strQuery; //Criar a String para alterar
-            strQuery = (" UPDATE TB_ATRIBUTOS ");
+            strQuery = (" UPDATE TabAtributos ");
             strQuery += (" SET ");
             strQuery += (" FORC = " + tb_Atributos.FORC );
             strQuery += (" ,DEST = " + tb_Atributos.DESC);
@@ -60,7 +60,7 @@ namespace Gerenciador.Repository
             //strQuery += (" CodigoPersonagem = '" + tb_Atributos.CodigoPersonagem + "' ");
             strQuery += (" WHERE ");
             strQuery += (" COD = " + tb_Atributos.Codigo + " ");
-            CldBancoDados ObjCldBancoDados = new CldBancoDados();
+            ConexaoDB ObjCldBancoDados = new ConexaoDB();
             resultado = ObjCldBancoDados.Executar(strQuery);
             return resultado;
         }

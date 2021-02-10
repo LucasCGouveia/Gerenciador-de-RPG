@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Gerenciador.Entities
 {
-    public class Tb_Usuarios
+    public class TabUsuarios
     {
         public int Codigo { get; set; }
         public string Login { get; set; } = string.Empty;
         public string Senha { get; set; } = string.Empty;
         public string TipoLogin { get; set; } = string.Empty;
-        public Tb_Usuarios()
+        public TabUsuarios()
         { }
-        public Tb_Usuarios(string login, string senha, string tipologin)
+        public TabUsuarios(string login, string senha, string tipologin)
         {
             Login = login;
             Senha = senha;

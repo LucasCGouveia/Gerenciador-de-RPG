@@ -16,7 +16,7 @@ namespace Gerenciador.Business
     {
         Resultado resultado = new Resultado();
         UsuarioRepository ObjRepository = new UsuarioRepository();
-        Tb_Usuarios tb_Usuarios = new Tb_Usuarios();
+        TabUsuarios tb_Usuarios = new TabUsuarios();
 
         public Resultado Gravar(string Login, string Senha, string TipoUser)
         {

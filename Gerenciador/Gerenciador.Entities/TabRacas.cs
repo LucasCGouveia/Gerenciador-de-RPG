@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Gerenciador.Entities
 {
-    public class Tb_Skills
+    public class TabRacas
     {
         public int Codigo { get; set; }
-        public string Skill { get; set; } = string.Empty;
+        public string Raca { get; set; } = string.Empty;
         public string Descricao { get; set; } = string.Empty;
         //public string TipoLogin { get; set; } = string.Empty;
-        public Tb_Skills()
+        public TabRacas()
         { }
-        public Tb_Skills(string skill, string descricao)
+        public TabRacas(string raca, string descricao)
         {
-            Skill = skill;
+            Raca = raca;
             Descricao = descricao;
         }
 

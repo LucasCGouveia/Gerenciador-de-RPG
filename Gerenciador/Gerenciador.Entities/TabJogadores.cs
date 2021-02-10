@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gerenciador.Entities
 {
-    public class Tb_Jogadores
+    public class TabJogadores
     {
         public int COD { get; set; }
         public string NOME { get; set; } = string.Empty;
@@ -17,9 +17,9 @@ namespace Gerenciador.Entities
         public DateTime DATAINCLUSAO { get; set; }
         public int COD_USUARIO { get; set; }
         public int ATIVO { get; set; }
-        public Tb_Jogadores()
+        public TabJogadores()
         { }
-        public Tb_Jogadores(string nome, string qtdpersonagens)
+        public TabJogadores(string nome, string qtdpersonagens)
         {
             NOME = nome;
             QTDPERSONAGENS = qtdpersonagens;

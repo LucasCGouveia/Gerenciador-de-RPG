@@ -13,7 +13,7 @@ namespace Gerenciador.Business
     {
         Resultado resultado = new Resultado();
         ItensRepository itensRepository = new ItensRepository();
-        Tb_Itens tb_Itens = new Tb_Itens();
+        TabItens tb_Itens = new TabItens();
         public Resultado Gravar(string Item, string Descricao)
         {
             tb_Itens.Item = Item;

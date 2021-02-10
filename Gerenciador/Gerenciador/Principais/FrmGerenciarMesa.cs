@@ -13,7 +13,7 @@ namespace Gerenciador
         {
             InitializeComponent();
         }
-        Tb_Personagens tb_Personagens = new Tb_Personagens();
+        TabPersonagens tb_Personagens = new TabPersonagens();
         UsuarioBusiness usuarioBusiness = new UsuarioBusiness();
         CampanhasRepository campanhasRepository = new CampanhasRepository();
         PersonagensBusiness personagensBusiness = new PersonagensBusiness();

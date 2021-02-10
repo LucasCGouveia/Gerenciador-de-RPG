@@ -11,7 +11,7 @@ using OfficeOpenXml.FormulaParsing.Excel.Functions.Text;
 
 namespace Gerenciador.Repository.BancoDados
 {
-    public class CldBancoDados
+    public class ConexaoDB
     {
         Resultado resultado = new Resultado();
         public static ClnFuncoesGerais.Operacao ObjOperacao;//Variável Enum Cep
@@ -23,7 +23,7 @@ namespace Gerenciador.Repository.BancoDados
         //================================================================
         public static SqlConnection AbreBanco()
         {
-            string StringConexao = @"Data Source=NOTNEWMIGHT\SQNPRD001;Initial Catalog=DBSK002;Persist Security Info=True;User ID=sa;Password=010921";
+            string StringConexao = @"Data Source=NOTNEWMIGHT\SQNPRD001;Initial Catalog=DasmeDB;Persist Security Info=True;User ID=sa;Password=010921";
             try
             {
                 SqlConnection conn = new SqlConnection(StringConexao);

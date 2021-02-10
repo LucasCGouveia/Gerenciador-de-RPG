@@ -4,3 +4,8 @@ C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Entities\obj\Debug
 C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Entities\obj\Debug\Gerenciador.Entities.csproj.CoreCompileInputs.cache
 C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Entities\obj\Debug\Gerenciador.Entities.dll
 C:\Projetos\GitHub\Gerenciador-de-RPG\Gerenciador\Gerenciador.Entities\obj\Debug\Gerenciador.Entities.pdb
+C:\xampp\htdocs\_GitHub\LucasCGouveia\Gerenciador-de-RPG\Gerenciador\Gerenciador.Entities\bin\Debug\Gerenciador.Entities.dll
+C:\xampp\htdocs\_GitHub\LucasCGouveia\Gerenciador-de-RPG\Gerenciador\Gerenciador.Entities\bin\Debug\Gerenciador.Entities.pdb
+C:\xampp\htdocs\_GitHub\LucasCGouveia\Gerenciador-de-RPG\Gerenciador\Gerenciador.Entities\obj\Debug\Gerenciador.Entities.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\_GitHub\LucasCGouveia\Gerenciador-de-RPG\Gerenciador\Gerenciador.Entities\obj\Debug\Gerenciador.Entities.dll
+C:\xampp\htdocs\_GitHub\LucasCGouveia\Gerenciador-de-RPG\Gerenciador\Gerenciador.Entities\obj\Debug\Gerenciador.Entities.pdb

@@ -13,8 +13,8 @@ namespace Gerenciador
             InitializeComponent();
         }
         Resultado resultado = new Resultado();
-        Tb_Atributos tb_Atributos = new Tb_Atributos();
-        Tb_Personagens tb_Personagens = new Tb_Personagens();
+        TabAtributos tb_Atributos = new TabAtributos();
+        TabPersonagens tb_Personagens = new TabPersonagens();
         PersonagensBusiness personagensBusiness = new PersonagensBusiness();
         AtributosBusiness atributosBusiness = new AtributosBusiness();
 

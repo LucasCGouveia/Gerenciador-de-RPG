@@ -13,7 +13,7 @@ namespace Gerenciador.Business
     {
         Resultado resultado = new Resultado();
         SkillsRepository racasRepository = new SkillsRepository();
-        Tb_Skills tb_Skills = new Tb_Skills();
+        TabSkills tb_Skills = new TabSkills();
         public Resultado GravarClasse(string Raca, string Descricao)
         {
             tb_Skills.Skill = Raca;

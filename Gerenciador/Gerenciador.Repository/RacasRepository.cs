@@ -16,8 +16,8 @@ namespace Gerenciador.Repository
         public DataSet ListarDataGrid()//Recebe a string do campo descrição, enviado por parâmetro, porém com retorno
         {
             string strQuery;
-            strQuery = "Select COD,RACA,DESCRICAO From TB_RACAS WHERE ATIVO = 1";//String de pesquisa no BD, onde: Seleciona código, nome e telefone pesquisando por qualquer parte do campo nome somente os ativados(não foram excluidos)
-            CldBancoDados ObjBancoDados = new CldBancoDados();//Instancia/cria objeto do BancoDeDados
+            strQuery = "Select COD,RACA,DESCRICAO From TabRacas WHERE ATIVO = 1";//String de pesquisa no BD, onde: Seleciona código, nome e telefone pesquisando por qualquer parte do campo nome somente os ativados(não foram excluidos)
+            ConexaoDB ObjBancoDados = new ConexaoDB();//Instancia/cria objeto do BancoDeDados
             return ObjBancoDados.RetornaDataSet(strQuery);//Envia a consulta por parâmetro para objeto e aguarda o retorno
         }
         //==================================================================================================================
@@ -26,32 +26,32 @@ namespace Gerenciador.Repository
             string strQuery;
             if (strDescricao != "")
             {
-                strQuery = "Select COD,CARGO,SALARIO From TB_RACAS WHERE CARGO = '" + strDescricao + "' and ATIVO = 1";//String de pesquisa no BD, onde: Seleciona código, nome e telefone pesquisando por qualquer parte do campo nome somente os ativados(não foram excluidos)
+                strQuery = "Select COD,CARGO,SALARIO From TabRacas WHERE CARGO = '" + strDescricao + "' and ATIVO = 1";//String de pesquisa no BD, onde: Seleciona código, nome e telefone pesquisando por qualquer parte do campo nome somente os ativados(não foram excluidos)
             }
             else
             {
-                strQuery = "Select COD,Cargo,Salario From TB_RACAS where ATIVO = 1";//String de pesquisa no BD, onde: Seleciona código, nome e telefone pesquisando por qualquer parte do campo nome somente os ativados(não foram excluidos)
+                strQuery = "Select COD,Cargo,Salario From TabRacas where ATIVO = 1";//String de pesquisa no BD, onde: Seleciona código, nome e telefone pesquisando por qualquer parte do campo nome somente os ativados(não foram excluidos)
 
             }
-            CldBancoDados ObjBancoDados = new CldBancoDados();//Instancia/cria objeto do BancoDeDados
+            ConexaoDB ObjBancoDados = new ConexaoDB();//Instancia/cria objeto do BancoDeDados
             return ObjBancoDados.RetornaDataSet(strQuery);//Envia a consulta por parâmetro para objeto e aguarda o retorno
         }
         public DataSet ListarRacasCombo()//Recebe a string do campo descrição, enviado por parâmetro, porém com retorno
         {
             string strQuery;
-            strQuery = "Select COD,RACA From TB_RACAS";//String de pesquisa no BD, onde: Seleciona código, nome e telefone pesquisando por qualquer parte do campo nome somente os ativados(não foram excluidos)
-            CldBancoDados ObjBancoDados = new CldBancoDados();//Instancia/cria objeto do BancoDeDados
+            strQuery = "Select COD,RACA From TabRacas";//String de pesquisa no BD, onde: Seleciona código, nome e telefone pesquisando por qualquer parte do campo nome somente os ativados(não foram excluidos)
+            ConexaoDB ObjBancoDados = new ConexaoDB();//Instancia/cria objeto do BancoDeDados
             return ObjBancoDados.RetornaDataSet(strQuery);//Envia a consulta por parâmetro para objeto e aguarda o retorno
         }
         public Resultado Desativar(int codRacas)
         {
             string strQuery;
-            strQuery = (" UPDATE TB_RACAS ");
+            strQuery = (" UPDATE TabRacas ");
             strQuery += (" SET ");
             strQuery += (" ATIVO = '" + 0 + "' ");
             strQuery += (" WHERE ");
             strQuery += (" COD = '" + codRacas + "' ;");
-            CldBancoDados ObjCldBancoDados = new CldBancoDados();
+            ConexaoDB ObjCldBancoDados = new ConexaoDB();
             resultado = ObjCldBancoDados.Executar(strQuery);
 
             return resultado;
@@ -73,10 +73,10 @@ namespace Gerenciador.Repository
         //================================================================
 
 
-        public Resultado Gravar(Tb_Racas tb_Racas)
+        public Resultado Gravar(TabRacas tb_Racas)
         {
             string strQuery; //Criar a String para inserir
-            strQuery = " INSERT INTO TB_RACAS ";
+            strQuery = " INSERT INTO TabRacas ";
             strQuery += ("(");
             strQuery += ("RACA");
             strQuery += (",DESCRICAO");
@@ -87,21 +87,21 @@ namespace Gerenciador.Repository
             strQuery += (",'" + tb_Racas.Descricao + "'");
             strQuery += (",1");
             strQuery += (")");
-            CldBancoDados ObjCldBancoDados = new CldBancoDados();
+            ConexaoDB ObjCldBancoDados = new ConexaoDB();
             resultado = ObjCldBancoDados.Executar(strQuery);
 
             return resultado;
         }
-        public Resultado Editar(Tb_Racas tb_Racas)
+        public Resultado Editar(TabRacas tb_Racas)
         {
             string strQuery; //Criar a String para alterar
-            strQuery = (" UPDATE TB_RACAS ");
+            strQuery = (" UPDATE TabRacas ");
             strQuery += (" SET ");
             strQuery += (" RACA = '" + tb_Racas.Raca + "' ");
             strQuery += (" ,DESCRICAO = '" + tb_Racas.Descricao + "' ");
             strQuery += (" WHERE ");
             strQuery += (" COD = " + tb_Racas.Codigo + " ");
-            CldBancoDados ObjCldBancoDados = new CldBancoDados();
+            ConexaoDB ObjCldBancoDados = new ConexaoDB();
             resultado = ObjCldBancoDados.Executar(strQuery);
             return resultado;
         }

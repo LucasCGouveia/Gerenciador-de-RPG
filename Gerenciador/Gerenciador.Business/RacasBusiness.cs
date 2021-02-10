@@ -13,7 +13,7 @@ namespace Gerenciador.Business
     {
         Resultado resultado = new Resultado();
         RacasRepository racasRepository = new RacasRepository();
-        Tb_Racas tb_Racas = new Tb_Racas();
+        TabRacas tb_Racas = new TabRacas();
         public Resultado GravarClasse(string Raca, string Descricao)
         {
             tb_Racas.Raca = Raca;

@@ -47,15 +47,15 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resultado.cs" />
-    <Compile Include="Tb_Atributos.cs" />
-    <Compile Include="Tb_Campanhas.cs" />
-    <Compile Include="Tb_Classes.cs" />
-    <Compile Include="Tb_Itens.cs" />
-    <Compile Include="Tb_Jogadores.cs" />
-    <Compile Include="Tb_Personagens.cs" />
-    <Compile Include="Tb_Racas.cs" />
-    <Compile Include="Tb_Skills.cs" />
-    <Compile Include="Tb_Usuarios.cs" />
+    <Compile Include="TabAtributos.cs" />
+    <Compile Include="TabCampanhas.cs" />
+    <Compile Include="TabClasses.cs" />
+    <Compile Include="TabItens.cs" />
+    <Compile Include="TabJogadores.cs" />
+    <Compile Include="TabPersonagens.cs" />
+    <Compile Include="TabRacas.cs" />
+    <Compile Include="TabSkills.cs" />
+    <Compile Include="TabUsuarios.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

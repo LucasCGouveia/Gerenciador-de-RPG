@@ -16,8 +16,8 @@ namespace Gerenciador.Repository
         public DataSet ListarDataGrid()//Recebe a string do campo descrição, enviado por parâmetro, porém com retorno
         {
             string strQuery;
-            strQuery = "Select COD,ITEM,DESCRICAO From TB_ITENS WHERE ATIVO = 1";//String de pesquisa no BD, onde: Seleciona código, nome e telefone pesquisando por qualquer parte do campo nome somente os ativados(não foram excluidos)
-            CldBancoDados ObjBancoDados = new CldBancoDados();//Instancia/cria objeto do BancoDeDados
+            strQuery = "Select COD,ITEM,DESCRICAO From TabItens WHERE ATIVO = 1";//String de pesquisa no BD, onde: Seleciona código, nome e telefone pesquisando por qualquer parte do campo nome somente os ativados(não foram excluidos)
+            ConexaoDB ObjBancoDados = new ConexaoDB();//Instancia/cria objeto do BancoDeDados
             return ObjBancoDados.RetornaDataSet(strQuery);//Envia a consulta por parâmetro para objeto e aguarda o retorno
         }
         //==================================================================================================================
@@ -33,18 +33,18 @@ namespace Gerenciador.Repository
                 strQuery = "Select COD,Cargo,Salario From Tb_Cargos where ATIVO = 1";//String de pesquisa no BD, onde: Seleciona código, nome e telefone pesquisando por qualquer parte do campo nome somente os ativados(não foram excluidos)
 
             }
-            CldBancoDados ObjBancoDados = new CldBancoDados();//Instancia/cria objeto do BancoDeDados
+            ConexaoDB ObjBancoDados = new ConexaoDB();//Instancia/cria objeto do BancoDeDados
             return ObjBancoDados.RetornaDataSet(strQuery);//Envia a consulta por parâmetro para objeto e aguarda o retorno
         }
         public Resultado Desativar(int codigo)
         {
             string strQuery;
-            strQuery = (" UPDATE TB_ITENS ");
+            strQuery = (" UPDATE TabItens ");
             strQuery += (" SET ");
             strQuery += (" ATIVO = '" + 0 + "' ");
             strQuery += (" WHERE ");
             strQuery += (" COD = '" + codigo + "' ;");
-            CldBancoDados ObjCldBancoDados = new CldBancoDados();
+            ConexaoDB ObjCldBancoDados = new ConexaoDB();
             resultado = ObjCldBancoDados.Executar(strQuery);
 
             return resultado;
@@ -66,10 +66,10 @@ namespace Gerenciador.Repository
         //================================================================
 
 
-        public Resultado Gravar(Tb_Itens tb_Itens)
+        public Resultado Gravar(TabItens tb_Itens)
         {
             string strQuery; //Criar a String para inserir
-            strQuery = " INSERT INTO TB_ITENS ";
+            strQuery = " INSERT INTO TabItens ";
             strQuery += ("(");
             strQuery += ("ITEM");
             strQuery += (",DESCRICAO");
@@ -80,21 +80,21 @@ namespace Gerenciador.Repository
             strQuery += (",'" + tb_Itens.Descricao + "'");
             strQuery += (",1");
             strQuery += (")");
-            CldBancoDados ObjCldBancoDados = new CldBancoDados();
+            ConexaoDB ObjCldBancoDados = new ConexaoDB();
             resultado = ObjCldBancoDados.Executar(strQuery);
 
             return resultado;
         }
-        public Resultado Editar(Tb_Itens tb_Itens)
+        public Resultado Editar(TabItens tb_Itens)
         {
             string strQuery; //Criar a String para alterar
-            strQuery = (" UPDATE TB_ITENS ");
+            strQuery = (" UPDATE TabItens ");
             strQuery += (" SET ");
             strQuery += (" ITEM = '" + tb_Itens.Item + "' ");
             strQuery += (" ,DESCRICAO = '" + tb_Itens.Descricao + "' ");
             strQuery += (" WHERE ");
             strQuery += (" COD = " + tb_Itens.Codigo + " ");
-            CldBancoDados ObjCldBancoDados = new CldBancoDados();
+            ConexaoDB ObjCldBancoDados = new ConexaoDB();
             resultado = ObjCldBancoDados.Executar(strQuery);
             return resultado;
         }

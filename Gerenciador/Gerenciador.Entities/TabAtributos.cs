@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gerenciador.Entities
 {
-    public class Tb_Atributos
+    public class TabAtributos
     {
         public int Codigo { get; set; }
         public int FORC { get; set; } 
@@ -17,7 +17,7 @@ namespace Gerenciador.Entities
         public int CARI { get; set; }
         public DateTime DataAtualizacao { get; set; }
         public int CodigoPersonagem { get; set; }
-        public Tb_Atributos()
+        public TabAtributos()
         { }
 
     }

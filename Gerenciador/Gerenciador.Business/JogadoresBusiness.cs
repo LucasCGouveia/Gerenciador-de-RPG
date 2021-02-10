@@ -13,7 +13,7 @@ namespace Gerenciador.Business
     {
         Resultado resultado = new Resultado();
         JogadoresRepository jogadoresRepository = new JogadoresRepository();
-        Tb_Jogadores tb_Jogadores = new Tb_Jogadores();
+        TabJogadores tb_Jogadores = new TabJogadores();
         public Resultado Gravar(string Nome, string Nascimento, string RG, string CPF, string QtdPersonagens, int CodigoUsuario)
         {
             tb_Jogadores.NOME = Nome;

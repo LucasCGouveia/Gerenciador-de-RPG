@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerenciador.Business", "Ger
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerenciador.Entities", "Gerenciador.Entities\Gerenciador.Entities.csproj", "{0A8CE0AC-F697-463F-972D-22BB366173C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DasmeOnline", "DasmeOnline\DasmeOnline.csproj", "{4ABDF7DF-5DDA-44E9-8C98-D67C0508B386}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{0A8CE0AC-F697-463F-972D-22BB366173C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A8CE0AC-F697-463F-972D-22BB366173C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A8CE0AC-F697-463F-972D-22BB366173C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ABDF7DF-5DDA-44E9-8C98-D67C0508B386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ABDF7DF-5DDA-44E9-8C98-D67C0508B386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ABDF7DF-5DDA-44E9-8C98-D67C0508B386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ABDF7DF-5DDA-44E9-8C98-D67C0508B386}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

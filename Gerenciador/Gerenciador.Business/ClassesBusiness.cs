@@ -13,7 +13,7 @@ namespace Gerenciador.Business
     {
         Resultado resultado = new Resultado();
         ClassesRepository classesRepository = new ClassesRepository();
-        Tb_Classes tb_Classes = new Tb_Classes();
+        TabClasses tb_Classes = new TabClasses();
 
         //ClnFuncoesGerais.Operacao ObjOperacao;   //Cria Obj da Operação
         //public ClnFuncoesGerais.Operacao EnumProperty //Método para receber o valor

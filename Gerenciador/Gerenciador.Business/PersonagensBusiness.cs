@@ -12,7 +12,7 @@ namespace Gerenciador.Business
     {
         Resultado resultado = new Resultado();
         PersonagensRepository personagensRepository = new PersonagensRepository();
-        public Resultado Gravar(Tb_Personagens tb_Personagens)
+        public Resultado Gravar(TabPersonagens tb_Personagens)
         {
             resultado = personagensRepository.Gravar(tb_Personagens);
             return resultado;
@@ -22,17 +22,17 @@ namespace Gerenciador.Business
             resultado = personagensRepository.Desativar(codigo);
             return resultado;
         }
-        public Resultado JogadorEditando(Tb_Personagens tb_Personagens)
+        public Resultado JogadorEditando(TabPersonagens tb_Personagens)
         {
             resultado = personagensRepository.JogadorEditando(tb_Personagens);
             return resultado;
         }
-        public Resultado MestreEditando(Tb_Personagens tb_Personagens)
+        public Resultado MestreEditando(TabPersonagens tb_Personagens)
         {
             resultado = personagensRepository.MestreEditando(tb_Personagens);
             return resultado;
         }
-        public Resultado AdicionarCampanha(Tb_Personagens tb_Personagens)
+        public Resultado AdicionarCampanha(TabPersonagens tb_Personagens)
         {
             resultado = personagensRepository.AdicionarCampanha(tb_Personagens);
             return resultado;

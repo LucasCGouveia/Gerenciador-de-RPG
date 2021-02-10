@@ -14,7 +14,7 @@ namespace Gerenciador
             InitializeComponent();
         }
         Resultado resultado = new Resultado();
-        Tb_Personagens tb_Personagens = new Tb_Personagens();
+        TabPersonagens tb_Personagens = new TabPersonagens();
         JogadoresBusiness jogadoresBusiness = new JogadoresBusiness();
         PersonagensBusiness personagensBusiness = new PersonagensBusiness();
         PersonagensRepository personagensRepository = new PersonagensRepository();

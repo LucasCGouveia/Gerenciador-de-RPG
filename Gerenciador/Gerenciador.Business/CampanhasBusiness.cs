@@ -14,7 +14,7 @@ namespace Gerenciador.Business
     {
         Resultado resultado = new Resultado();
         CampanhasRepository campanhasRepository = new CampanhasRepository();
-        Tb_Campanhas tb_Campanhas = new Tb_Campanhas();
+        TabCampanhas tb_Campanhas = new TabCampanhas();
         public Resultado Gravar(string NomeCampanha, string Sistema, string Descricao, int CodigoMestre)
         {
             tb_Campanhas.NomeCampanha = NomeCampanha;

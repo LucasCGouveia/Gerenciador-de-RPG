@@ -13,7 +13,7 @@ namespace Gerenciador.Business
     {
         Resultado resultado = new Resultado();
         AtributosRepository atributosRepository = new AtributosRepository();
-        Tb_Atributos tb_Atributos = new Tb_Atributos();
+        TabAtributos tb_Atributos = new TabAtributos();
         public Resultado Gravar(int Codigo)
         {
             tb_Atributos.CodigoPersonagem = Codigo;
@@ -32,7 +32,7 @@ namespace Gerenciador.Business
         //    resultado = atributosRepository.Desativar(codigoRaca);
         //    return resultado;
         //}
-        public Resultado Editar(Tb_Atributos tb_Atributos)
+        public Resultado Editar(TabAtributos tb_Atributos)
         {
             tb_Atributos.DataAtualizacao = DateTime.Now;
             resultado = atributosRepository.Editar(tb_Atributos);

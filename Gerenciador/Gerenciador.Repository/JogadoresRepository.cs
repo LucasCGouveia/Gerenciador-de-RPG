@@ -17,21 +17,21 @@ namespace Gerenciador.Repository
         public DataTable GetCODJogador()
         {
             string strQuery;
-            strQuery = ("SELECT J.COD,U.LOGIN from DBSK002..TB_USUARIOS as U ");
-            strQuery += ("INNER JOIN DBSK002..TB_JOGADORES as J ");
+            strQuery = ("SELECT J.COD,U.LOGIN from TabUsuarios as U ");
+            strQuery += ("INNER JOIN TabJOgadores as J ");
             strQuery += ("on U.COD = J.COD_USUARIO where U.ATIVO = 1");
-            CldBancoDados ObjBancoDados = new CldBancoDados();
+            ConexaoDB ObjBancoDados = new ConexaoDB();
             return ObjBancoDados.RetornaDataTable(strQuery);
         }
         public Resultado Desativar(int COD)
         {
             string strQuery;
-            strQuery = (" UPDATE TB_JOGADORES ");
+            strQuery = (" UPDATE TabJOgadores ");
             strQuery += (" SET ");
             strQuery += (" Ativo = '" + 0 + "' ");
             strQuery += (" WHERE ");
             strQuery += (" COD = '" + COD + "' ;");
-            CldBancoDados ObjCldBancoDados = new CldBancoDados();
+            ConexaoDB ObjCldBancoDados = new ConexaoDB();
             resultado = ObjCldBancoDados.Executar(strQuery);
             return resultado;
 
@@ -39,18 +39,18 @@ namespace Gerenciador.Repository
         public Resultado Excluir(int COD)
         {
             string strQuery;
-            strQuery = ("DELETE FROM TB_JOGADORES ");
+            strQuery = ("DELETE FROM TabJOgadores ");
             strQuery += (" WHERE ");
             strQuery += (" COD = '" + COD + "' ;");
-            CldBancoDados ObjCldBancoDados = new CldBancoDados();
+            ConexaoDB ObjCldBancoDados = new ConexaoDB();
             resultado = ObjCldBancoDados.Executar(strQuery);
             return resultado;
 
         }
-        public Resultado Gravar(Tb_Jogadores tb_Jogadores)
+        public Resultado Gravar(TabJogadores tb_Jogadores)
         {
             string strQuery; //Criar a String para inserir
-            strQuery = " INSERT INTO TB_JOGADORES ";
+            strQuery = " INSERT INTO TabJOgadores ";
             strQuery += ("(");
             strQuery += ("NOME");
             strQuery += (",NASCIMENTO");
@@ -71,16 +71,16 @@ namespace Gerenciador.Repository
             strQuery += ("," + tb_Jogadores.COD_USUARIO );
             strQuery += (",1");
             strQuery += (")");
-            CldBancoDados ObjCldBancoDados = new CldBancoDados();
+            ConexaoDB ObjCldBancoDados = new ConexaoDB();
             resultado = ObjCldBancoDados.Executar(strQuery);
             return resultado;
         }
         //================================================================
 
-        public Resultado Editar(Tb_Jogadores tb_Jogadores)
+        public Resultado Editar(TabJogadores tb_Jogadores)
         {
             string strQuery; //Criar a String para alterar
-            strQuery = (" UPDATE TB_JOGADORES ");
+            strQuery = (" UPDATE TabJOgadores ");
             strQuery += (" SET ");
             strQuery += (" NOME = '" + tb_Jogadores.NOME + "' ");
             strQuery += (" ,NASCIMENTO = '" + tb_Jogadores.NASCIMENTO + "' ");
@@ -91,7 +91,7 @@ namespace Gerenciador.Repository
             //strQuery += (" ,COD_USUARIO = '" + tb_Jogadores.COD_USUARIO + "' ");
             strQuery += (" WHERE ");
             strQuery += (" COD = " + tb_Jogadores.COD + " ");
-            CldBancoDados ObjCldBancoDados = new CldBancoDados();
+            ConexaoDB ObjCldBancoDados = new ConexaoDB();
             resultado = ObjCldBancoDados.Executar(strQuery);
             return resultado;
 

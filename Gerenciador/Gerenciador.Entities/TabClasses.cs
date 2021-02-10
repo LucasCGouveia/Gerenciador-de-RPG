@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Gerenciador.Entities
 {
-    public class Tb_Itens
+    public class TabClasses
     {
         public int Codigo { get; set; }
-        public string Item { get; set; } = string.Empty;
+        public string Classe { get; set; } = string.Empty;
         public string Descricao { get; set; } = string.Empty;
-        public Tb_Itens()
+        //public string TipoLogin { get; set; } = string.Empty;
+        public TabClasses()
         { }
-        public Tb_Itens(string item, string descricao)
+        public TabClasses(string classe, string descricao)
         {
-            Item = item;
+            Classe = classe;
             Descricao = descricao;
         }
-
     }
 }
