@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Gerenciador.Business
 {
-    public class PersonagensBusiness
+    public class PersonagensBusiness : BusinessBase<TabPersonagens>
     {
         Resultado resultado = new Resultado();
         PersonagensRepository personagensRepository = new PersonagensRepository();
@@ -42,6 +42,31 @@ namespace Gerenciador.Business
             resultado = personagensRepository.Excluir(codigo);
             return resultado;
         }
+        //==================================================================================================
+        //==================================================================================================
+        //==================================================================================================
+        //==================================================================================================
+        //==================================================================================================
+        public List<TabPersonagens> ListarPersonagensCampanha(int pId)
+        {
+            List<TabPersonagens> listaPersonagensCampanha = personagensRepository.ListarPersonagensCampanha(pId);
+            return listaPersonagensCampanha;
+        }
+        public List<TabPersonagens> ListarPersonagensJogador(int pId)
+        {
+            List<TabPersonagens> listaPersonagensCampanha = personagensRepository.ListarPersonagensJogador(pId);
+            return listaPersonagensCampanha;
+        }
+        public List<TabPersonagens> BuscarPersonagensSemCampanha(string Nome)
+        {
+            List<TabPersonagens> listaPersonagensSemCampanha = personagensRepository.BuscarPersonagensSemCampanha(Nome);
+            return listaPersonagensSemCampanha;
+        }
 
+        //==================================================================================================
+        //==================================================================================================
+        //==================================================================================================
+        //==================================================================================================
+        //==================================================================================================
     }
 }

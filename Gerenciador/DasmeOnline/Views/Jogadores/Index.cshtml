@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "~/Views/_Layouts/_Dasme.cshtml";
+}
+
+<header class="major">
+    <h2>Bem Vindo @ViewBag.TabUsuarios.LOGIN</h2>
+</header>
+<div class="row">
+    <div class="col-md-8">
+        <h4>Meus Personagens:</h4>
+    </div>
+    <div class="col-md-4" align="right">
+        @if (ViewBag.TabJOgadores.COD != 0)
+        {
+            <a href="~/Jogadores/PersonagemNovo/@ViewBag.TabJogadores.COD">
+                <input type="button" id="txtNovoPersonagem" value="Novo Personagem" />
+            </a>
+        }
+        else
+        {
+            <div style="border:1px solid red">
+                @ViewBag.Message
+            </div>
+            <input type="button" id="txtNovoPersonagem" value="Novo Personagem" readonly />
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table border="0">
+            <tr>
+                <td>Nome</td>
+                <td>Raça</td>
+                <td>Classe</td>
+                <td>Classe de Armadura</td>
+                <td>Pontos de Vida</td>
+                <td>Nivel</td>
+                <td>Editar</td>
+                <td>Excluir</td>
+            </tr>
+            @foreach (var item in ViewBag.TabPersonagens)
+            {
+                <tr>
+                    <td><a class="" href="~/Mestres/CampanhaGerenciar/@item.COD">@item.NOME</a></td>
+                    <td>@item.RACA</td>
+                    <td>@item.CLASSE</td>
+                    <td>@item.CA</td>
+                    <td>@item.PVTOTAL</td>
+                    <td>@item.NIVEL</td>
+                    <td><a class="btn btn-info" href="~/Mestres/CampanhaEditar/@item.COD"><span class="fa fa-edit"></span></a></td>
+                    <td><a class="btn btn-danger" href="~/Mestres/CampanhaExcluir/@item.COD"><span class="fa fa-book"></span></a></td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+

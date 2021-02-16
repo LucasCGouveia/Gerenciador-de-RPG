@@ -1,0 +1,66 @@
+﻿@{
+    Layout = "~/Views/_Layouts/_Dasme.cshtml";
+}
+
+<header class="major">
+    <h2> Configurações do Usuário: @ViewBag.TabUsuarios.LOGIN</h2>
+</header>
+
+<form action="~/Jogadores/JogadorEditar" method="post">
+    @if (ViewBag.Message != null)
+    {
+        <div style="border:1px solid red">
+            @ViewBag.Message
+        </div>
+    }
+    <!-- CAMPOS OCULTOS -->
+    <input type="text" class="form-control" name="COD" value="@ViewBag.TabJogadores.COD" style="display:none" />
+    <input type="text" class="form-control" name="COD_USUARIO" value="@ViewBag.TabUsuarios.COD" style="display:none" />
+    <input type="text" class="form-control" name="ATIVO" value="@ViewBag.TabJogadores.ATIVO" style="display:none" />
+
+    <div class="form-row">
+        <div class="form-group" col-md-6>
+            <p align="center">Nome:</p>
+            <input type="text" class="form-control" name="NOME" value="@ViewBag.TabJogadores.NOME" />
+        </div>
+        <div class="form-group" col-md-6>
+            <p align="center">Data de Nascimento:</p>
+            <input type="text" class="form-control" name="NASCIMENTO" value="@ViewBag.TabJogadores.NASCIMENTO" />
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group" col-md-6>
+            <p align="center">RG:</p>
+            <input type="text" class="form-control" name="RG" value="@ViewBag.TabJogadores.RG" />
+        </div>
+        <div class="form-group" col-md-6>
+            <p align="center">CPF:</p>
+            <input type="text" class="form-control" name="CPF" value="@ViewBag.TabJogadores.CPF" />
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group" col-md-6>
+            <p align="center">N° de Personagens:</p>
+            <input type="text" class="form-control" name="QTDPERSONAGENS" value="@ViewBag.TabJogadores.QTDPERSONAGENS" readonly />
+        </div>
+        <div class="form-group" col-md-6>
+            <p align="center">Data Cadastro:</p>
+            <input type="text" class="form-control" name="DATAINCLUSAO" value="@ViewBag.TabJogadores.DATAINCLUSAO" readonly />
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group" col-md-6>
+            <button class="btn btn-primary">Atualizar</button>
+        </div>
+        <div class="form-group" col-md-6>
+            <a href="~/Jogadores/Index" class="btn btn-primary">Voltar</a>
+        </div>
+    </div>
+
+</form>
+
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <a href="~/Jogadores/JogadorExcluir/@ViewBag.TabJogadores.COD" class="btn btn-danger">Excluir Conta</a>
+    </div>
+</div>

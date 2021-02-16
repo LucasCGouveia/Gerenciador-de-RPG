@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Gerenciador.Entities
 {
-    public class TabPersonagens
+    public class TabPersonagens : EntityTypeConfiguration<TabPersonagens>
     {
         public int COD { get; set; }
         public string NOME { get; set; } = string.Empty;
@@ -29,7 +30,7 @@ namespace Gerenciador.Entities
         public string PESO { get; set; } = string.Empty;
         public string HISTORIA { get; set; } = string.Empty;
         public DateTime DATAINCLUSAO { get; set; }
-        public int COD_JOGADOR { get; set; }
+        public int? COD_JOGADOR { get; set; }
         public int COD_CAMPANHA { get; set; }
         public int ATIVO { get; set; }
         public TabPersonagens()

@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/_Layouts/_Dasme.cshtml";
+}
+
+<header class="major">
+    <h2>Editar Classe</h2>
+</header>
+
+<form action="~/Classes/Update" method="post">
+    <!-- CAMPOS OCULTOS -->
+    <input type="text" class="form-control" name="COD" value="@ViewBag.TabClasses.COD" style="display:none" />
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <p align="center">Classe</p>
+            <input type="text" class="form-control" name="CLASSE" value="@ViewBag.TabClasses.CLASSE" />
+        </div>
+        <div class="form-group col-md-4">
+            <p align="center">Descrição</p>
+            <input type="text" class="form-control" name="DESCRICAO" value="@ViewBag.TabClasses.DESCRICAO" />
+        </div>
+        <div class="form-group col-md-4">
+            <p align="center">Ativo</p>
+            <input type="checkbox" class="form-check-input" name="ATIVO" value="1" id="flexSwitchCheckDefault">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <input type="submit" class="form-control" value="Editar" />
+        </div>
+    </div>
+</form>

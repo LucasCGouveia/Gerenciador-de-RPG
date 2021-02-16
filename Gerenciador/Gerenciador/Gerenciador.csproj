@@ -161,6 +161,7 @@
     <Compile Include="Secundarios\FrmTrocaTelas.Designer.cs">
       <DependentUpon>FrmTrocaTelas.cs</DependentUpon>
     </Compile>
+    <Compile Include="_Utils\Cryptography.cs" />
     <EmbeddedResource Include="Buscas\FrmBuscaJogador.resx">
       <DependentUpon>FrmBuscaJogador.cs</DependentUpon>
     </EmbeddedResource>

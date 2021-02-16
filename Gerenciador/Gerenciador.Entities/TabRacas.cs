@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity.ModelConfiguration;
 
 namespace Gerenciador.Entities
 {
-    public class TabRacas
+    public class TabRacas : EntityTypeConfiguration<TabRacas>
     {
-        public int Codigo { get; set; }
-        public string Raca { get; set; } = string.Empty;
-        public string Descricao { get; set; } = string.Empty;
-        //public string TipoLogin { get; set; } = string.Empty;
+        public int COD { get; set; }
+        public string RACA { get; set; } = string.Empty;
+        public string DESCRICAO { get; set; } = string.Empty;
+        public int ATIVO { get; set; }
         public TabRacas()
         { }
         public TabRacas(string raca, string descricao)
         {
-            Raca = raca;
-            Descricao = descricao;
+            RACA = raca;
+            DESCRICAO = descricao;
         }
 
     }

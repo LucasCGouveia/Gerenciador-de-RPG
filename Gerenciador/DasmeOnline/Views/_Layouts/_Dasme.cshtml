@@ -1,0 +1,114 @@
+﻿<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+    <title>New Might IT</title>
+    @*<title>@ViewBag.Title</title>*@
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+
+    <link href="~/Content/css/skel.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/style-xlarge.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body id="top">
+
+    <!-- Header -->
+    <header id="header" class="skel-layers-fixed">
+        <h2>Dasme Online</h2>
+        <nav id="nav">
+            <ul>
+                <li><a href="@Url.Action("Index","Mestres")">Inicio</a></li>
+                <li><a href="~/Itens/Index">Itens</a></li>
+                <li><a href="~/Skills/Index">Skills</a></li>
+                <li><a href="~/Missoes/Index">Missões</a></li>
+                @if (ViewBag.LOGIN == "ADM")
+                {
+                    <li>
+                        <button class="button special dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
+                            Gerenciar
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="~/Classes/Index">Classes</a></li>
+                            <li><a class="dropdown-item" href="~/mestres/ListarJogadores">Jogadores</a></li>
+                            <li><a class="dropdown-item" href="~/mestres/ListarPersonagens">Personagens</a></li>
+                            <li><a class="dropdown-item" href="~/Racas/Index">Raças</a></li>
+                            <li><a class="dropdown-item" href="~/mestres/ListarUsuario">Usuarios</a></li>
+                        </ul>
+                    </li>
+                }
+                <li>
+                    <button class="button special dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
+                        @ViewBag.LOGIN
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item details" href="#">Configurações</a></li>
+                        <li><a class="dropdown-item" href="@Url.Action("LogOut","Login")">LogOut</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row double">
+                <div class="6u">
+                    <div class="row collapse-at-2">
+                        <div class="6u">
+                            <h3>Accumsan</h3>
+                            <ul class="alt">
+                                <li><a href="#">Nascetur nunc varius</a></li>
+                                <li><a href="#">Vis faucibus sed tempor</a></li>
+                                <li><a href="#">Massa amet lobortis vel</a></li>
+                                <li><a href="#">Nascetur nunc varius</a></li>
+                            </ul>
+                        </div>
+                        <div class="6u">
+                            <h3>Faucibus</h3>
+                            <ul class="alt">
+                                <li><a href="#">Nascetur nunc varius</a></li>
+                                <li><a href="#">Vis faucibus sed tempor</a></li>
+                                <li><a href="#">Massa amet lobortis vel</a></li>
+                                <li><a href="#">Nascetur nunc varius</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="6u">
+                    <h2>Aliquam Interdum</h2>
+                    <p>Blandit nunc tempor lobortis nunc non. Mi accumsan. Justo aliquet massa adipiscing cubilia eu accumsan id. Arcu accumsan faucibus vis ultricies adipiscing ornare ut. Mi accumsan justo aliquet.</p>
+                    <ul class="icons">
+                        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="copyright">
+                <li>&copy; Untitled. All rights reserved.</li>
+                <li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+                <li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="~/Content/js/popper.min.js"></script>
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/skel.min.js"></script>
+    <script src="~/Content/js/skel-layers.min.js"></script>
+    <script src="~/Content/js/init.js"></script>
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

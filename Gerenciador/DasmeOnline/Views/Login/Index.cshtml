@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login</title>
+    <link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+@*
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+*@
+<body>
+    <header class="major">
+        <h2>Login de Usuario em Dasme Online</h2>
+    </header>
+    <form action="/Login/Index" method="post">
+        @{
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            if (@ViewBag.Message != null)
+            {
+                <div style="border:1px solid red">
+                    @ViewBag.Message
+                </div>
+            }
+
+            <br /><br /><br /><br /><br /><br /><br /><br />
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <h2 align="center">Cadastre-se</h2>
+                </div>
+                <div class="form-group col-md-6">
+                    <h2 align="center">Login</h2>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6" align="center">
+                    Cadastre-se em Dasme Online<a href="~/Login/UsuarioNovo"> AQUI </a>
+                </div>
+                <div class="form-group col-md-6" align="center">
+                    <input type="text" class="form-control col-md-5" name="usuario" id="txtUsuario" placeholder="Usuario" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6" align="center">
+                    Conheça nossos produtos New Might IT <a href="">AQUI </a>
+                </div>
+                <div class="form-group col-md-6" align="center">
+                    <input type="password" class="form-control col-md-5" name="password" id="txtSenha" placeholder="Senha" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+
+                </div>
+                <div class="form-group col-md-6" align="center">
+                    <button class="btn btn-info">Login</button>
+                </div>
+            </div>
+        }
+    </form>
+    @*
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+    *@
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,15 +1,10 @@
 ﻿using Gerenciador.Entities;
 using Gerenciador.Repository;
-using Gerenciador.Repository.BancoDados;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Gerenciador.Business
 {
-    public class ClassesBusiness
+    public class ClassesBusiness : BusinessBase<TabClasses>
     {
         Resultado resultado = new Resultado();
         ClassesRepository classesRepository = new ClassesRepository();
@@ -23,8 +18,8 @@ namespace Gerenciador.Business
         //}
         public Resultado GravarClasse(string Classe, string Descricao)
         {
-            tb_Classes.Classe = Classe;
-            tb_Classes.Descricao = Descricao;
+            tb_Classes.CLASSE = Classe;
+            tb_Classes.DESCRICAO = Descricao;
             resultado = classesRepository.Gravar(tb_Classes);
             return resultado;
         }
@@ -35,9 +30,9 @@ namespace Gerenciador.Business
         }
         public Resultado EditarClasse(string Codigo,string Classe, string Descricao)
         {
-            tb_Classes.Codigo = Convert.ToInt32(Codigo);
-            tb_Classes.Classe = Classe;
-            tb_Classes.Descricao = Descricao;
+            tb_Classes.COD = Convert.ToInt32(Codigo);
+            tb_Classes.CLASSE = Classe;
+            tb_Classes.DESCRICAO = Descricao;
             resultado = classesRepository.EditarClasse(tb_Classes);
             return resultado;
         }

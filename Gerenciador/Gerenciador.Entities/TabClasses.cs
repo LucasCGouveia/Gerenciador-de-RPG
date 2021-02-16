@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Gerenciador.Entities
 {
-    public class TabClasses
+    public class TabClasses : EntityTypeConfiguration<TabClasses>
     {
-        public int Codigo { get; set; }
-        public string Classe { get; set; } = string.Empty;
-        public string Descricao { get; set; } = string.Empty;
-        //public string TipoLogin { get; set; } = string.Empty;
+        public int COD { get; set; }
+        public string CLASSE { get; set; } = string.Empty;
+        public string DESCRICAO { get; set; } = string.Empty;
+        public int ATIVO { get; set; }
         public TabClasses()
         { }
         public TabClasses(string classe, string descricao)
         {
-            Classe = classe;
-            Descricao = descricao;
+            CLASSE = classe;
+            DESCRICAO = descricao;
         }
     }
 }

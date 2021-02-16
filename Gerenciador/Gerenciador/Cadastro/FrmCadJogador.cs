@@ -54,7 +54,7 @@ namespace Gerenciador
             }
             else
             {
-                resultado = jogadoresBusiness.Gravar(txtNome.Text, mtxtDataNasc.Text, mtxtRG.Text, mtxtCPF.Text, "0", Convert.ToInt32(txtCod.Text));
+                resultado = jogadoresBusiness.Gravar(txtNome.Text, mtxtDataNasc.Text, mtxtRG.Text, mtxtCPF.Text, 0, Convert.ToInt32(txtCod.Text));
                 if (resultado.sucesso)
                 {
                     MessageBox.Show("Cadastro concluido com sucesso voltando a tela de login. ", "C O N C L U I D O", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -1,26 +1,21 @@
 ﻿using Gerenciador.Entities;
 using Gerenciador.Repository;
-using Gerenciador.Repository.BancoDados;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Gerenciador.Business
 {
-    public class CampanhasBusiness
+    public class CampanhasBusiness : BusinessBase<TabCampanhas>
     {
         Resultado resultado = new Resultado();
         CampanhasRepository campanhasRepository = new CampanhasRepository();
         TabCampanhas tb_Campanhas = new TabCampanhas();
         public Resultado Gravar(string NomeCampanha, string Sistema, string Descricao, int CodigoMestre)
         {
-            tb_Campanhas.NomeCampanha = NomeCampanha;
-            tb_Campanhas.Sistema = Sistema;
-            tb_Campanhas.Descricao = Descricao;
-            tb_Campanhas.CodigoMestre = CodigoMestre;
+            tb_Campanhas.NOMECAMPANHA = NomeCampanha;
+            tb_Campanhas.SISTEMA = Sistema;
+            tb_Campanhas.DESCRICAO = Descricao;
+            tb_Campanhas.COD_MESTRE = CodigoMestre;
             resultado = campanhasRepository.Gravar(tb_Campanhas);
             return resultado;
         }
@@ -31,14 +26,18 @@ namespace Gerenciador.Business
         }
         public Resultado Editar(string Codigo, string NomeCampanha, string Sistema, string Descricao)
         {
-            tb_Campanhas.Codigo = Convert.ToInt32(Codigo);
-            tb_Campanhas.NomeCampanha = NomeCampanha;
-            tb_Campanhas.Sistema = Sistema;
-            tb_Campanhas.Descricao = Descricao;
+            tb_Campanhas.COD = Convert.ToInt32(Codigo);
+            tb_Campanhas.NOMECAMPANHA = NomeCampanha;
+            tb_Campanhas.SISTEMA = Sistema;
+            tb_Campanhas.DESCRICAO = Descricao;
             resultado = campanhasRepository.Editar(tb_Campanhas);
             return resultado;
         }
-        
+        public List<TabCampanhas> ListarCampanhasMestre(int pId)
+        {
+            List<TabCampanhas> ListaCampanhas = campanhasRepository.ListarCampanhasMestre(pId);
+            return ListaCampanhas;
+        }
 
 
 

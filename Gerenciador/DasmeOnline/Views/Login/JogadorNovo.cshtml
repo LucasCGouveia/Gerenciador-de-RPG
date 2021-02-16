@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+
+<header class="major">
+    <h2>Conclusão Cadastro Jogador</h2>
+</header>
+
+<form action="~/Login/JogadorNovo" method="post">
+    <!-- DADOS OCULTOS -->
+    <input type="text" class="form-control" name="COD_USUARIO" value="@ViewBag.TabUsuarios.COD" style="display:none"/>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <p align="center">Nome do Usuario</p>
+            <input type="text" class="form-control" name="NOME" />
+        </div>
+        <div class="form-group col-md-6">
+            <p align="center">Data de Nascimento</p>
+            <input type="datetime" class="form-control" name="Nascimento" />
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <p align="center">RG</p>
+            <input type="text" class="form-control" name="RG" />
+        </div>
+        <div class="form-group col-md-6">
+            <p align="center">CPF</p>
+            <input type="text" class="form-control" name="CPF" />
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+        <button class="btn btn-primary">Concluir Cadastro</button>
+        </div>    
+    </div>
+</form>

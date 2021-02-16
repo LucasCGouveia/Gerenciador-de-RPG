@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "~/Views/_Layouts/_Dasme.cshtml";
+}
+
+<header class="major">
+    <h2>Bem Vindo @ViewBag.TabUsuarios.LOGIN</h2>
+</header>
+<div class="row">
+    <div class="col-md-8">
+        <h4>Campanhas criadas:</h4>
+    </div>
+    <div class="col-md-4" align="right">
+        <a href="~/Mestres/CampanhaNova">
+            <input type="button" id="txtNovoColaborador" value="Nova Campanha" />
+        </a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table border="0">
+            <tr>
+                <td>Nome</td>
+                <td>Sistema</td>
+                <td>Descrição</td>
+                <td>Editar</td>
+                <td>Excluir</td>
+            </tr>
+            @foreach (var item in ViewBag.TabCampanhas)
+            {
+                <tr>
+                    <td><a class="" href="~/Mestres/CampanhaGerenciar/@item.COD">@item.NOMECAMPANHA</a></td>
+                    <td>@item.SISTEMA</td>
+                    <td>@item.DESCRICAO</td>
+                    <td><a class="btn btn-info" href="~/Mestres/CampanhaEditar/@item.COD"><span class="fa fa-edit"></span></a></td>
+                    <td><a class="btn btn-danger" href="~/Mestres/CampanhaExcluir/@item.COD"><span class="fa fa-book"></span></a></td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace Gerenciador.Business
 {
-    public class JogadoresBusiness
+    public class JogadoresBusiness : BusinessBase<TabJogadores>
     {
         Resultado resultado = new Resultado();
         JogadoresRepository jogadoresRepository = new JogadoresRepository();
         TabJogadores tb_Jogadores = new TabJogadores();
-        public Resultado Gravar(string Nome, string Nascimento, string RG, string CPF, string QtdPersonagens, int CodigoUsuario)
+        public Resultado Gravar(string Nome, string Nascimento, string RG, string CPF, int QtdPersonagens, int CodigoUsuario)
         {
             tb_Jogadores.NOME = Nome;
             tb_Jogadores.NASCIMENTO = Nascimento;
@@ -31,7 +31,7 @@ namespace Gerenciador.Business
             resultado = jogadoresRepository.Desativar(codigo);
             return resultado;
         }
-        public Resultado Editar(string Codigo, string Nome, string Nascimento, string RG, string CPF, string QtdPersonagens, int CodigoUsuario)
+        public Resultado Editar(string Codigo, string Nome, string Nascimento, string RG, string CPF, int QtdPersonagens, int CodigoUsuario)
         {
             tb_Jogadores.COD = Convert.ToInt32(Codigo);
             tb_Jogadores.NOME = Nome;
@@ -76,5 +76,20 @@ namespace Gerenciador.Business
                 throw ex;
             }
         }
+        //=================================================================================================================================================================================
+        //=================================================================================================================================================================================
+        //=================================================================================================================================================================================
+        //=================================================================================================================================================================================
+        //=================================================================================================================================================================================
+        public TabJogadores ListarJogadorPorCodUsuario(int pId)
+        {
+            TabJogadores tabJogadores = jogadoresRepository.ListarJogadorPorCodUsuario(pId);
+            return tabJogadores;
+        }
+        //=================================================================================================================================================================================
+        //=================================================================================================================================================================================
+        //=================================================================================================================================================================================
+        //=================================================================================================================================================================================
+        //=================================================================================================================================================================================
     }
 }

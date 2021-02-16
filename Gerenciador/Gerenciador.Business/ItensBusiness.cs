@@ -1,11 +1,6 @@
 ﻿using Gerenciador.Entities;
 using Gerenciador.Repository;
-using Gerenciador.Repository.BancoDados;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Gerenciador.Business
 {
@@ -16,8 +11,8 @@ namespace Gerenciador.Business
         TabItens tb_Itens = new TabItens();
         public Resultado Gravar(string Item, string Descricao)
         {
-            tb_Itens.Item = Item;
-            tb_Itens.Descricao = Descricao;
+            tb_Itens.ITEM = Item;
+            tb_Itens.DESCRICAO = Descricao;
             resultado = itensRepository.Gravar(tb_Itens);
             return resultado;
         }
@@ -28,9 +23,9 @@ namespace Gerenciador.Business
         }
         public Resultado Editar(string Codigo, string Item, string Descricao)
         {
-            tb_Itens.Codigo = Convert.ToInt32(Codigo);
-            tb_Itens.Item = Item;
-            tb_Itens.Descricao = Descricao;
+            tb_Itens.COD = Convert.ToInt32(Codigo);
+            tb_Itens.ITEM = Item;
+            tb_Itens.DESCRICAO = Descricao;
             resultado = itensRepository.Editar(tb_Itens);
             return resultado;
         }

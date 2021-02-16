@@ -3,51 +3,46 @@ using Gerenciador.Repository;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
-using System.Windows.Forms;
 
 namespace Gerenciador.Business
 {
-    public class UsuarioBusiness
+    public class UsuarioBusiness : BusinessBase<TabUsuarios>
     {
+        public string ReturnUrl { get; set; }
         Resultado resultado = new Resultado();
-        UsuarioRepository ObjRepository = new UsuarioRepository();
+        UsuarioRepository usuarioRepository = new UsuarioRepository();
         TabUsuarios tb_Usuarios = new TabUsuarios();
 
         public Resultado Gravar(string Login, string Senha, string TipoUser)
         {
-            tb_Usuarios.Login = Login.ToUpper();
-            tb_Usuarios.Senha = Senha;
-            tb_Usuarios.TipoLogin = TipoUser;
-            resultado = ObjRepository.Gravar(tb_Usuarios);
+            tb_Usuarios.LOGIN = Login.ToUpper();
+            tb_Usuarios.SENHA = Senha;
+            tb_Usuarios.TIPOUSER = TipoUser;
+            resultado = usuarioRepository.Gravar(tb_Usuarios);
             return resultado;
         }
         public Resultado Ativar(int codigo)
         {
-            resultado = ObjRepository.Ativar(codigo);
+            resultado = usuarioRepository.Ativar(codigo);
             return resultado;
         }
         public Resultado Desativar(int codigo)
         {
-            resultado = ObjRepository.Desativar(codigo);
+            resultado = usuarioRepository.Desativar(codigo);
             return resultado;
         }
         public Resultado Excluir(int codigo)
         {
-            resultado = ObjRepository.Excluir(codigo);
+            resultado = usuarioRepository.Excluir(codigo);
             return resultado;
         }
         public Resultado Editar(string Codigo, string Login, string Senha, string TipoUser)
         {
-            tb_Usuarios.Codigo = Convert.ToInt32(Codigo);
-            tb_Usuarios.Login = Login;
-            tb_Usuarios.Senha = Senha;
-            tb_Usuarios.TipoLogin = TipoUser;
-            resultado = ObjRepository.Editar(tb_Usuarios);
+            tb_Usuarios.COD = Convert.ToInt32(Codigo);
+            tb_Usuarios.LOGIN = Login;
+            tb_Usuarios.SENHA = Senha;
+            tb_Usuarios.TIPOUSER = TipoUser;
+            resultado = usuarioRepository.Editar(tb_Usuarios);
             return resultado;
         }
         public List<string> GetUsuarios(string TxtLogin,string TxtSenha)
@@ -65,7 +60,7 @@ namespace Gerenciador.Business
 
                 //Cria lista
                 List<string> ListaDeDados = new List<string>();
-                objDataTable = ObjRepository.GetUsuarios();
+                objDataTable = usuarioRepository.GetUsuarios();
 
                 //Percorrer as linhas do datatable para adicionar na lista 
                 foreach (DataRow dataRow in objDataTable.Rows)
@@ -172,8 +167,26 @@ namespace Gerenciador.Business
             }
         }
 
-
-
+        //==========================================================================================================================================================================
+        //==========================================================================================================================================================================
+        //==========================================================================================================================================================================
+        //==========================================================================================================================================================================
+        //==========================================================================================================================================================================
+        public TabUsuarios Login(TabUsuarios login)
+        {
+            TabUsuarios usuario = usuarioRepository.Login(login);
+            return usuario;
+        }
+        public TabUsuarios VerificarUsuario(TabUsuarios login)
+        {
+            TabUsuarios usuario = usuarioRepository.VerificarUsuario(login);
+            return usuario;
+        }
+        //==========================================================================================================================================================================
+        //==========================================================================================================================================================================
+        //==========================================================================================================================================================================
+        //==========================================================================================================================================================================
+        //==========================================================================================================================================================================
 
 
 

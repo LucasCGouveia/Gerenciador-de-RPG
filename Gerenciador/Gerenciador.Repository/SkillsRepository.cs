@@ -1,4 +1,4 @@
-﻿using Gerenciador.Repository.BancoDados;
+﻿using Gerenciador.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,8 +76,8 @@ namespace Gerenciador.Repository
             strQuery += (",ATIVO");
             strQuery += (")");
             strQuery += (" VALUES (");
-            strQuery += ("'" + tb_Skills.Skill + "'");
-            strQuery += (",'" + tb_Skills.Descricao + "'");
+            strQuery += ("'" + tb_Skills.SKILL + "'");
+            strQuery += (",'" + tb_Skills.DESCRICAO + "'");
             strQuery += (",1");
             strQuery += (")");
             ConexaoDB ObjCldBancoDados = new ConexaoDB();
@@ -90,10 +90,10 @@ namespace Gerenciador.Repository
             string strQuery; //Criar a String para alterar
             strQuery = (" UPDATE TabSkills ");
             strQuery += (" SET ");
-            strQuery += (" SKILL = '" + tb_Skills.Skill + "' ");
-            strQuery += (" ,DESCRICAO = '" + tb_Skills.Descricao + "' ");
+            strQuery += (" SKILL = '" + tb_Skills.SKILL + "' ");
+            strQuery += (" ,DESCRICAO = '" + tb_Skills.DESCRICAO + "' ");
             strQuery += (" WHERE ");
-            strQuery += (" COD = " + tb_Skills.Codigo + " ");
+            strQuery += (" COD = " + tb_Skills.COD + " ");
             ConexaoDB ObjCldBancoDados = new ConexaoDB();
             resultado = ObjCldBancoDados.Executar(strQuery);
             return resultado;

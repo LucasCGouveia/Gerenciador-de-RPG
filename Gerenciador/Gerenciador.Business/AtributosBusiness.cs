@@ -16,9 +16,9 @@ namespace Gerenciador.Business
         TabAtributos tb_Atributos = new TabAtributos();
         public Resultado Gravar(int Codigo)
         {
-            tb_Atributos.CodigoPersonagem = Codigo;
+            tb_Atributos.COD_PERSONAGEM = Codigo;
             tb_Atributos.FORC = 0;
-            tb_Atributos.DESC = 0;
+            tb_Atributos.DEST = 0;
             tb_Atributos.CONS = 0;
             tb_Atributos.INTE = 0;
             tb_Atributos.SABE = 0;

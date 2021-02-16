@@ -1,0 +1,61 @@
+﻿@{
+    Layout = "~/Views/_Layouts/_Dasme.cshtml";
+}
+
+<header class="major">
+    <h2> Você esta prestes a excluir Usuário: @ViewBag.TabUsuarios.LOGIN</h2>
+</header>
+
+<form action="~/Jogadores/JogadorExcluir" method="post">
+    <!-- CAMPOS OCULTOS -->
+    <input type="text" class="form-control" name="COD" value="@ViewBag.TabJogadores.COD" style="display:none" />
+    <input type="text" class="form-control" name="COD_USUARIO" value="@ViewBag.TabUsuarios.COD" style="display:none" />
+    <input type="text" class="form-control" name="ATIVO" value="@ViewBag.TabJogadores.ATIVO" style="display:none" />
+
+    <h2>Informações do Jogador:</h2>
+
+    <div class="form-row">
+        <div class="form-group" col-md-6>
+            <p align="center">Nome:</p>
+            <input type="text" class="form-control" name="NOME" value="@ViewBag.TabJogadores.NOME" />
+        </div>
+        <div class="form-group" col-md-6>
+            <p align="center">Data Cadastro:</p>
+            <input type="text" class="form-control" name="DATAINCLUSAO" value="@ViewBag.TabJogadores.DATAINCLUSAO" readonly />
+        </div>
+    </div>
+
+    <h2>Você excluira tambem os personagens:</h2>
+
+    <table>
+        <tr>
+            <td>Nome do Personagem</td>
+            <td>Raça</td>
+            <td>Classe</td>
+            <td>Classe de Armadura</td>
+            <td>Pontos de Vida</td>
+            <td>Nivel</td>
+        </tr>
+        @foreach (var item in ViewBag.listaTabPersonagens)
+        {
+            <tr>
+                <td>@item.NOME</td>
+                <td>@item.RACA</td>
+                <td>@item.CLASSE</td>
+                <td>@item.CA</td>
+                <td>@item.PVTOTAL</td>
+                <td>@item.NIVEL</td>
+            </tr>
+        }
+    </table>
+
+    <div class="form-row">
+        <div class="form-group" col-md-6>
+            <button class="btn btn-danger">Confirmar Exclusão</button>
+        </div>
+        <div class="form-group" col-md-6>
+            <a href="~/Jogadores/JogadorEditar" class="btn btn-primary">Voltar</a>
+        </div>
+    </div>
+
+</form>

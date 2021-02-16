@@ -1,22 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.Entity.ModelConfiguration;
 
 namespace Gerenciador.Entities
 {
-    public class TabAtributos
+    public class TabAtributos : EntityTypeConfiguration<TabAtributos>
     {
-        public int Codigo { get; set; }
+        public int COD { get; set; }
         public int FORC { get; set; } 
-        public int DESC { get; set; }
+        public int DEST { get; set; }
         public int CONS { get; set; }
         public int INTE { get; set; } 
         public int SABE { get; set; } 
         public int CARI { get; set; }
         public DateTime DataAtualizacao { get; set; }
-        public int CodigoPersonagem { get; set; }
+        public int COD_PERSONAGEM { get; set; }
         public TabAtributos()
         { }
 

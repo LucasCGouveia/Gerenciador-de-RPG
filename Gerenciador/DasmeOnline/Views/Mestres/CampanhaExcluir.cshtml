@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "~/Views/_Layouts/_Dasme.cshtml";
+}
+
+<header class="major">
+    <h2>EXCLUIR CAMPANHA</h2>
+</header>
+<form action="/Mestres/CampanhaExcluir" method="post" align="center">
+    <!-- CAMPOS OCULTOS - ATIVO, COD e COD_MESTRE  ======================================================================================== -->
+    <input type="text" class="form-control" name="COD" value="@ViewBag.TabCampanhas.Cod" style="display:none" />
+    <input type="text" class="form-control" name="COD_MESTRE" value="@ViewBag.TabCampanhas.Cod_Mestre" style="display:none" />
+    <input type="text" class="form-control" name="Ativo" value="@ViewBag.TabCampanhas.Ativo" style="display:none" />
+    <!-- =========================================================================================================================== -->
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Nome da Campanha</label>
+            <input type="text" class="form-control" name="NomeCampanha" value="@ViewBag.TabCampanhas.NomeCampanha" />
+        </div>
+        <div class="form-group col-md-6">
+            <label>Sistema</label>
+            <select id="inputState" class="form-control" name="Sistema" value="@ViewBag.TabCampanhas.Sistema">
+                <option selected>Escolha...</option>
+                <option>D&D 3.5</option>
+                <option>D&D 4</option>
+                <option>D&D 5</option>
+                <option>Might Blade</option>
+                <option>Tormenta</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label>Descricao</label>
+            <input type="text" class="form-control" name="Descricao" value="@ViewBag.TabCampanhas.Descricao" />
+        </div>
+    </div>
+
+    <button class="btn-primary">Excluir Campanha</button>
+</form>

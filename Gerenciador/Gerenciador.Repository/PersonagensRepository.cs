@@ -1,5 +1,5 @@
 ﻿using Gerenciador.Entities;
-using Gerenciador.Repository.BancoDados;
+using Gerenciador.Repository;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Gerenciador.Repository
 {
-    public class PersonagensRepository
+    public class PersonagensRepository : RepositoryBase<TabPersonagens>
     {
         Resultado resultado = new Resultado();
         TabPersonagens tb_Personagens = new TabPersonagens();
@@ -174,5 +174,66 @@ namespace Gerenciador.Repository
             return resultado;
 
         }
+        //============================================================================================================
+        //============================================================================================================
+        //============================================================================================================
+        //============================================================================================================
+        //============================================================================================================
+        public List<TabPersonagens> ListarPersonagensCampanha(int pId)
+        {
+            try
+            {
+                // if (obj != null && !((int)obj.GetType().GetProperty("Ativo").GetValue(obj) == 0))
+                List<TabPersonagens> ListaPersonagensCampanha = Db.TabPersonagens.Where(x => x.COD_CAMPANHA == pId)
+                    .Where(x => x.ATIVO == 1).ToList();
+
+
+                return ListaPersonagensCampanha;
+                throw new Exception("Nenhum registro encontrado.");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<TabPersonagens> ListarPersonagensJogador(int pId)
+        {
+            try
+            {
+                // if (obj != null && !((int)obj.GetType().GetProperty("Ativo").GetValue(obj) == 0))
+                List<TabPersonagens> ListaPersonagensCampanha = Db.TabPersonagens.Where(x => x.COD_JOGADOR == pId)
+                    .Where(x => x.ATIVO == 1).ToList();
+
+
+                return ListaPersonagensCampanha;
+                throw new Exception("Nenhum registro encontrado.");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<TabPersonagens> BuscarPersonagensSemCampanha(string Nome)
+        {
+            try
+            {
+                List<TabPersonagens> ListaPersonagensCampanha = Db.TabPersonagens.Where(x => x.COD_CAMPANHA == 0)
+                    .Where(x => x.NOME.ToUpper() == Nome.ToUpper())
+                    .Where(x => x.RACA != "Monstro")
+                    .Where(x => x.ATIVO == 1).ToList().ToList();
+
+                return ListaPersonagensCampanha;
+                throw new Exception("Nenhum registro encontrado.");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        //============================================================================================================
+        //============================================================================================================
+        //============================================================================================================
+        //============================================================================================================
+        //============================================================================================================
     }
 }

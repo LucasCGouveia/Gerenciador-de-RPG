@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null;
+}
+<html>
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header class="major">
+        <h2>Cadastro de Usuario</h2>
+    </header>
+
+    <form action="~/Login/UsuarioNovo" method="post">
+        @if (@ViewBag.Message != null)
+        {
+        <div style="border:1px solid red">
+            @ViewBag.Message
+        </div>
+        }
+        <div class="form-row">
+            <div class="form-group">
+                <p align="center">Usuario:</p>
+                <input type="text" class="form-control" name="LOGIN" required />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <p align="center">Senha:</p>
+                <input type="password" class="form-control" name="SENHA" required />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <p align="center">Confirmação de Senha:</p>
+                <input type="password" class="form-control" name="VALSENHA" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <p align="center">Tipo de Usuario:</p>
+                <select id="inputState" class="form-control" name="TIPOUSER" required>
+                    <option selected>Escolha...</option>
+                    <option>JOGADOR</option>
+                    <option>MESTRE</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <button class="btn btn-primary">Cadastre-se</button>
+            </div>
+        </div>
+
+    </form>
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

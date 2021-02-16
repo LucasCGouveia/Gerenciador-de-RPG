@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace DasmeOnline.Controllers
 {
+    [AllowAnonymous]
     public class DasmeController : Controller
     {
         // GET: Dasme

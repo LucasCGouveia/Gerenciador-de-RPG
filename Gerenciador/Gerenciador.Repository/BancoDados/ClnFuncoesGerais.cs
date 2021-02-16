@@ -6,7 +6,7 @@ using System.Data;//Importar ADO
 using System.Data.SqlClient; //Importar SQL
 //using System.Threading.Tasks;
 
-namespace Gerenciador.Repository.BancoDados
+namespace Gerenciador.Repository
 {
     public class ClnFuncoesGerais
     {

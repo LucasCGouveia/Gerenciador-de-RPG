@@ -1,24 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.Entity.ModelConfiguration;
 
 namespace Gerenciador.Entities
 {
-    public class TabUsuarios
+    public class TabUsuarios : EntityTypeConfiguration<TabUsuarios>
     {
-        public int Codigo { get; set; }
-        public string Login { get; set; } = string.Empty;
-        public string Senha { get; set; } = string.Empty;
-        public string TipoLogin { get; set; } = string.Empty;
+        public int COD { get; set; }
+        [Required]
+        public string LOGIN { get; set; } = string.Empty;
+        [Required]
+        [DataType(DataType.Password)]
+        public string SENHA { get; set; } = string.Empty;
+        public string TIPOUSER { get; set; } = string.Empty;
+        public int ATIVO { get; set; }
         public TabUsuarios()
         { }
         public TabUsuarios(string login, string senha, string tipologin)
         {
-            Login = login;
-            Senha = senha;
-            TipoLogin = tipologin;
+            LOGIN = login;
+            SENHA = senha;
+            TIPOUSER = tipologin;
         }
+        
     }
 }

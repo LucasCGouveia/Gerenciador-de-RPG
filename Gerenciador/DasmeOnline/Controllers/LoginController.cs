@@ -1,4 +1,5 @@
-﻿using DasmeOnline.Models;
+﻿using DasmeOnline;
+using Gerenciador.Business;
 using Gerenciador.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,65 +11,51 @@ using System.Web.Mvc;
 namespace DasmeOnline.Controllers
 {
     [AllowAnonymous]
-    public class LoginController : Controller
+    public class LoginController : Cookie
     {
-        [HttpGet]
-        public ActionResult Login(string returnUrl)
+        private readonly UsuarioBusiness usuarioBusiness;
+        private readonly JogadoresBusiness jogadoresBusiness;
+        public LoginController()
         {
-            var model = new LoginModel
+            usuarioBusiness = new UsuarioBusiness();
+            jogadoresBusiness = new JogadoresBusiness();
+
+        }
+        public ActionResult Index(string returnUrl)
+        {
+            var login = new UsuarioBusiness
             {
                 ReturnUrl = returnUrl
             };
-            return View(model);
+            return View(login);
         }
         [HttpPost]
-        public ActionResult Login(LoginModel model)
+        public ActionResult Index(string usuario, string password)
         {
-            if (!ModelState.IsValid)
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    TabUsuarios login = new TabUsuarios()
+                    {
+                        LOGIN = usuario.ToUpper(),
+                        SENHA = password.Encrypt(),
+                    };
+                    TabUsuarios tabUsuarios = usuarioBusiness.Login(login);
+                    if (tabUsuarios != null)
+                    {
+                        base.SalvarCookie("IdUsuario", tabUsuarios.COD.ToString());
+                        base.SalvarCookie("Login", tabUsuarios.LOGIN.ToString());
+                        return Redirect(GetRedirectUrl(usuarioBusiness.ReturnUrl,tabUsuarios));
+                    }
+                    ViewBag.Message = "Usuario ou senha inválidos.";
+                }
+                return View();
+            }
+            catch (Exception ex)
             {
                 return View();
             }
-
-            List<TabUsuarios> lista = model.Read();
-
-            foreach (TabUsuarios item in lista)
-            {
-                if (item.Login == model.Login && item.Senha == model.Senha)
-                {
-                    var identity = new ClaimsIdentity(new[]
-                    {
-                    new Claim(ClaimTypes.Name,item.Login),
-                    },
-                    "ApplicationCookie");
-
-                    var ctx = Request.GetOwinContext();
-                    var authManager = ctx.Authentication;
-
-                    authManager.SignIn(identity);
-
-                    return Redirect(GetRedirectUrl(model.ReturnUrl));
-                }
-                //TODO: lcaetano ADICIONADO APENAS PARA TESTE ---RETIRAR ASSIM QUE POSSIVEL
-                else
-                {
-                    if (model.Login == "ADM" && model.Senha == "ADM")
-                    {
-                        var identity = new ClaimsIdentity(new[] {
-                    new Claim(ClaimTypes.Name,"Administrador"),
-                },
-                    "ApplicationCookie");
-
-                        var ctx = Request.GetOwinContext();
-                        var authManager = ctx.Authentication;
-
-                        authManager.SignIn(identity);
-
-                        return Redirect(GetRedirectUrl(model.ReturnUrl));
-                    }
-
-                }
-            }
-            return View();
         }
         public ActionResult LogOut()
         {
@@ -78,14 +65,67 @@ namespace DasmeOnline.Controllers
             authManager.SignOut("ApplicationCookie");
             return RedirectToAction("Index", "Dasme");
         }
-        private string GetRedirectUrl(string returnUrl)
+        private string GetRedirectUrl(string returnUrl,TabUsuarios tabUsuarios)
         {
-            if (string.IsNullOrEmpty(returnUrl) || !Url.IsLocalUrl(returnUrl))
+            if ((string.IsNullOrEmpty(returnUrl) || !Url.IsLocalUrl(returnUrl)) && tabUsuarios.TIPOUSER == "M")
             {
-                return Url.Action("Index", "Dasme");
+                return Url.Action("Index", "Mestres");
+            }
+            else if ((string.IsNullOrEmpty(returnUrl) || !Url.IsLocalUrl(returnUrl)) && tabUsuarios.TIPOUSER == "J")
+            {
+                return Url.Action("Index", "Jogadores");
             }
             return returnUrl;
         }
+        [HttpGet]
+        public ActionResult UsuarioNovo()
+        {
 
+            return View();
+        }
+        [HttpPost]
+        public ActionResult UsuarioNovo(TabUsuarios tabUsuarios)
+        {
+            //VERIFICAR SE JA NÃO EXISTE ESTE LOGIN
+            TabUsuarios Validacao = usuarioBusiness.VerificarUsuario(tabUsuarios);
+            if(Validacao != null)
+            {
+                ViewBag.Message = "Usuario já cadastrado.";
+                return View();
+            }
+
+            tabUsuarios.SENHA = tabUsuarios.SENHA.Encrypt();
+            if (tabUsuarios.TIPOUSER == "JOGADOR")
+            {
+                tabUsuarios.TIPOUSER = "J";
+                usuarioBusiness.Adicionar(tabUsuarios);
+                base.SalvarCookie("Login", tabUsuarios.LOGIN.ToString());
+                return RedirectToAction("JogadorNovo");
+            }
+
+            tabUsuarios.TIPOUSER = "M";
+            usuarioBusiness.Adicionar(tabUsuarios);
+            return RedirectToAction("Index");
+        }
+        public ActionResult JogadorNovo()
+        {
+            string LOGIN = Convert.ToString(base.RecuperarStringCookie("Login"));
+            TabUsuarios tabUsuarios = new TabUsuarios();
+            tabUsuarios.LOGIN = LOGIN;
+            tabUsuarios = usuarioBusiness.VerificarUsuario(tabUsuarios);
+
+            ViewBag.TabUsuarios = tabUsuarios;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult JogadorNovo(TabJogadores tabJogadores)
+        {
+            tabJogadores.QTDPERSONAGENS = 0;
+            tabJogadores.DATAINCLUSAO = DateTime.Now;
+
+            jogadoresBusiness.Adicionar(tabJogadores);
+
+            return RedirectToAction("LogOut");
+        }
     }
 }

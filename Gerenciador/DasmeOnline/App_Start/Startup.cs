@@ -14,7 +14,7 @@ namespace DasmeOnline
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = "ApplicationCookie",
-                LoginPath = new PathString("/Login/login")
+                LoginPath = new PathString("/Login/Index")
             });
         }
     }

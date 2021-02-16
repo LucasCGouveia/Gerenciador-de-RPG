@@ -1,11 +1,6 @@
 ﻿using Gerenciador.Entities;
 using Gerenciador.Repository;
-using Gerenciador.Repository.BancoDados;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Gerenciador.Business
 {
@@ -16,8 +11,8 @@ namespace Gerenciador.Business
         TabSkills tb_Skills = new TabSkills();
         public Resultado GravarClasse(string Raca, string Descricao)
         {
-            tb_Skills.Skill = Raca;
-            tb_Skills.Descricao = Descricao;
+            tb_Skills.SKILL = Raca;
+            tb_Skills.DESCRICAO = Descricao;
             resultado = racasRepository.Gravar(tb_Skills);
             return resultado;
         }
@@ -28,9 +23,9 @@ namespace Gerenciador.Business
         }
         public Resultado Editar(string Codigo, string Raca, string Descricao)
         {
-            tb_Skills.Codigo = Convert.ToInt32(Codigo);
-            tb_Skills.Skill = Raca;
-            tb_Skills.Descricao = Descricao;
+            tb_Skills.COD = Convert.ToInt32(Codigo);
+            tb_Skills.SKILL = Raca;
+            tb_Skills.DESCRICAO = Descricao;
             resultado = racasRepository.Editar(tb_Skills);
             return resultado;
         }

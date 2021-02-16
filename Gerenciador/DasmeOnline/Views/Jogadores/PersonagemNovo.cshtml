@@ -1,0 +1,125 @@
+﻿@{
+    Layout = "~/Views/_Layouts/_Dasme.cshtml";
+}
+<header class="major">
+    <h2>Novo Personagem</h2>
+</header>
+
+<form action="~/Jogadores/PersonagemNovo" method="post">
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label>Nome do Personagem</label>
+            <input type="text" class="form-control" />
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label>Raça</label>
+            <select id="inputState" class="form-control" name="RACA">
+                <option selected>Escolha...</option>
+                @foreach (var item in ViewBag.TabRacas)
+                { 
+                <option>@item.RACA</option>
+                }
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label>Classe</label>
+            <select id="inputState" class="form-control" name="CLASSE">
+                <option selected>Escolha...</option>
+                @foreach (var item in ViewBag.TabClasses)
+                {
+                    <option>@item.CLASSE</option>
+                }
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <label>Alinhamento</label>
+            <select id="inputState" class="form-control" name="ALINHAMENTO">
+                <option selected>Escolha...</option>
+                <option>D&D 3.5</option>
+                <option>D&D 4</option>
+                <option>D&D 5</option>
+                <option>Might Blade</option>
+                <option>Tormenta</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <label>Experiencia</label>
+            <input type="number" class="form-control" name="EXPERIENCIA" value="0" readonly/>
+        </div>
+        <div class="form-group col-md-2">
+            <label>Nivel do Personagem</label>
+            <input type="number" class="form-control" name="NIVEL" value="0" readonly/>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-2">
+            <label>Classe de Armadura</label>
+            <input type="number" class="form-control" name="CA" value="0" readonly/>
+        </div>
+        <div class="form-group col-md-2">
+            <label>Pontos de Vida(Total)</label>
+            <input type="number" class="form-control" name="PVTOTAL" value="0" readonly/>
+        </div>
+        <div class="form-group col-md-2">
+            <label>Pontos de Vida(Atual)</label>
+            <input type="number" class="form-control" name="PVATUAL" value="0" readonly/>
+        </div>
+        <div class="form-group col-md-2">
+            <label>Pontos de Ataque/Magia</label>
+            <input type="number" class="form-control" name="PATAQUE" value="0" readonly/>
+        </div>
+        <div class="form-group col-md-2">
+            <label>Iniciativa</label>
+            <input type="number" class="form-control" name="INICIATIVA" value="0" readonly/>
+        </div>
+        <div class="form-group col-md-2">
+            <label>Dinheiro</label>
+            <input type="number" class="form-control" name="DINHEIRO" value="0" readonly/>
+        </div>
+
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-2">
+            <label>Genero</label>
+            <input type="text" class="form-control" name="GENERO" />
+        </div>
+        <div class="form-group col-md-2">
+            <label>Cabelo</label>
+            <input type="text" class="form-control" name="CABELO" />
+        </div>
+        <div class="form-group col-md-2">
+            <label>Olhos</label>
+            <input type="text" class="form-control" name="OLHOS" />
+        </div>
+        <div class="form-group col-md-2">
+            <label>Tamanho</label>
+            <input type="text" class="form-control" name="TAMANHO" />
+        </div>
+        <div class="form-group col-md-2">
+            <label>Altura</label>
+            <input type="text" class="form-control" name="ALTURA" />
+        </div>
+        <div class="form-group col-md-2">
+            <label>Peso</label>
+            <input type="text" class="form-control" name="PESO" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col md-12">
+            <label>Historia</label>
+            <input type="text" class="form-control" name="HISTORIA" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col md-12">
+            <input type="button" value="Gravar" />
+        </div>
+    </div>
+
+</form>

@@ -1,4 +1,4 @@
-﻿using Gerenciador.Repository.BancoDados;
+﻿using Gerenciador.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ using Gerenciador.Entities;
 
 namespace Gerenciador.Repository
 {
-    public class UsuarioRepository
+    public class UsuarioRepository : RepositoryBase<TabUsuarios>
     {
         Resultado resultado = new Resultado();
         public DataSet ListarDataGrid(string LOGIN) //Recebe o código p/ procura
@@ -117,9 +117,9 @@ namespace Gerenciador.Repository
             strQuery += (",ATIVO");
             strQuery += (")");
             strQuery += (" VALUES (");
-            strQuery += ("'" + tb_Usuarios.Login + "'");
-            strQuery += (",'" + tb_Usuarios.Senha + "'");
-            strQuery += (",'" + tb_Usuarios.TipoLogin + "'");
+            strQuery += ("'" + tb_Usuarios.LOGIN + "'");
+            strQuery += (",'" + tb_Usuarios.SENHA + "'");
+            strQuery += (",'" + tb_Usuarios.TIPOUSER + "'");
             strQuery += (",1");
             strQuery += (")");
             ConexaoDB ObjCldBancoDados = new ConexaoDB();
@@ -132,19 +132,40 @@ namespace Gerenciador.Repository
             string strQuery; //Criar a String para alterar
             strQuery = (" UPDATE TabUsuarios ");
             strQuery += (" SET ");
-            strQuery += (" LOGIN = '" + tb_Usuarios.Login + "' ");
-            strQuery += (" ,SENHA = '" + tb_Usuarios.Senha + "' ");
-            strQuery += (" ,TIPOUSER = '" + tb_Usuarios.Senha + "' ");
+            strQuery += (" LOGIN = '" + tb_Usuarios.LOGIN + "' ");
+            strQuery += (" ,SENHA = '" + tb_Usuarios.SENHA + "' ");
+            strQuery += (" ,TIPOUSER = '" + tb_Usuarios.SENHA + "' ");
             strQuery += (" WHERE ");
-            strQuery += (" COD = " + tb_Usuarios.Codigo + " ");
+            strQuery += (" COD = " + tb_Usuarios.COD + " ");
             ConexaoDB ObjCldBancoDados = new ConexaoDB();
             resultado = ObjCldBancoDados.Executar(strQuery);
             return resultado;
         }
 
-
-
-
+        //=============================================================================================================================================================================
+        //=============================================================================================================================================================================
+        //=============================================================================================================================================================================
+        //=============================================================================================================================================================================
+        //=============================================================================================================================================================================
+        public TabUsuarios Login(TabUsuarios login)
+        {
+            TabUsuarios usuario = Db.TabUsuarios.Where(x => x.LOGIN == login.LOGIN)
+                                        .Where(x => x.SENHA == login.SENHA)
+                                        .FirstOrDefault();
+            return usuario;
+        }
+        public TabUsuarios VerificarUsuario(TabUsuarios login)
+        {
+            TabUsuarios usuario = Db.TabUsuarios.Where(x => x.LOGIN == login.LOGIN)
+                                        .FirstOrDefault();
+            return usuario;
+        }
+        
+        //=============================================================================================================================================================================
+        //=============================================================================================================================================================================
+        //=============================================================================================================================================================================
+        //=============================================================================================================================================================================
+        //=============================================================================================================================================================================
 
 
 

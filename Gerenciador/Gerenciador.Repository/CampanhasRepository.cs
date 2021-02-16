@@ -1,16 +1,12 @@
-﻿using Gerenciador.Repository.BancoDados;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;//Importar ADO
-using System.Data.SqlClient; //Importar SQLusing System.Data;
-using System.Drawing;
+using System.Linq;
 using Gerenciador.Entities;
 
 namespace Gerenciador.Repository
 {
-    public class CampanhasRepository
+    public class CampanhasRepository : RepositoryBase<TabCampanhas>
     {
         Resultado resultado = new Resultado();
         public DataSet ListarDataGrid(int CodigoMestre)//Recebe a string do campo descrição, enviado por parâmetro, porém com retorno
@@ -29,6 +25,23 @@ namespace Gerenciador.Repository
             strQuery += (" WHERE P.ATIVO = 1 and COD_CAMPANHA = " + Codigo + "ORDER BY INICIATIVA DESC");
             ConexaoDB ObjBancoDados = new ConexaoDB();//Instancia/cria objeto do BancoDeDados
             return ObjBancoDados.RetornaDataSet(strQuery);//Envia a consulta por parâmetro para objeto e aguarda o retorno
+        }
+        public List<TabCampanhas> ListarCampanhasMestre(int pId)
+        {
+            try
+            {
+                // if (obj != null && !((int)obj.GetType().GetProperty("Ativo").GetValue(obj) == 0))
+                List<TabCampanhas> ListaCampanhas = Db.TabCampanhas.Where(x => x.COD_MESTRE == pId)
+                    .Where(x => x.ATIVO == 1).ToList();
+
+
+                return ListaCampanhas;
+                throw new Exception("Nenhum registro encontrado.");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
 
@@ -114,10 +127,10 @@ namespace Gerenciador.Repository
             strQuery += (",ATIVO");
             strQuery += (")");
             strQuery += (" VALUES (");
-            strQuery += ("'" + tb_Campanhas.NomeCampanha + "'");
-            strQuery += (",'" + tb_Campanhas.Sistema + "'");
-            strQuery += (",'" + tb_Campanhas.Descricao + "'");
-            strQuery += ("," + tb_Campanhas.CodigoMestre);
+            strQuery += ("'" + tb_Campanhas.NOMECAMPANHA + "'");
+            strQuery += (",'" + tb_Campanhas.SISTEMA + "'");
+            strQuery += (",'" + tb_Campanhas.DESCRICAO + "'");
+            strQuery += ("," + tb_Campanhas.COD_MESTRE);
             strQuery += (",1");
             strQuery += (")");
             ConexaoDB ObjCldBancoDados = new ConexaoDB();
@@ -130,11 +143,11 @@ namespace Gerenciador.Repository
             string strQuery; //Criar a String para alterar
             strQuery = (" UPDATE TabCampanhas ");
             strQuery += (" SET ");
-            strQuery += (" NOMECAMPANHA = '" + tb_Campanhas.NomeCampanha + "' ");
-            strQuery += (" SISTEMA = '" + tb_Campanhas.Sistema + "' ");
-            strQuery += (" ,DESCRICAO = '" + tb_Campanhas.Descricao + "' ");
+            strQuery += (" NOMECAMPANHA = '" + tb_Campanhas.NOMECAMPANHA + "' ");
+            strQuery += (" SISTEMA = '" + tb_Campanhas.SISTEMA + "' ");
+            strQuery += (" ,DESCRICAO = '" + tb_Campanhas.DESCRICAO + "' ");
             strQuery += (" WHERE ");
-            strQuery += (" COD = " + tb_Campanhas.Codigo + " ");
+            strQuery += (" COD = " + tb_Campanhas.COD + " ");
             ConexaoDB ObjCldBancoDados = new ConexaoDB();
             resultado = ObjCldBancoDados.Executar(strQuery);
             return resultado;

@@ -46,12 +46,12 @@ namespace Gerenciador
             if (resultado.sucesso)
             {
                 tb_Atributos.FORC = Convert.ToInt32(txtFOR.Text);
-                tb_Atributos.DESC = Convert.ToInt32(txtFOR.Text);
+                tb_Atributos.DEST = Convert.ToInt32(txtFOR.Text);
                 tb_Atributos.CONS = Convert.ToInt32(txtFOR.Text);
                 tb_Atributos.INTE = Convert.ToInt32(txtFOR.Text);
                 tb_Atributos.SABE = Convert.ToInt32(txtFOR.Text);
                 tb_Atributos.CARI = Convert.ToInt32(txtFOR.Text);
-                tb_Atributos.Codigo = Convert.ToInt32(LblAtributo.Text);
+                tb_Atributos.COD = Convert.ToInt32(LblAtributo.Text);
                 resultado = atributosBusiness.Editar(tb_Atributos);
                 if (resultado.sucesso)
                 {

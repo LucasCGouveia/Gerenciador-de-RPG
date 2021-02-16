@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AtributosBusiness.cs" />
+    <Compile Include="Base\BusinessBase.cs" />
     <Compile Include="CampanhasBusiness.cs" />
     <Compile Include="ClassesBusiness.cs" />
     <Compile Include="ItensBusiness.cs" />
