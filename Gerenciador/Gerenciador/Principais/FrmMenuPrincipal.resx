@@ -4335,7 +4335,7 @@
         E+/wDu/wDu/IOocWx7MC6snMxDu8wzu8wzuyzqHF8csfuur/AJI4kKRzVsy8AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnCadastroDeProduto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnItens.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
         dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAWfSURBVFhHxZZZU1RXFIV591+k8pqn/IRUKhpTZYJl
@@ -4365,7 +4365,7 @@
         8Ggh//C+4VwRwL8j4APw0XuE846IAP/3/0E2/wF++zKkHb00BgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnItens.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCadastroDeProduto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
         dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAWfSURBVFhHxZZZU1RXFIV591+k8pqn/IRUKhpTZYJl

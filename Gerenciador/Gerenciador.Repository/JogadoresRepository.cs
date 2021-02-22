@@ -14,6 +14,20 @@ namespace Gerenciador.Repository
     public class JogadoresRepository : RepositoryBase<TabJogadores>
     {
         Resultado resultado = new Resultado();
+        public DataSet ListarDataGrid(string NOME) //Recebe o código p/ procura
+        {
+            string strQuery;
+            if (NOME == "")
+            {
+                strQuery = ("SELECT COD,NOME,NASCIMENTO,RG,CPF,QTDPERSONAGENS,DATAINCLUSAO,COD_USUARIO,ATIVO from TabJOgadores");
+            }
+            else
+            {
+                strQuery = ("SELECT COD,NOME,NASCIMENTO,RG,CPF,QTDPERSONAGENS,DATAINCLUSAO,COD_USUARIO,ATIVO from TabJOgadores WHERE NOME LIKE '% " + NOME + "%' ");
+            }
+            ConexaoDB ObjBancoDados = new ConexaoDB();//Instancia BancoDeDados, criar Obj
+            return ObjBancoDados.RetornaDataSet(strQuery);//Envia a consulta por parâmetro para objeto e aguarda o retorno
+        }
         public DataTable GetCODJogador()
         {
             string strQuery;
@@ -22,6 +36,19 @@ namespace Gerenciador.Repository
             strQuery += ("on U.COD = J.COD_USUARIO where U.ATIVO = 1");
             ConexaoDB ObjBancoDados = new ConexaoDB();
             return ObjBancoDados.RetornaDataTable(strQuery);
+        }
+        public Resultado Ativar(int COD)
+        {
+            string strQuery;
+            strQuery = (" UPDATE TabJOgadores ");
+            strQuery += (" SET ");
+            strQuery += (" Ativo = '" + 1 + "' ");
+            strQuery += (" WHERE ");
+            strQuery += (" COD = '" + COD + "' ;");
+            ConexaoDB ObjCldBancoDados = new ConexaoDB();
+            resultado = ObjCldBancoDados.Executar(strQuery);
+            return resultado;
+
         }
         public Resultado Desativar(int COD)
         {
@@ -36,10 +63,12 @@ namespace Gerenciador.Repository
             return resultado;
 
         }
-        public Resultado Excluir(int COD)
+        public Resultado AtualizaQtdPersonagens(int COD)
         {
             string strQuery;
-            strQuery = ("DELETE FROM TabJOgadores ");
+            strQuery = (" UPDATE TabJOgadores ");
+            strQuery += (" SET ");
+            strQuery += (" QtdPersonagens = QtdPersonagens + 1");
             strQuery += (" WHERE ");
             strQuery += (" COD = '" + COD + "' ;");
             ConexaoDB ObjCldBancoDados = new ConexaoDB();
@@ -47,6 +76,30 @@ namespace Gerenciador.Repository
             return resultado;
 
         }
+        public Resultado AtualizaQtdPersonagensExclusao(int COD)
+        {
+            string strQuery;
+            strQuery = (" UPDATE TabJOgadores ");
+            strQuery += (" SET ");
+            strQuery += (" QtdPersonagens = QtdPersonagens - 1");
+            strQuery += (" WHERE ");
+            strQuery += (" COD = '" + COD + "' ;");
+            ConexaoDB ObjCldBancoDados = new ConexaoDB();
+            resultado = ObjCldBancoDados.Executar(strQuery);
+            return resultado;
+
+        }
+        //public Resultado Excluir(int COD)
+        //{
+        //    string strQuery;
+        //    strQuery = ("DELETE FROM TabJOgadores ");
+        //    strQuery += (" WHERE ");
+        //    strQuery += (" COD = '" + COD + "' ;");
+        //    ConexaoDB ObjCldBancoDados = new ConexaoDB();
+        //    resultado = ObjCldBancoDados.Executar(strQuery);
+        //    return resultado;
+
+        //}
         public Resultado Gravar(TabJogadores tb_Jogadores)
         {
             string strQuery; //Criar a String para inserir
@@ -77,25 +130,25 @@ namespace Gerenciador.Repository
         }
         //================================================================
 
-        public Resultado Editar(TabJogadores tb_Jogadores)
-        {
-            string strQuery; //Criar a String para alterar
-            strQuery = (" UPDATE TabJOgadores ");
-            strQuery += (" SET ");
-            strQuery += (" NOME = '" + tb_Jogadores.NOME + "' ");
-            strQuery += (" ,NASCIMENTO = '" + tb_Jogadores.NASCIMENTO + "' ");
-            strQuery += (" ,RG = '" + tb_Jogadores.RG + "' ");
-            strQuery += (" ,CPF = '" + tb_Jogadores.CPF + "' ");
-            strQuery += (" ,QTDPERSONAGENS = '" + tb_Jogadores.QTDPERSONAGENS + "' ");
-            //strQuery += (" ,DATAINCLUSAO = '" + tb_Jogadores.DATAINCLUSAO + "' ");
-            //strQuery += (" ,COD_USUARIO = '" + tb_Jogadores.COD_USUARIO + "' ");
-            strQuery += (" WHERE ");
-            strQuery += (" COD = " + tb_Jogadores.COD + " ");
-            ConexaoDB ObjCldBancoDados = new ConexaoDB();
-            resultado = ObjCldBancoDados.Executar(strQuery);
-            return resultado;
+        //public Resultado Editar(TabJogadores tb_Jogadores)
+        //{
+        //    string strQuery; //Criar a String para alterar
+        //    strQuery = (" UPDATE TabJOgadores ");
+        //    strQuery += (" SET ");
+        //    strQuery += (" NOME = '" + tb_Jogadores.NOME + "' ");
+        //    strQuery += (" ,NASCIMENTO = '" + tb_Jogadores.NASCIMENTO + "' ");
+        //    strQuery += (" ,RG = '" + tb_Jogadores.RG + "' ");
+        //    strQuery += (" ,CPF = '" + tb_Jogadores.CPF + "' ");
+        //    strQuery += (" ,QTDPERSONAGENS = '" + tb_Jogadores.QTDPERSONAGENS + "' ");
+        //    //strQuery += (" ,DATAINCLUSAO = '" + tb_Jogadores.DATAINCLUSAO + "' ");
+        //    //strQuery += (" ,COD_USUARIO = '" + tb_Jogadores.COD_USUARIO + "' ");
+        //    strQuery += (" WHERE ");
+        //    strQuery += (" COD = " + tb_Jogadores.COD + " ");
+        //    ConexaoDB ObjCldBancoDados = new ConexaoDB();
+        //    resultado = ObjCldBancoDados.Executar(strQuery);
+        //    return resultado;
 
-        }
+        //}
 
 
 

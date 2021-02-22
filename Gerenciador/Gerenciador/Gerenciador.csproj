@@ -46,23 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Buscas\FrmBuscaJogador.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Buscas\FrmBuscaJogador.Designer.cs">
-      <DependentUpon>FrmBuscaJogador.cs</DependentUpon>
-    </Compile>
     <Compile Include="Buscas\FrmBuscaPersonagem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Buscas\FrmBuscaPersonagem.Designer.cs">
       <DependentUpon>FrmBuscaPersonagem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Buscas\FrmBuscaUserExcluido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Buscas\FrmBuscaUserExcluido.Designer.cs">
-      <DependentUpon>FrmBuscaUserExcluido.cs</DependentUpon>
     </Compile>
     <Compile Include="Buscas\FrmBuscaUsuarios.cs">
       <SubType>Form</SubType>
@@ -111,6 +99,30 @@
     </Compile>
     <Compile Include="Cadastro\FrmSkills.Designer.cs">
       <DependentUpon>FrmSkills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Buscas\FrmBuscaJogadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buscas\FrmBuscaJogadores.Designer.cs">
+      <DependentUpon>FrmBuscaJogadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\FrmMissoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\FrmMissoes.Designer.cs">
+      <DependentUpon>FrmMissoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Buscas\FrmBuscaMissoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buscas\FrmBuscaMissoes.Designer.cs">
+      <DependentUpon>FrmBuscaMissoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personagens\FrmVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personagens\FrmVendas.Designer.cs">
+      <DependentUpon>FrmVendas.cs</DependentUpon>
     </Compile>
     <Compile Include="Jogador\FrmAreaJogador.cs">
       <SubType>Form</SubType>
@@ -162,15 +174,9 @@
     <Compile Include="Secundarios\FrmTrocaTelas.Designer.cs">
       <DependentUpon>FrmTrocaTelas.cs</DependentUpon>
     </Compile>
-    <Compile Include="_Utils\Cryptography.cs" />
-    <EmbeddedResource Include="Buscas\FrmBuscaJogador.resx">
-      <DependentUpon>FrmBuscaJogador.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Utils\CryptLib.cs" />
     <EmbeddedResource Include="Buscas\FrmBuscaPersonagem.resx">
       <DependentUpon>FrmBuscaPersonagem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Buscas\FrmBuscaUserExcluido.resx">
-      <DependentUpon>FrmBuscaUserExcluido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Buscas\FrmBuscaUsuarios.resx">
       <DependentUpon>FrmBuscaUsuarios.cs</DependentUpon>
@@ -195,6 +201,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastro\FrmSkills.resx">
       <DependentUpon>FrmSkills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Buscas\FrmBuscaJogadores.resx">
+      <DependentUpon>FrmBuscaJogadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\FrmMissoes.resx">
+      <DependentUpon>FrmMissoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Buscas\FrmBuscaMissoes.resx">
+      <DependentUpon>FrmBuscaMissoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personagens\FrmVendas.resx">
+      <DependentUpon>FrmVendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Jogador\FrmAreaJogador.resx">
       <DependentUpon>FrmAreaJogador.cs</DependentUpon>
@@ -244,12 +262,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagens\Livro do Mestre.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Gerenciador.Business\Gerenciador.Business.csproj">
-      <Project>{111D8877-B599-4CA2-B3EF-68227A345815}</Project>
+      <Project>{111d8877-b599-4ca2-b3ef-68227a345815}</Project>
       <Name>Gerenciador.Business</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gerenciador.Entities\Gerenciador.Entities.csproj">
-      <Project>{0A8CE0AC-F697-463F-972D-22BB366173C6}</Project>
+      <Project>{0a8ce0ac-f697-463f-972d-22bb366173c6}</Project>
       <Name>Gerenciador.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gerenciador.Repository\Gerenciador.Repository.csproj">
@@ -257,8 +278,6 @@
       <Name>Gerenciador.Repository</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Imagens\Livro do Mestre.jpg" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

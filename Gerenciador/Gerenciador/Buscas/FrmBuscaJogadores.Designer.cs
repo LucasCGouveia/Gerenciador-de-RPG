@@ -1,6 +1,6 @@
 ﻿namespace Gerenciador
 {
-    partial class FrmBuscaPersonagem
+    partial class FrmBuscaJogadores
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.gbResultadoDaPesquisa = new System.Windows.Forms.GroupBox();
             this.lblResultadoDaPesquisa = new System.Windows.Forms.Label();
@@ -38,11 +38,12 @@
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.lblPsquisaRapida = new System.Windows.Forms.Label();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
-            this.LblUser = new System.Windows.Forms.Label();
+            this.LblMestre = new System.Windows.Forms.Label();
             this.BtnAtivar = new System.Windows.Forms.Button();
-            this.lblTituloFormulario = new System.Windows.Forms.Label();
+            this.BtnExcluir = new System.Windows.Forms.Button();
+            this.BtnDesabilitar = new System.Windows.Forms.Button();
+            this.lblDadosDoCadastro = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
-            this.LblCampanha = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.gbResultadoDaPesquisa.SuspendLayout();
             this.gbPesquisa.SuspendLayout();
@@ -54,30 +55,30 @@
             this.dgv.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Location = new System.Drawing.Point(21, 33);
             this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgv.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(679, 343);
             this.dgv.TabIndex = 3;
@@ -89,7 +90,7 @@
             this.gbResultadoDaPesquisa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.gbResultadoDaPesquisa.Controls.Add(this.dgv);
             this.gbResultadoDaPesquisa.Controls.Add(this.lblResultadoDaPesquisa);
-            this.gbResultadoDaPesquisa.Location = new System.Drawing.Point(33, 160);
+            this.gbResultadoDaPesquisa.Location = new System.Drawing.Point(38, 142);
             this.gbResultadoDaPesquisa.Name = "gbResultadoDaPesquisa";
             this.gbResultadoDaPesquisa.Size = new System.Drawing.Size(718, 394);
             this.gbResultadoDaPesquisa.TabIndex = 141;
@@ -116,7 +117,7 @@
             this.gbPesquisa.Controls.Add(this.btnPesquisar);
             this.gbPesquisa.Controls.Add(this.lblPsquisaRapida);
             this.gbPesquisa.Controls.Add(this.txtPesquisa);
-            this.gbPesquisa.Location = new System.Drawing.Point(33, 88);
+            this.gbPesquisa.Location = new System.Drawing.Point(38, 70);
             this.gbPesquisa.Name = "gbPesquisa";
             this.gbPesquisa.Size = new System.Drawing.Size(718, 66);
             this.gbPesquisa.TabIndex = 140;
@@ -160,19 +161,19 @@
             this.txtPesquisa.Size = new System.Drawing.Size(394, 20);
             this.txtPesquisa.TabIndex = 0;
             // 
-            // LblUser
+            // LblMestre
             // 
-            this.LblUser.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LblUser.AutoSize = true;
-            this.LblUser.BackColor = System.Drawing.Color.Transparent;
-            this.LblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUser.ForeColor = System.Drawing.Color.Black;
-            this.LblUser.Location = new System.Drawing.Point(702, 14);
-            this.LblUser.Name = "LblUser";
-            this.LblUser.Size = new System.Drawing.Size(68, 15);
-            this.LblUser.TabIndex = 139;
-            this.LblUser.Text = "USUARIO";
-            this.LblUser.Visible = false;
+            this.LblMestre.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblMestre.AutoSize = true;
+            this.LblMestre.BackColor = System.Drawing.Color.Transparent;
+            this.LblMestre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMestre.ForeColor = System.Drawing.Color.Black;
+            this.LblMestre.Location = new System.Drawing.Point(707, -4);
+            this.LblMestre.Name = "LblMestre";
+            this.LblMestre.Size = new System.Drawing.Size(64, 15);
+            this.LblMestre.TabIndex = 139;
+            this.LblMestre.Text = "MESTRE";
+            this.LblMestre.Visible = false;
             // 
             // BtnAtivar
             // 
@@ -182,27 +183,59 @@
             this.BtnAtivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAtivar.ForeColor = System.Drawing.Color.Black;
             this.BtnAtivar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnAtivar.Location = new System.Drawing.Point(33, 570);
+            this.BtnAtivar.Location = new System.Drawing.Point(38, 552);
             this.BtnAtivar.Name = "BtnAtivar";
             this.BtnAtivar.Size = new System.Drawing.Size(171, 47);
             this.BtnAtivar.TabIndex = 146;
-            this.BtnAtivar.Text = "&Adicionar";
+            this.BtnAtivar.Text = "&Ativar";
             this.BtnAtivar.UseVisualStyleBackColor = false;
             this.BtnAtivar.Click += new System.EventHandler(this.BtnAtivar_Click);
             // 
-            // lblTituloFormulario
+            // BtnExcluir
             // 
-            this.lblTituloFormulario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTituloFormulario.AutoSize = true;
-            this.lblTituloFormulario.BackColor = System.Drawing.Color.Transparent;
-            this.lblTituloFormulario.Font = new System.Drawing.Font("Goudy Old Style", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloFormulario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTituloFormulario.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblTituloFormulario.Location = new System.Drawing.Point(195, 25);
-            this.lblTituloFormulario.Name = "lblTituloFormulario";
-            this.lblTituloFormulario.Size = new System.Drawing.Size(373, 46);
-            this.lblTituloFormulario.TabIndex = 143;
-            this.lblTituloFormulario.Text = "Busca de Personagens";
+            this.BtnExcluir.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnExcluir.BackColor = System.Drawing.Color.Transparent;
+            this.BtnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnExcluir.ForeColor = System.Drawing.Color.Black;
+            this.BtnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnExcluir.Location = new System.Drawing.Point(392, 552);
+            this.BtnExcluir.Name = "BtnExcluir";
+            this.BtnExcluir.Size = new System.Drawing.Size(171, 47);
+            this.BtnExcluir.TabIndex = 144;
+            this.BtnExcluir.Text = "&Excluir";
+            this.BtnExcluir.UseVisualStyleBackColor = false;
+            this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
+            // 
+            // BtnDesabilitar
+            // 
+            this.BtnDesabilitar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnDesabilitar.BackColor = System.Drawing.Color.Transparent;
+            this.BtnDesabilitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnDesabilitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDesabilitar.ForeColor = System.Drawing.Color.Black;
+            this.BtnDesabilitar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnDesabilitar.Location = new System.Drawing.Point(215, 552);
+            this.BtnDesabilitar.Name = "BtnDesabilitar";
+            this.BtnDesabilitar.Size = new System.Drawing.Size(171, 47);
+            this.BtnDesabilitar.TabIndex = 145;
+            this.BtnDesabilitar.Text = "&Desabilitar";
+            this.BtnDesabilitar.UseVisualStyleBackColor = false;
+            this.BtnDesabilitar.Click += new System.EventHandler(this.BtnDesabilitar_Click);
+            // 
+            // lblDadosDoCadastro
+            // 
+            this.lblDadosDoCadastro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDadosDoCadastro.AutoSize = true;
+            this.lblDadosDoCadastro.BackColor = System.Drawing.Color.Transparent;
+            this.lblDadosDoCadastro.Font = new System.Drawing.Font("Goudy Old Style", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDadosDoCadastro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblDadosDoCadastro.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblDadosDoCadastro.Location = new System.Drawing.Point(200, 7);
+            this.lblDadosDoCadastro.Name = "lblDadosDoCadastro";
+            this.lblDadosDoCadastro.Size = new System.Drawing.Size(326, 46);
+            this.lblDadosDoCadastro.TabIndex = 143;
+            this.lblDadosDoCadastro.Text = "Busca de Jogadores";
             // 
             // btnSair
             // 
@@ -211,7 +244,7 @@
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSair.Location = new System.Drawing.Point(580, 570);
+            this.btnSair.Location = new System.Drawing.Point(585, 552);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(171, 47);
             this.btnSair.TabIndex = 142;
@@ -219,37 +252,25 @@
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // LblCampanha
-            // 
-            this.LblCampanha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LblCampanha.AutoSize = true;
-            this.LblCampanha.BackColor = System.Drawing.Color.Transparent;
-            this.LblCampanha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCampanha.ForeColor = System.Drawing.Color.Black;
-            this.LblCampanha.Location = new System.Drawing.Point(689, 39);
-            this.LblCampanha.Name = "LblCampanha";
-            this.LblCampanha.Size = new System.Drawing.Size(81, 15);
-            this.LblCampanha.TabIndex = 147;
-            this.LblCampanha.Text = "CAMPANHA";
-            // 
-            // FrmBuscaPersonagem
+            // FrmBuscaJogadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 630);
-            this.Controls.Add(this.LblCampanha);
+            this.ClientSize = new System.Drawing.Size(808, 594);
             this.Controls.Add(this.gbResultadoDaPesquisa);
             this.Controls.Add(this.gbPesquisa);
-            this.Controls.Add(this.LblUser);
+            this.Controls.Add(this.LblMestre);
             this.Controls.Add(this.BtnAtivar);
-            this.Controls.Add(this.lblTituloFormulario);
+            this.Controls.Add(this.BtnExcluir);
+            this.Controls.Add(this.BtnDesabilitar);
+            this.Controls.Add(this.lblDadosDoCadastro);
             this.Controls.Add(this.btnSair);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmBuscaPersonagem";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmBuscaPersonagemCampanha";
+            this.Name = "FrmBuscaJogadores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Text = "FrmBuscarJogadores";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmBuscaPersonagem_Load);
+            this.Load += new System.EventHandler(this.FrmBuscarJogadores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.gbResultadoDaPesquisa.ResumeLayout(false);
             this.gbResultadoDaPesquisa.PerformLayout();
@@ -269,10 +290,11 @@
         internal System.Windows.Forms.Button btnPesquisar;
         internal System.Windows.Forms.Label lblPsquisaRapida;
         internal System.Windows.Forms.TextBox txtPesquisa;
-        internal System.Windows.Forms.Label LblUser;
+        internal System.Windows.Forms.Label LblMestre;
         internal System.Windows.Forms.Button BtnAtivar;
-        internal System.Windows.Forms.Label lblTituloFormulario;
+        internal System.Windows.Forms.Button BtnExcluir;
+        internal System.Windows.Forms.Button BtnDesabilitar;
+        internal System.Windows.Forms.Label lblDadosDoCadastro;
         internal System.Windows.Forms.Button btnSair;
-        public System.Windows.Forms.Label LblCampanha;
     }
 }

@@ -31,18 +31,18 @@ namespace Gerenciador.Business
             resultado = usuarioRepository.Desativar(codigo);
             return resultado;
         }
-        public Resultado Excluir(int codigo)
-        {
-            resultado = usuarioRepository.Excluir(codigo);
-            return resultado;
-        }
+        //public Resultado Excluir(int codigo)
+        //{
+        //    resultado = usuarioRepository.Excluir(codigo);
+        //    return resultado;
+        //}
         public Resultado Editar(string Codigo, string Login, string Senha, string TipoUser)
         {
             tb_Usuarios.COD = Convert.ToInt32(Codigo);
             tb_Usuarios.LOGIN = Login;
             tb_Usuarios.SENHA = Senha;
             tb_Usuarios.TIPOUSER = TipoUser;
-            resultado = usuarioRepository.Editar(tb_Usuarios);
+            usuarioRepository.Editar(tb_Usuarios);
             return resultado;
         }
         public List<string> GetUsuarios(string TxtLogin,string TxtSenha)

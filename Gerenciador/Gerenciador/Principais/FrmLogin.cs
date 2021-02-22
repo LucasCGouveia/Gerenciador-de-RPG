@@ -15,10 +15,10 @@ namespace Gerenciador
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            UsuarioBusiness usuarioBusiness = new UsuarioBusiness();
             List<string> ListaDeDados = new List<string>();
             FrmMenuPrincipal objFrmMenuPrinciapl = new FrmMenuPrincipal();
             FrmAreaJogador frmAreaJogador = new FrmAreaJogador();
-            UsuarioBusiness usuarioBusiness = new UsuarioBusiness();
 
             ListaDeDados = usuarioBusiness.GetUsuarios(txtUsuario.Text,txtSenha.Text.Encrypt());            
 

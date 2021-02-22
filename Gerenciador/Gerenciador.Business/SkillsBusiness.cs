@@ -4,29 +4,39 @@ using System;
 
 namespace Gerenciador.Business
 {
-    public class SkillsBusiness
+    public class SkillsBusiness : BusinessBase<TabSkills>
     {
         Resultado resultado = new Resultado();
-        SkillsRepository racasRepository = new SkillsRepository();
+        SkillsRepository skillsRepository = new SkillsRepository();
         TabSkills tb_Skills = new TabSkills();
-        public Resultado GravarClasse(string Raca, string Descricao)
+        public Resultado Gravar(TabSkills tb_Skills)
         {
-            tb_Skills.SKILL = Raca;
-            tb_Skills.DESCRICAO = Descricao;
-            resultado = racasRepository.Gravar(tb_Skills);
+            resultado = skillsRepository.Gravar(tb_Skills);
             return resultado;
         }
         public Resultado Desativar(int codigoRaca)
         {
-            resultado = racasRepository.Desativar(codigoRaca);
+            resultado = skillsRepository.Desativar(codigoRaca);
             return resultado;
         }
-        public Resultado Editar(string Codigo, string Raca, string Descricao)
+        //public Resultado Excluir(int codigo)
+        //{
+        //    resultado = skillsRepository.Excluir(codigo);
+        //    return resultado;
+        //}
+        public Resultado ExcluirSkillsPersonagem(int codigo)
         {
-            tb_Skills.COD = Convert.ToInt32(Codigo);
-            tb_Skills.SKILL = Raca;
-            tb_Skills.DESCRICAO = Descricao;
-            resultado = racasRepository.Editar(tb_Skills);
+            resultado = skillsRepository.ExcluirSkillsPersonagem(codigo);
+            return resultado;
+        }
+        //public Resultado Editar(TabSkills tb_Skills)
+        //{
+        //    resultado = skillsRepository.Editar(tb_Skills);
+        //    return resultado;
+        //}
+        public Resultado AdicionarPersonagem(TabSkills tb_Skills)
+        {
+            resultado = skillsRepository.AdicionarPersonagem(tb_Skills);
             return resultado;
         }
 

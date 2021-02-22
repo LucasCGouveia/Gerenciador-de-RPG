@@ -82,8 +82,10 @@
     <Compile Include="TabAtributos.cs" />
     <Compile Include="TabCampanhas.cs" />
     <Compile Include="TabClasses.cs" />
+    <Compile Include="TabImagens.cs" />
     <Compile Include="TabItens.cs" />
     <Compile Include="TabJogadores.cs" />
+    <Compile Include="TabMissoes.cs" />
     <Compile Include="TabPersonagens.cs" />
     <Compile Include="TabRacas.cs" />
     <Compile Include="TabSkills.cs" />

@@ -62,6 +62,7 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.gbResultadoDaPesquisa = new System.Windows.Forms.GroupBox();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.LblVoltar = new System.Windows.Forms.Label();
             this.gbtxts.SuspendLayout();
             this.gbResultadoDaPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -508,11 +509,23 @@
             this.dgv.Size = new System.Drawing.Size(877, 185);
             this.dgv.TabIndex = 3;
             // 
+            // LblVoltar
+            // 
+            this.LblVoltar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblVoltar.AutoSize = true;
+            this.LblVoltar.Location = new System.Drawing.Point(848, 11);
+            this.LblVoltar.Name = "LblVoltar";
+            this.LblVoltar.Size = new System.Drawing.Size(50, 13);
+            this.LblVoltar.TabIndex = 162;
+            this.LblVoltar.Text = "VOLTAR";
+            this.LblVoltar.Visible = false;
+            // 
             // FrmCadPersongem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 643);
+            this.Controls.Add(this.LblVoltar);
             this.Controls.Add(this.LblUser);
             this.Controls.Add(this.lblDadosDoCadastro);
             this.Controls.Add(this.gbtxts);
@@ -569,5 +582,6 @@
         public System.Windows.Forms.ComboBox cBoxAlinhamento;
         public System.Windows.Forms.ComboBox cBoxTamanho;
         public System.Windows.Forms.ComboBox cBoxGenero;
+        public System.Windows.Forms.Label LblVoltar;
     }
 }

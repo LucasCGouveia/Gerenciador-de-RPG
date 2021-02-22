@@ -6,8 +6,12 @@ namespace Gerenciador.Entities
     {
         public int COD { get; set; }
         public string ITEM { get; set; } = string.Empty;
+        public string TIPO { get; set; } = string.Empty;
+        public string DANO { get; set; } = string.Empty;
+        public string BONUS { get; set; } = string.Empty;
+        public string VALOR { get; set; } = string.Empty;
         public string DESCRICAO { get; set; } = string.Empty;
-        public int ATIVO { get; set; }
+        public int COD_PERSONAGEM { get; set; }
         public TabItens()
         { }
         public TabItens(string item, string descricao)

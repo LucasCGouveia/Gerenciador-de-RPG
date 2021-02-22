@@ -192,6 +192,35 @@ namespace Gerenciador.Repository
             }
             return resultado;
         }
+        public DataTable GetTable(string strQuery)
+        {
+            Resultado resultado = new Resultado();
+            SqlConnection conn;
+            conn = AbreBanco();
+            try
+            {
+                SqlCommand sqlComm = new SqlCommand(strQuery, conn);
+                sqlComm.ExecuteNonQuery();
+                resultado.sucesso = true;
+
+                SqlDataAdapter dp = new SqlDataAdapter(sqlComm);
+                DataTable dt = new DataTable();
+                dp.Fill(dt);
+
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                resultado.sucesso = false;
+                resultado.exception = ex;
+                throw;
+            }
+            finally //Em caso de erro ou não, o finally é executado para fechar a conexao com bd
+            {
+                FechaBanco(conn);
+            }
+        }
 
         //================================================================================================================================================================================
         //================================================================================================================================================================================

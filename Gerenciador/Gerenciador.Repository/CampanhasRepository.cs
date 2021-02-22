@@ -19,7 +19,7 @@ namespace Gerenciador.Repository
         public DataSet ListarDataGridPersonagensMesa(int Codigo)//Recebe a string do campo descrição, enviado por parâmetro, porém com retorno
         {
             string strQuery;
-            strQuery = ("Select P.COD,NOME,RACA,CLASSE,ALINHAMENTO,CA,PVTOTAL,PVATUAL,PATAQUE,INICIATIVA,NIVEL,A.FORC,A.DEST,A.CONS,A.INTE,A.SABE,A.CARI,HISTORIA ");
+            strQuery = ("Select P.COD,NOME,RACA,CLASSE,ALINHAMENTO,CA,PVTOTAL,PVATUAL,PATAQUE,INICIATIVA,DINHEIRO,EXPERIENCIA,NIVEL,A.FORC,A.DEST,A.CONS,A.INTE,A.SABE,A.CARI,HISTORIA ");
             strQuery += (" From TabPersonagens as P");
             strQuery += (" INNER JOIN TabAtributos as A on A.COD_PERSONAGEM = P.COD");
             strQuery += (" WHERE P.ATIVO = 1 and COD_CAMPANHA = " + Codigo + "ORDER BY INICIATIVA DESC");
@@ -43,7 +43,12 @@ namespace Gerenciador.Repository
                 throw ex;
             }
         }
-
+        public DataTable VerificarCampanhas() //Recebe o código p/ procura
+        {
+            string strQuery = "select COD_MESTRE from TB_CAMPANHAS";
+            ConexaoDB ObjBancoDados = new ConexaoDB();//Instancia BancoDeDados, criar Obj
+            return ObjBancoDados.RetornaDataTable(strQuery);//Return a consulta tipo SqlDataReader
+        }
 
 
 
@@ -138,20 +143,20 @@ namespace Gerenciador.Repository
 
             return resultado;
         }
-        public Resultado Editar(TabCampanhas tb_Campanhas)
-        {
-            string strQuery; //Criar a String para alterar
-            strQuery = (" UPDATE TabCampanhas ");
-            strQuery += (" SET ");
-            strQuery += (" NOMECAMPANHA = '" + tb_Campanhas.NOMECAMPANHA + "' ");
-            strQuery += (" SISTEMA = '" + tb_Campanhas.SISTEMA + "' ");
-            strQuery += (" ,DESCRICAO = '" + tb_Campanhas.DESCRICAO + "' ");
-            strQuery += (" WHERE ");
-            strQuery += (" COD = " + tb_Campanhas.COD + " ");
-            ConexaoDB ObjCldBancoDados = new ConexaoDB();
-            resultado = ObjCldBancoDados.Executar(strQuery);
-            return resultado;
-        }
+        //public Resultado Editar(TabCampanhas tb_Campanhas)
+        //{
+        //    string strQuery; //Criar a String para alterar
+        //    strQuery = (" UPDATE TabCampanhas ");
+        //    strQuery += (" SET ");
+        //    strQuery += (" NOMECAMPANHA = '" + tb_Campanhas.NOMECAMPANHA + "' ");
+        //    strQuery += (" SISTEMA = '" + tb_Campanhas.SISTEMA + "' ");
+        //    strQuery += (" ,DESCRICAO = '" + tb_Campanhas.DESCRICAO + "' ");
+        //    strQuery += (" WHERE ");
+        //    strQuery += (" COD = " + tb_Campanhas.COD + " ");
+        //    ConexaoDB ObjCldBancoDados = new ConexaoDB();
+        //    resultado = ObjCldBancoDados.Executar(strQuery);
+        //    return resultado;
+        //}
 
 
 

@@ -2,7 +2,7 @@
 using Gerenciador.Entities;
 using Gerenciador.Repository;
 using System;
-
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Gerenciador
@@ -16,6 +16,9 @@ namespace Gerenciador
         Resultado resultado = new Resultado();
         UsuarioBusiness usuarioBusiness = new UsuarioBusiness();
         UsuarioRepository usuarioRepository = new UsuarioRepository();
+        CampanhasBusiness campanhasBusiness = new CampanhasBusiness();
+        JogadoresBusiness jogadoresBusiness = new JogadoresBusiness();
+
         public void CarregaDataGrid()
         {
             //dgv.DataSource = ObjUsuario.ListarUsuariosCadUsuario(txtPesquisa.Text).Tables[0]; //Método Listar que passa o parâmetro do texto digitado para o Grid
@@ -70,17 +73,44 @@ namespace Gerenciador
 
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
+            resultado.sucesso = true;
             int codigo = Convert.ToInt32(dgv.CurrentRow.Cells[0].Value);
-            resultado = usuarioBusiness.Excluir(codigo);
-            if (resultado.sucesso)
+            string TipoUser = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
+
+            if (TipoUser == "M")
             {
-                MessageBox.Show("Excluido com sucesso. ", "E X C L U I D O", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CarregaDataGrid();
+                List<int> QtdCampanhasMestre = campanhasBusiness.VerificarCampanhas(codigo);
+
+                if (QtdCampanhasMestre.Count >= 1)
+                {
+                    MessageBox.Show("Este Mestre Possui Campanhas,não é possivel exclui-lo", "");
+                    resultado.sucesso = false;
+                }
             }
-            else
+            else if (TipoUser == "J")
             {
-                MessageBox.Show("Falha na Gravação. Erro:" + resultado.exception, "Item Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                List<int> VerificarCadastroJogador = jogadoresBusiness.GetCODJogador(Convert.ToString(dgv.CurrentRow.Cells[1].Value));
+
+                if (VerificarCadastroJogador.Count >= 1 && VerificarCadastroJogador[0] != 0)
+                {
+                    MessageBox.Show("Este Jogador Possui Conta de Jogador,não é possivel exclui-lo", "");
+                    resultado.sucesso = false;
+                }
             }
+                if (resultado.sucesso)
+            {
+                resultado = usuarioBusiness.Excluir(codigo);
+                if (resultado.sucesso)
+                {
+                    MessageBox.Show("Excluido com sucesso. ", "E X C L U I D O", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CarregaDataGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Falha na Exclusão. Erro:" + resultado.exception, "E X C L U S Ã O", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
         }
         private void btnSair_Click(object sender, EventArgs e)
         {

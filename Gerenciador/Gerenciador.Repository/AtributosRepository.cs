@@ -64,5 +64,15 @@ namespace Gerenciador.Repository
             resultado = ObjCldBancoDados.Executar(strQuery);
             return resultado;
         }
+        public Resultado Excluir(TabAtributos tb_Atributos)
+        {
+            string strQuery; //Criar a String para alterar
+            strQuery = (" DELETE FROM TabAtributos ");
+            strQuery += (" WHERE ");
+            strQuery += (" COD_PERSONAGEM = " + tb_Atributos.COD_PERSONAGEM + " ");
+            ConexaoDB ObjCldBancoDados = new ConexaoDB();
+            resultado = ObjCldBancoDados.Executar(strQuery);
+            return resultado;
+        }
     }
 }

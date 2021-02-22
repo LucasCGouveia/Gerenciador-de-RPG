@@ -26,29 +26,44 @@ namespace Gerenciador.Business
             resultado = jogadoresRepository.Gravar(tb_Jogadores);
             return resultado;
         }
+        public Resultado Ativar(int codigo)
+        {
+            resultado = jogadoresRepository.Ativar(codigo);
+            return resultado;
+        }
         public Resultado Desativar(int codigo)
         {
             resultado = jogadoresRepository.Desativar(codigo);
             return resultado;
         }
-        public Resultado Editar(string Codigo, string Nome, string Nascimento, string RG, string CPF, int QtdPersonagens, int CodigoUsuario)
+        public Resultado AtualizaQtdPersonagens(int codigo)
         {
-            tb_Jogadores.COD = Convert.ToInt32(Codigo);
-            tb_Jogadores.NOME = Nome;
-            tb_Jogadores.NASCIMENTO = Nascimento;
-            tb_Jogadores.RG = RG;
-            tb_Jogadores.CPF = CPF;
-            tb_Jogadores.QTDPERSONAGENS = QtdPersonagens;
-            tb_Jogadores.DATAINCLUSAO = DateTime.Now;
-            tb_Jogadores.COD_USUARIO = CodigoUsuario;
-            resultado = jogadoresRepository.Editar(tb_Jogadores);
+            resultado = jogadoresRepository.AtualizaQtdPersonagens(codigo);
             return resultado;
         }
-        public Resultado Excluir(int codigo)
+        public Resultado AtualizaQtdPersonagensExclusao(int codigo)
         {
-            resultado = jogadoresRepository.Excluir(codigo);
+            resultado = jogadoresRepository.AtualizaQtdPersonagensExclusao(codigo);
             return resultado;
         }
+        //public Resultado Editar(string Codigo, string Nome, string Nascimento, string RG, string CPF, int QtdPersonagens, int CodigoUsuario)
+        //{
+        //    tb_Jogadores.COD = Convert.ToInt32(Codigo);
+        //    tb_Jogadores.NOME = Nome;
+        //    tb_Jogadores.NASCIMENTO = Nascimento;
+        //    tb_Jogadores.RG = RG;
+        //    tb_Jogadores.CPF = CPF;
+        //    tb_Jogadores.QTDPERSONAGENS = QtdPersonagens;
+        //    tb_Jogadores.DATAINCLUSAO = DateTime.Now;
+        //    tb_Jogadores.COD_USUARIO = CodigoUsuario;
+        //    jogadoresRepository.Editar(tb_Jogadores);
+        //    return resultado;
+        //}
+        //public Resultado Excluir(int codigo)
+        //{
+        //    resultado = jogadoresRepository.Excluir(codigo);
+        //    return resultado;
+        //}
         public List<int> GetCODJogador(string Usuario)
         {
             try

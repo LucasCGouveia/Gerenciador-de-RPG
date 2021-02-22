@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.LblCodigo = new System.Windows.Forms.Label();
+            this.LblPersonagem = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
             this.cBoxRaca = new System.Windows.Forms.ComboBox();
             this.cBoxAlinhamento = new System.Windows.Forms.ComboBox();
@@ -36,7 +36,7 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAtualizar = new System.Windows.Forms.Button();
-            this.lblPersonagem = new System.Windows.Forms.Label();
+            this.LblNomePersonagem = new System.Windows.Forms.Label();
             this.gbResultadoDaPesquisa = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -75,16 +75,31 @@
             this.dgvPericias = new System.Windows.Forms.DataGridView();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.BtnVender = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.BtnVenderSkills = new System.Windows.Forms.Button();
+            this.BtnAprimorarSkills = new System.Windows.Forms.Button();
             this.dgvSkills = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvInventario = new System.Windows.Forms.DataGridView();
-            this.BtnSkills = new System.Windows.Forms.Button();
-            this.BtnArmas = new System.Windows.Forms.Button();
-            this.BtnInventario = new System.Windows.Forms.Button();
-            this.BtnPericias = new System.Windows.Forms.Button();
             this.LblCampanha = new System.Windows.Forms.Label();
             this.LblAtributo = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.lOJAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.armasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.armadurasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cONSUMOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.escudosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iTEMMAGICOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pETSMontariasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pOÇÕESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mAGIASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cLASSEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hABILIDADEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mAGIASToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gbResultadoDaPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArmas)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -94,18 +109,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSkills)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // LblCodigo
+            // LblPersonagem
             // 
-            this.LblCodigo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LblCodigo.AutoSize = true;
-            this.LblCodigo.Location = new System.Drawing.Point(1276, 9);
-            this.LblCodigo.Name = "LblCodigo";
-            this.LblCodigo.Size = new System.Drawing.Size(40, 13);
-            this.LblCodigo.TabIndex = 168;
-            this.LblCodigo.Text = "Codigo";
-            this.LblCodigo.Visible = false;
+            this.LblPersonagem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblPersonagem.AutoSize = true;
+            this.LblPersonagem.Location = new System.Drawing.Point(1266, 14);
+            this.LblPersonagem.Name = "LblPersonagem";
+            this.LblPersonagem.Size = new System.Drawing.Size(83, 13);
+            this.LblPersonagem.TabIndex = 168;
+            this.LblPersonagem.Text = "PERSONAGEM";
+            this.LblPersonagem.Visible = false;
             // 
             // btnSair
             // 
@@ -114,7 +130,7 @@
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSair.Location = new System.Drawing.Point(1114, 595);
+            this.btnSair.Location = new System.Drawing.Point(1122, 606);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(215, 72);
             this.btnSair.TabIndex = 164;
@@ -203,19 +219,19 @@
             this.btnAtualizar.UseVisualStyleBackColor = false;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
-            // lblPersonagem
+            // LblNomePersonagem
             // 
-            this.lblPersonagem.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblPersonagem.AutoSize = true;
-            this.lblPersonagem.BackColor = System.Drawing.Color.Transparent;
-            this.lblPersonagem.Font = new System.Drawing.Font("Goudy Old Style", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPersonagem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblPersonagem.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblPersonagem.Location = new System.Drawing.Point(562, 36);
-            this.lblPersonagem.Name = "lblPersonagem";
-            this.lblPersonagem.Size = new System.Drawing.Size(220, 46);
-            this.lblPersonagem.TabIndex = 166;
-            this.lblPersonagem.Text = "Personagens";
+            this.LblNomePersonagem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblNomePersonagem.AutoSize = true;
+            this.LblNomePersonagem.BackColor = System.Drawing.Color.Transparent;
+            this.LblNomePersonagem.Font = new System.Drawing.Font("Goudy Old Style", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNomePersonagem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LblNomePersonagem.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LblNomePersonagem.Location = new System.Drawing.Point(571, 0);
+            this.LblNomePersonagem.Name = "LblNomePersonagem";
+            this.LblNomePersonagem.Size = new System.Drawing.Size(220, 46);
+            this.LblNomePersonagem.TabIndex = 166;
+            this.LblNomePersonagem.Text = "Personagens";
             // 
             // gbResultadoDaPesquisa
             // 
@@ -260,7 +276,7 @@
             this.gbResultadoDaPesquisa.Controls.Add(this.label10);
             this.gbResultadoDaPesquisa.Controls.Add(this.label20);
             this.gbResultadoDaPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbResultadoDaPesquisa.Location = new System.Drawing.Point(12, 85);
+            this.gbResultadoDaPesquisa.Location = new System.Drawing.Point(21, 49);
             this.gbResultadoDaPesquisa.Name = "gbResultadoDaPesquisa";
             this.gbResultadoDaPesquisa.Size = new System.Drawing.Size(897, 255);
             this.gbResultadoDaPesquisa.TabIndex = 165;
@@ -631,7 +647,7 @@
             // 
             this.LblUser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LblUser.AutoSize = true;
-            this.LblUser.Location = new System.Drawing.Point(1214, 9);
+            this.LblUser.Location = new System.Drawing.Point(1204, 14);
             this.LblUser.Name = "LblUser";
             this.LblUser.Size = new System.Drawing.Size(56, 13);
             this.LblUser.TabIndex = 169;
@@ -655,7 +671,7 @@
             this.groupBox1.Controls.Add(this.txtDescricao);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(915, 97);
+            this.groupBox1.Location = new System.Drawing.Point(924, 61);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(414, 243);
             this.groupBox1.TabIndex = 167;
@@ -687,29 +703,85 @@
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.groupBox2.Controls.Add(this.dgvArmas);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.BtnVender);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(463, 346);
+            this.groupBox2.Location = new System.Drawing.Point(472, 310);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(446, 243);
+            this.groupBox2.Size = new System.Drawing.Size(446, 290);
             this.groupBox2.TabIndex = 167;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ARMAS";
+            // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(16, 240);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(205, 44);
+            this.button2.TabIndex = 163;
+            this.button2.Text = "&Aprimorar";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // BtnVender
+            // 
+            this.BtnVender.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnVender.BackColor = System.Drawing.Color.Transparent;
+            this.BtnVender.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnVender.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVender.ForeColor = System.Drawing.Color.Black;
+            this.BtnVender.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnVender.Location = new System.Drawing.Point(227, 240);
+            this.BtnVender.Name = "BtnVender";
+            this.BtnVender.Size = new System.Drawing.Size(205, 44);
+            this.BtnVender.TabIndex = 163;
+            this.BtnVender.Text = "&Vender";
+            this.BtnVender.UseVisualStyleBackColor = false;
+            this.BtnVender.Click += new System.EventHandler(this.BtnVender_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupBox3.Controls.Add(this.BtnVenderSkills);
+            this.groupBox3.Controls.Add(this.BtnAprimorarSkills);
             this.groupBox3.Controls.Add(this.dgvSkills);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.Black;
-            this.groupBox3.Location = new System.Drawing.Point(13, 346);
+            this.groupBox3.Location = new System.Drawing.Point(22, 310);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(446, 243);
+            this.groupBox3.Size = new System.Drawing.Size(446, 290);
             this.groupBox3.TabIndex = 167;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Skills/Magias";
+            // 
+            // BtnVenderSkills
+            // 
+            this.BtnVenderSkills.Location = new System.Drawing.Point(227, 241);
+            this.BtnVenderSkills.Name = "BtnVenderSkills";
+            this.BtnVenderSkills.Size = new System.Drawing.Size(205, 44);
+            this.BtnVenderSkills.TabIndex = 172;
+            this.BtnVenderSkills.Text = "&Vender";
+            this.BtnVenderSkills.UseVisualStyleBackColor = true;
+            this.BtnVenderSkills.Click += new System.EventHandler(this.BtnVenderSkills_Click);
+            // 
+            // BtnAprimorarSkills
+            // 
+            this.BtnAprimorarSkills.Location = new System.Drawing.Point(16, 241);
+            this.BtnAprimorarSkills.Name = "BtnAprimorarSkills";
+            this.BtnAprimorarSkills.Size = new System.Drawing.Size(205, 44);
+            this.BtnAprimorarSkills.TabIndex = 171;
+            this.BtnAprimorarSkills.Text = "&Aprimorar";
+            this.BtnAprimorarSkills.UseVisualStyleBackColor = true;
+            this.BtnAprimorarSkills.Click += new System.EventHandler(this.BtnAprimorarSkills_Click);
             // 
             // dgvSkills
             // 
@@ -727,9 +799,9 @@
             this.groupBox4.Controls.Add(this.dgvInventario);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
-            this.groupBox4.Location = new System.Drawing.Point(917, 346);
+            this.groupBox4.Location = new System.Drawing.Point(926, 310);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(412, 243);
+            this.groupBox4.Size = new System.Drawing.Size(412, 290);
             this.groupBox4.TabIndex = 167;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "INVENTARIO";
@@ -739,68 +811,8 @@
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventario.Location = new System.Drawing.Point(16, 25);
             this.dgvInventario.Name = "dgvInventario";
-            this.dgvInventario.Size = new System.Drawing.Size(416, 194);
+            this.dgvInventario.Size = new System.Drawing.Size(382, 194);
             this.dgvInventario.TabIndex = 170;
-            // 
-            // BtnSkills
-            // 
-            this.BtnSkills.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnSkills.BackColor = System.Drawing.Color.Transparent;
-            this.BtnSkills.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnSkills.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSkills.ForeColor = System.Drawing.Color.Black;
-            this.BtnSkills.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnSkills.Location = new System.Drawing.Point(12, 595);
-            this.BtnSkills.Name = "BtnSkills";
-            this.BtnSkills.Size = new System.Drawing.Size(215, 72);
-            this.BtnSkills.TabIndex = 163;
-            this.BtnSkills.Text = "&Skills / Magias";
-            this.BtnSkills.UseVisualStyleBackColor = false;
-            // 
-            // BtnArmas
-            // 
-            this.BtnArmas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnArmas.BackColor = System.Drawing.Color.Transparent;
-            this.BtnArmas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnArmas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnArmas.ForeColor = System.Drawing.Color.Black;
-            this.BtnArmas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnArmas.Location = new System.Drawing.Point(244, 595);
-            this.BtnArmas.Name = "BtnArmas";
-            this.BtnArmas.Size = new System.Drawing.Size(215, 72);
-            this.BtnArmas.TabIndex = 163;
-            this.BtnArmas.Text = "&ARMAS";
-            this.BtnArmas.UseVisualStyleBackColor = false;
-            // 
-            // BtnInventario
-            // 
-            this.BtnInventario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnInventario.BackColor = System.Drawing.Color.Transparent;
-            this.BtnInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnInventario.ForeColor = System.Drawing.Color.Black;
-            this.BtnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnInventario.Location = new System.Drawing.Point(465, 596);
-            this.BtnInventario.Name = "BtnInventario";
-            this.BtnInventario.Size = new System.Drawing.Size(215, 72);
-            this.BtnInventario.TabIndex = 163;
-            this.BtnInventario.Text = "&INVENTARIO";
-            this.BtnInventario.UseVisualStyleBackColor = false;
-            // 
-            // BtnPericias
-            // 
-            this.BtnPericias.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnPericias.BackColor = System.Drawing.Color.Transparent;
-            this.BtnPericias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnPericias.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPericias.ForeColor = System.Drawing.Color.Black;
-            this.BtnPericias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnPericias.Location = new System.Drawing.Point(694, 596);
-            this.BtnPericias.Name = "BtnPericias";
-            this.BtnPericias.Size = new System.Drawing.Size(215, 72);
-            this.BtnPericias.TabIndex = 163;
-            this.BtnPericias.Text = "&PERICIAS";
-            this.BtnPericias.UseVisualStyleBackColor = false;
             // 
             // LblCampanha
             // 
@@ -820,11 +832,134 @@
             this.LblAtributo.BackColor = System.Drawing.Color.Transparent;
             this.LblAtributo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblAtributo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblAtributo.Location = new System.Drawing.Point(1056, 9);
+            this.LblAtributo.Location = new System.Drawing.Point(1079, 9);
             this.LblAtributo.Name = "LblAtributo";
-            this.LblAtributo.Size = new System.Drawing.Size(73, 18);
+            this.LblAtributo.Size = new System.Drawing.Size(50, 18);
             this.LblAtributo.TabIndex = 171;
             this.LblAtributo.Text = "Atributo";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lOJAToolStripMenuItem,
+            this.mAGIASToolStripMenuItem,
+            this.sairToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1373, 40);
+            this.menuStrip1.TabIndex = 172;
+            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            // 
+            // lOJAToolStripMenuItem
+            // 
+            this.lOJAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.armasToolStripMenuItem,
+            this.armadurasToolStripMenuItem,
+            this.cONSUMOToolStripMenuItem,
+            this.escudosToolStripMenuItem,
+            this.iTEMMAGICOToolStripMenuItem,
+            this.pETSMontariasToolStripMenuItem,
+            this.pOÇÕESToolStripMenuItem});
+            this.lOJAToolStripMenuItem.Name = "lOJAToolStripMenuItem";
+            this.lOJAToolStripMenuItem.Size = new System.Drawing.Size(83, 36);
+            this.lOJAToolStripMenuItem.Text = "LOJA";
+            // 
+            // armasToolStripMenuItem
+            // 
+            this.armasToolStripMenuItem.Name = "armasToolStripMenuItem";
+            this.armasToolStripMenuItem.Size = new System.Drawing.Size(272, 36);
+            this.armasToolStripMenuItem.Text = "Armas";
+            this.armasToolStripMenuItem.Click += new System.EventHandler(this.armasToolStripMenuItem_Click);
+            // 
+            // armadurasToolStripMenuItem
+            // 
+            this.armadurasToolStripMenuItem.Name = "armadurasToolStripMenuItem";
+            this.armadurasToolStripMenuItem.Size = new System.Drawing.Size(272, 36);
+            this.armadurasToolStripMenuItem.Text = "Armaduras";
+            this.armadurasToolStripMenuItem.Click += new System.EventHandler(this.armadurasToolStripMenuItem_Click);
+            // 
+            // cONSUMOToolStripMenuItem
+            // 
+            this.cONSUMOToolStripMenuItem.Name = "cONSUMOToolStripMenuItem";
+            this.cONSUMOToolStripMenuItem.Size = new System.Drawing.Size(272, 36);
+            this.cONSUMOToolStripMenuItem.Text = "CONSUMO";
+            this.cONSUMOToolStripMenuItem.Click += new System.EventHandler(this.cONSUMOToolStripMenuItem_Click);
+            // 
+            // escudosToolStripMenuItem
+            // 
+            this.escudosToolStripMenuItem.Name = "escudosToolStripMenuItem";
+            this.escudosToolStripMenuItem.Size = new System.Drawing.Size(272, 36);
+            this.escudosToolStripMenuItem.Text = "Escudos";
+            this.escudosToolStripMenuItem.Click += new System.EventHandler(this.escudosToolStripMenuItem_Click);
+            // 
+            // iTEMMAGICOToolStripMenuItem
+            // 
+            this.iTEMMAGICOToolStripMenuItem.Name = "iTEMMAGICOToolStripMenuItem";
+            this.iTEMMAGICOToolStripMenuItem.Size = new System.Drawing.Size(272, 36);
+            this.iTEMMAGICOToolStripMenuItem.Text = "ITEM MAGICO";
+            this.iTEMMAGICOToolStripMenuItem.Click += new System.EventHandler(this.iTEMMAGICOToolStripMenuItem_Click);
+            // 
+            // pETSMontariasToolStripMenuItem
+            // 
+            this.pETSMontariasToolStripMenuItem.Name = "pETSMontariasToolStripMenuItem";
+            this.pETSMontariasToolStripMenuItem.Size = new System.Drawing.Size(272, 36);
+            this.pETSMontariasToolStripMenuItem.Text = "PETS/Montarias";
+            this.pETSMontariasToolStripMenuItem.Click += new System.EventHandler(this.pETSMontariasToolStripMenuItem_Click);
+            // 
+            // pOÇÕESToolStripMenuItem
+            // 
+            this.pOÇÕESToolStripMenuItem.Name = "pOÇÕESToolStripMenuItem";
+            this.pOÇÕESToolStripMenuItem.Size = new System.Drawing.Size(272, 36);
+            this.pOÇÕESToolStripMenuItem.Text = "POÇÕES";
+            this.pOÇÕESToolStripMenuItem.Click += new System.EventHandler(this.pOÇÕESToolStripMenuItem_Click);
+            // 
+            // mAGIASToolStripMenuItem
+            // 
+            this.mAGIASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cLASSEToolStripMenuItem,
+            this.hABILIDADEToolStripMenuItem,
+            this.mAGIASToolStripMenuItem1});
+            this.mAGIASToolStripMenuItem.Name = "mAGIASToolStripMenuItem";
+            this.mAGIASToolStripMenuItem.Size = new System.Drawing.Size(101, 36);
+            this.mAGIASToolStripMenuItem.Text = "SKILLS";
+            // 
+            // cLASSEToolStripMenuItem
+            // 
+            this.cLASSEToolStripMenuItem.Name = "cLASSEToolStripMenuItem";
+            this.cLASSEToolStripMenuItem.Size = new System.Drawing.Size(234, 36);
+            this.cLASSEToolStripMenuItem.Text = "CLASSE";
+            this.cLASSEToolStripMenuItem.Click += new System.EventHandler(this.cLASSEToolStripMenuItem_Click);
+            // 
+            // hABILIDADEToolStripMenuItem
+            // 
+            this.hABILIDADEToolStripMenuItem.Name = "hABILIDADEToolStripMenuItem";
+            this.hABILIDADEToolStripMenuItem.Size = new System.Drawing.Size(234, 36);
+            this.hABILIDADEToolStripMenuItem.Text = "HABILIDADE";
+            this.hABILIDADEToolStripMenuItem.Click += new System.EventHandler(this.hABILIDADEToolStripMenuItem_Click);
+            // 
+            // mAGIASToolStripMenuItem1
+            // 
+            this.mAGIASToolStripMenuItem1.Name = "mAGIASToolStripMenuItem1";
+            this.mAGIASToolStripMenuItem1.Size = new System.Drawing.Size(234, 36);
+            this.mAGIASToolStripMenuItem1.Text = "MAGIAS";
+            this.mAGIASToolStripMenuItem1.Click += new System.EventHandler(this.mAGIASToolStripMenuItem1_Click);
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sairToolStripMenuItem1});
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(70, 36);
+            this.sairToolStripMenuItem.Text = "Sair";
+            // 
+            // sairToolStripMenuItem1
+            // 
+            this.sairToolStripMenuItem1.Name = "sairToolStripMenuItem1";
+            this.sairToolStripMenuItem1.Size = new System.Drawing.Size(133, 36);
+            this.sairToolStripMenuItem1.Text = "Sair";
+            this.sairToolStripMenuItem1.Click += new System.EventHandler(this.sairToolStripMenuItem1_Click);
             // 
             // FrmAddAtributos
             // 
@@ -833,20 +968,18 @@
             this.ClientSize = new System.Drawing.Size(1373, 679);
             this.Controls.Add(this.LblAtributo);
             this.Controls.Add(this.LblCampanha);
-            this.Controls.Add(this.BtnPericias);
             this.Controls.Add(this.btnSair);
-            this.Controls.Add(this.BtnInventario);
-            this.Controls.Add(this.BtnArmas);
-            this.Controls.Add(this.BtnSkills);
-            this.Controls.Add(this.LblCodigo);
-            this.Controls.Add(this.lblPersonagem);
+            this.Controls.Add(this.LblPersonagem);
+            this.Controls.Add(this.LblNomePersonagem);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gbResultadoDaPesquisa);
             this.Controls.Add(this.LblUser);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmAddAtributos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddAtributos";
@@ -863,6 +996,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSkills)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -870,7 +1005,7 @@
 
         #endregion
 
-        public System.Windows.Forms.Label LblCodigo;
+        public System.Windows.Forms.Label LblPersonagem;
         internal System.Windows.Forms.Button btnSair;
         public System.Windows.Forms.ComboBox cBoxRaca;
         public System.Windows.Forms.ComboBox cBoxAlinhamento;
@@ -878,7 +1013,7 @@
         public System.Windows.Forms.TextBox txtNome;
         public System.Windows.Forms.Label label5;
         internal System.Windows.Forms.Button btnAtualizar;
-        internal System.Windows.Forms.Label lblPersonagem;
+        internal System.Windows.Forms.Label LblNomePersonagem;
         internal System.Windows.Forms.GroupBox gbResultadoDaPesquisa;
         public System.Windows.Forms.Label LblUser;
         public System.Windows.Forms.Label label11;
@@ -919,13 +1054,28 @@
         private System.Windows.Forms.DataGridView dgvSkills;
         public System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dgvInventario;
-        internal System.Windows.Forms.Button BtnSkills;
-        internal System.Windows.Forms.Button BtnArmas;
-        internal System.Windows.Forms.Button BtnInventario;
-        internal System.Windows.Forms.Button BtnPericias;
         internal System.Windows.Forms.Label LblCampanha;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txtIniciativa;
         internal System.Windows.Forms.Label LblAtributo;
+        internal System.Windows.Forms.Button button2;
+        internal System.Windows.Forms.Button BtnVender;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem lOJAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem armasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem armadurasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem escudosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem mAGIASToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cLASSEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hABILIDADEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mAGIASToolStripMenuItem1;
+        private System.Windows.Forms.Button BtnAprimorarSkills;
+        private System.Windows.Forms.Button BtnVenderSkills;
+        private System.Windows.Forms.ToolStripMenuItem cONSUMOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem iTEMMAGICOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pETSMontariasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pOÇÕESToolStripMenuItem;
     }
 }

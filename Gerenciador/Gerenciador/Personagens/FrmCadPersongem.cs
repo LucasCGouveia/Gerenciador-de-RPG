@@ -79,10 +79,20 @@ namespace Gerenciador
         }
         private void btnSair_Click(object sender, EventArgs e)
         {
-            FrmAreaJogador frmAreaJogador = new FrmAreaJogador();
-            frmAreaJogador.LblUser.Text = LblUser.Text;
-            frmAreaJogador.Show();
-            Close();
+            if (LblVoltar.Text == "MenuPrincipal")
+            {
+                FrmMenuPrincipal frmMenuPrincipal = new FrmMenuPrincipal();
+                frmMenuPrincipal.LblUser.Text = LblUser.Text;
+                frmMenuPrincipal.Show();
+                Close();
+            }
+            else
+            {
+                FrmAreaJogador frmAreaJogador = new FrmAreaJogador();
+                frmAreaJogador.LblUser.Text = LblUser.Text;
+                frmAreaJogador.Show();
+                Close();
+            }
         }
 
         private void FrmCadPersongem_Load(object sender, EventArgs e)
@@ -137,12 +147,16 @@ namespace Gerenciador
                             CarregaDataGrid();
                             LblCodigo.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
                             resultado = atributosBusiness.Gravar(Convert.ToInt32(LblCodigo.Text));
-                            if (!resultado.sucesso)
+                            if (resultado.sucesso)
+                            {
+                                MessageBox.Show("Cadastro concluido com sucesso. ", "C O N C L U I D O", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                jogadoresBusiness.AtualizaQtdPersonagens(Codigo[0]);
+                            }
+                            else
                             {
                                 personagensBusiness.Excluir(Convert.ToInt32(LblCodigo.Text));
                                 MessageBox.Show("Erro no Cadastro.Exceção: " + resultado.exception, "F A L H A   N O   C A D A S T R O", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            MessageBox.Show("Cadastro concluido com sucesso. ", "C O N C L U I D O", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }  
                         }
                         else
                         {

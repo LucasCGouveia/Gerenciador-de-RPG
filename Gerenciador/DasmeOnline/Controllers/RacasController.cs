@@ -14,7 +14,7 @@ namespace DasmeOnline.Controllers
         public RacasController()
         {
             racasBusiness = new RacasBusiness();
-            ViewBag.LOGIN = base.RecuperarStringCookie("Login");
+            ViewBag.LOGIN = base.RecuperarValorCookie("LOGIN");
         }
 
         [HttpGet]

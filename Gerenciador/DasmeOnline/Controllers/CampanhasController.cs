@@ -8,13 +8,13 @@ using System.Web.Mvc;
 
 namespace DasmeOnline.Controllers
 {
-    public class MestresController : Cookie
+    public class CampanhasController : Cookie
     {
         private readonly UsuarioBusiness usuarioBusiness;
         private readonly CampanhasBusiness campanhasBusiness;
         private readonly PersonagensBusiness personagensBusiness;
 
-        public MestresController()
+        public CampanhasController()
         {
             usuarioBusiness = new UsuarioBusiness();
             campanhasBusiness = new CampanhasBusiness();
@@ -22,12 +22,12 @@ namespace DasmeOnline.Controllers
         }
         public ActionResult Index()
         {
-            int id = base.RecuperarValorCookie("IdUsuario");
-            ViewBag.LOGIN = base.RecuperarStringCookie("Login");
+            string cod = base.RecuperarValorCookie("COD");
+            ViewBag.LOGIN = base.RecuperarValorCookie("LOGIN");
 
-            TabUsuarios tabUsuarios = usuarioBusiness.Listar(id);
+            TabUsuarios tabUsuarios = usuarioBusiness.Listar(Convert.ToInt32(cod));
             ViewBag.TabUsuarios = tabUsuarios;
-            List<TabCampanhas> listaCampanhas = campanhasBusiness.ListarCampanhasMestre(id);
+            List<TabCampanhas> listaCampanhas = campanhasBusiness.ListarCampanhasMestre(Convert.ToInt32(cod));
             ViewBag.TabCampanhas = listaCampanhas;
 
             return View();
@@ -40,7 +40,7 @@ namespace DasmeOnline.Controllers
         [HttpGet]
         public ActionResult CampanhaNova()
         {
-            int cod = base.RecuperarValorCookie("IdUsuario");
+            string cod = base.RecuperarValorCookie("COD");
 
             ViewBag.Cod_Mestre = cod;
             return View();
@@ -102,9 +102,9 @@ namespace DasmeOnline.Controllers
         [HttpGet]
         public ActionResult PersonagemAdicionar(int cod)
         {
-            int Campanha = base.RecuperarValorCookie("Campanha");
+            string Campanha = base.RecuperarValorCookie("Campanha");
             TabPersonagens tabPersonagens = personagensBusiness.Listar(cod);
-            tabPersonagens.COD_CAMPANHA = Campanha;
+            tabPersonagens.COD_CAMPANHA = Convert.ToInt32(Campanha);
 
             personagensBusiness.Editar(tabPersonagens);
 
@@ -113,7 +113,7 @@ namespace DasmeOnline.Controllers
         [HttpGet]
         public ActionResult PersonagemRemover(int cod)
         {
-            int Campanha = base.RecuperarValorCookie("Campanha");
+            string Campanha = base.RecuperarValorCookie("Campanha");
             TabPersonagens tabPersonagens = personagensBusiness.Listar(cod);
             tabPersonagens.COD_CAMPANHA = 0;
 
@@ -124,7 +124,7 @@ namespace DasmeOnline.Controllers
         [HttpGet]
         public ActionResult PersonagemBuscar(int cod)
         {
-            base.SalvarCookie("Campanha", cod.ToString());
+            base.SalvarCookie("CAMPANHA", Convert.ToString(cod));
             ViewBag.listaTabPersonagens = "";
             return View();
         }

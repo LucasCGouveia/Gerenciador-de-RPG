@@ -58,7 +58,7 @@
             this.txtDescricao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtDescricao.Location = new System.Drawing.Point(459, 81);
-            this.txtDescricao.MaxLength = 20;
+            this.txtDescricao.MaxLength = 999;
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(381, 77);

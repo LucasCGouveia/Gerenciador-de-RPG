@@ -30,14 +30,12 @@ namespace Gerenciador
             if (dgv.RowCount == 0) //Se não houver dados no DGV, os botão serão desativados
             {
                 BtnEditar.Enabled = false;
-                BtnExcluir.Enabled = false;
                 MessageBox.Show("NÃO FORAM ENCONTRADOS DADOS COM A INFORMAÇÃO: ", "Verificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dgv.DataSource = null; //Limpa o cabeçalho
             }
             else
             {
                 BtnEditar.Enabled = true;
-                BtnExcluir.Enabled = true;
             }
         }
         private void btnGravar_Click(object sender, EventArgs e)
@@ -51,7 +49,7 @@ namespace Gerenciador
             else
             {
                 List<int> CodigoMestre = usuarioBusiness.GetCodigoMestre(LblMestre.Text);
-                resultado = campanhasBusiness.Gravar(txtNomeCampanha.Text,cBoxSistemaCampanha.Text, txtDescricao.Text,CodigoMestre[0]);
+                resultado = campanhasBusiness.Gravar(txtNomeCampanha.Text, cBoxSistemaCampanha.Text, txtDescricao.Text, CodigoMestre[0]);
                 if (resultado.sucesso)
                 {
                     MessageBox.Show("Gravado. ", "Item Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -89,26 +87,56 @@ namespace Gerenciador
             FrmCampanhas objFrm = new FrmCampanhas();
             if (BtnEditar.Text == "Alterar")
             {
-                resultado = campanhasBusiness.Editar(LblCodigo.Text, txtNomeCampanha.Text, cBoxSistemaCampanha.Text, txtDescricao.Text);
-                if (resultado.sucesso)
+                if (LblCodigo.Text != "Codigo")
                 {
-                    MessageBox.Show("Editado com sucesso. ", "Item Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtNomeCampanha.Text = "";
-                    txtDescricao.Text = "";
-                    objFrm.Show();
-                    Close();
+                    TabCampanhas tabCampanhas = new TabCampanhas();
+                    tabCampanhas.COD = Convert.ToInt32(LblCodigo.Text);
+                    tabCampanhas.NOMECAMPANHA = txtNomeCampanha.Text;
+                    tabCampanhas.SISTEMA = cBoxSistemaCampanha.Text;
+                    tabCampanhas.DESCRICAO = txtDescricao.Text;
+                    campanhasBusiness.Editar(tabCampanhas);
+                    if (resultado.sucesso)
+                    {
+                        MessageBox.Show("Editado com sucesso. ", "Item Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        FrmMenuPrincipal frmMenuPrincipal = new FrmMenuPrincipal();
+                        frmMenuPrincipal.LblUser.Text = LblMestre.Text;
+                        frmMenuPrincipal.Show();
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha na Gravação. Erro:" + resultado.exception, "Item Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        objFrm.Show();
+                        Close();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Falha na Gravação. Erro:" + resultado.exception, "Item Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    objFrm.Show();
-                    Close();
+                    TabCampanhas tabCampanhas = new TabCampanhas();
+                    tabCampanhas.COD = Convert.ToInt32(LblCodigo.Text);
+                    tabCampanhas.NOMECAMPANHA = txtNomeCampanha.Text;
+                    tabCampanhas.SISTEMA = cBoxSistemaCampanha.Text;
+                    tabCampanhas.DESCRICAO = txtDescricao.Text;
+                    resultado = campanhasBusiness.Editar(tabCampanhas);
+                    
+                    if (resultado.sucesso)
+                    {
+                        MessageBox.Show("Editado com sucesso. ", "Item Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        objFrm.Show();
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha na Gravação. Erro:" + resultado.exception, "Item Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        objFrm.Show();
+                        Close();
+                    }
                 }
             }
             else
             {
                 objFrm.btnGravar.Visible = false;
-                objFrm.BtnExcluir.Visible = false;
+                objFrm.BtnEditar.Visible = true;
                 objFrm.btnLimpar.Visible = false;
                 objFrm.dgv.Visible = false;
                 objFrm.LblCodigo.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);

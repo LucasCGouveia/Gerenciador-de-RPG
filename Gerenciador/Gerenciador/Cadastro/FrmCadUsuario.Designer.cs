@@ -199,6 +199,7 @@
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Visible = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnEditar
             // 

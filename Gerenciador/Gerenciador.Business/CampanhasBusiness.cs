@@ -2,6 +2,7 @@
 using Gerenciador.Repository;
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace Gerenciador.Business
 {
@@ -24,21 +25,49 @@ namespace Gerenciador.Business
             resultado = campanhasRepository.Desativar(codigoRaca);
             return resultado;
         }
-        public Resultado Editar(string Codigo, string NomeCampanha, string Sistema, string Descricao)
-        {
-            tb_Campanhas.COD = Convert.ToInt32(Codigo);
-            tb_Campanhas.NOMECAMPANHA = NomeCampanha;
-            tb_Campanhas.SISTEMA = Sistema;
-            tb_Campanhas.DESCRICAO = Descricao;
-            resultado = campanhasRepository.Editar(tb_Campanhas);
-            return resultado;
-        }
+        //public TabCampanhas Editar(string Codigo, string NomeCampanha, string Sistema, string Descricao)
+        //{
+        //    tb_Campanhas.COD = Convert.ToInt32(Codigo);
+        //    tb_Campanhas.NOMECAMPANHA = NomeCampanha;
+        //    tb_Campanhas.SISTEMA = Sistema;
+        //    tb_Campanhas.DESCRICAO = Descricao;
+        //    TabCampanhas  = campanhasRepository.Editar(tb_Campanhas);
+        //    return resultado;
+        //}
         public List<TabCampanhas> ListarCampanhasMestre(int pId)
         {
             List<TabCampanhas> ListaCampanhas = campanhasRepository.ListarCampanhasMestre(pId);
             return ListaCampanhas;
         }
+        public List<int> VerificarCampanhas(int codigoMestre)
+        {
+            UsuarioRepository usuarioRepository = new UsuarioRepository();
+            try
+            {
+                DataTable objDataTable = new DataTable();
+                List<int> ListaDeDados = new List<int>();
+                objDataTable = campanhasRepository.VerificarCampanhas();
+                foreach (DataRow dataRow in objDataTable.Rows)
+                {
+                    int Codigo = Convert.ToInt32(dataRow["COD_MESTRE"]);
 
+                    if (Codigo == codigoMestre)
+                    {
+                        ListaDeDados.Add(Codigo);
+                        break;
+                    }
+                }
+                return ListaDeDados;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                //Fechar Conexão 
+            }
+        }
 
 
     }

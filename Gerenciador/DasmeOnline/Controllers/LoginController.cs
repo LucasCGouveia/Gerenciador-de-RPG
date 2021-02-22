@@ -44,15 +44,16 @@ namespace DasmeOnline.Controllers
                     TabUsuarios tabUsuarios = usuarioBusiness.Login(login);
                     if (tabUsuarios != null)
                     {
-                        base.SalvarCookie("IdUsuario", tabUsuarios.COD.ToString());
-                        base.SalvarCookie("Login", tabUsuarios.LOGIN.ToString());
-                        return Redirect(GetRedirectUrl(usuarioBusiness.ReturnUrl,tabUsuarios));
+                        base.SalvarCookie("COD", Convert.ToString(tabUsuarios.COD));
+                        base.SalvarCookie("LOGIN", tabUsuarios.LOGIN.ToString());
+                        base.SalvarCookie("TIPOUSER", tabUsuarios.TIPOUSER.ToString());
+                        return Redirect(GetRedirectUrl(usuarioBusiness.ReturnUrl, tabUsuarios));
                     }
                     ViewBag.Message = "Usuario ou senha inválidos.";
                 }
                 return View();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return View();
             }
@@ -65,11 +66,11 @@ namespace DasmeOnline.Controllers
             authManager.SignOut("ApplicationCookie");
             return RedirectToAction("Index", "Dasme");
         }
-        private string GetRedirectUrl(string returnUrl,TabUsuarios tabUsuarios)
+        private string GetRedirectUrl(string returnUrl, TabUsuarios tabUsuarios)
         {
             if ((string.IsNullOrEmpty(returnUrl) || !Url.IsLocalUrl(returnUrl)) && tabUsuarios.TIPOUSER == "M")
             {
-                return Url.Action("Index", "Mestres");
+                return Url.Action("Index", "Campanhas");
             }
             else if ((string.IsNullOrEmpty(returnUrl) || !Url.IsLocalUrl(returnUrl)) && tabUsuarios.TIPOUSER == "J")
             {
@@ -88,7 +89,7 @@ namespace DasmeOnline.Controllers
         {
             //VERIFICAR SE JA NÃO EXISTE ESTE LOGIN
             TabUsuarios Validacao = usuarioBusiness.VerificarUsuario(tabUsuarios);
-            if(Validacao != null)
+            if (Validacao != null)
             {
                 ViewBag.Message = "Usuario já cadastrado.";
                 return View();
@@ -99,17 +100,29 @@ namespace DasmeOnline.Controllers
             {
                 tabUsuarios.TIPOUSER = "J";
                 usuarioBusiness.Adicionar(tabUsuarios);
-                base.SalvarCookie("Login", tabUsuarios.LOGIN.ToString());
+                base.SalvarCookie("COD", Convert.ToString(tabUsuarios.COD));
+                base.SalvarCookie("LOGIN", tabUsuarios.LOGIN.ToString());
+                base.SalvarCookie("TIPOUSER", tabUsuarios.TIPOUSER.ToString());
+
                 return RedirectToAction("JogadorNovo");
             }
-
-            tabUsuarios.TIPOUSER = "M";
-            usuarioBusiness.Adicionar(tabUsuarios);
-            return RedirectToAction("Index");
+            else if (tabUsuarios.TIPOUSER == "MESTRE")
+            {
+                tabUsuarios.TIPOUSER = "M";
+                usuarioBusiness.Adicionar(tabUsuarios);
+                base.SalvarCookie("COD", Convert.ToString(tabUsuarios.COD));
+                base.SalvarCookie("LOGIN", tabUsuarios.LOGIN.ToString());
+                base.SalvarCookie("TIPOUSER", tabUsuarios.TIPOUSER.ToString());
+                return RedirectToAction("JogadorNovo");
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
         }
         public ActionResult JogadorNovo()
         {
-            string LOGIN = Convert.ToString(base.RecuperarStringCookie("Login"));
+            string LOGIN = Convert.ToString(base.RecuperarValorCookie("LOGIN"));
             TabUsuarios tabUsuarios = new TabUsuarios();
             tabUsuarios.LOGIN = LOGIN;
             tabUsuarios = usuarioBusiness.VerificarUsuario(tabUsuarios);

@@ -11,7 +11,7 @@ namespace Gerenciador
     /// <summary>
     /// Classe de extensão responsável por conter métodos de criptografia de dados.
     /// </summary>
-    public static class Cryptography
+    public static class CryptLib
     {
         private const int KeySize = 10;
         private const int BlockSize = 4;

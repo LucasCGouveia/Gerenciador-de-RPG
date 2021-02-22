@@ -16,6 +16,9 @@ namespace Gerenciador
         Resultado resultado = new Resultado();
         JogadoresBusiness jogadoresBusiness = new JogadoresBusiness();
         PersonagensBusiness personagensBusiness = new PersonagensBusiness();
+        AtributosBusiness atributosBusiness = new AtributosBusiness();
+        ItensBusiness itensBusiness = new ItensBusiness();
+        SkillsBusiness skillsBusiness = new SkillsBusiness();
 
         PersonagensRepository personagensRepository = new PersonagensRepository();
         public void CarregaDataGrid()
@@ -106,10 +109,16 @@ namespace Gerenciador
         {
             try
             {
+                resultado = atributosBusiness.Excluir(Convert.ToInt32(dgv.CurrentRow.Cells[0].Value));
+                resultado = itensBusiness.ExcluirItensPersonagem(Convert.ToInt32(dgv.CurrentRow.Cells[0].Value));
+                resultado = skillsBusiness.ExcluirSkillsPersonagem(Convert.ToInt32(dgv.CurrentRow.Cells[0].Value));
                 resultado = personagensBusiness.Excluir(Convert.ToInt32(dgv.CurrentRow.Cells[0].Value));
+                List<int> Codigo = jogadoresBusiness.GetCODJogador(LblUser.Text);
+
                 if (resultado.sucesso)
                 {
                     MessageBox.Show("Personagem Excluido com sucesso", "S U C E S S O");
+                    jogadoresBusiness.AtualizaQtdPersonagensExclusao(Codigo[0]);
                     CarregaDataGrid();
                 }
                 else

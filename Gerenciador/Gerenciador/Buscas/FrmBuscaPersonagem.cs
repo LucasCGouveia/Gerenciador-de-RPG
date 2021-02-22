@@ -20,7 +20,11 @@ namespace Gerenciador
         PersonagensRepository personagensRepository = new PersonagensRepository();
         public void CarregaDataGrid()
         {
-            dgv.DataSource = personagensRepository.GetPersonagemCamapanha().Tables[0]; //Método Listar que passa o parâmetro do texto digitado para o Grid
+            int codigo = 0;
+            if (lblTituloFormulario.Text.Contains("NPC"))
+                dgv.DataSource = personagensRepository.ListarDataGrid(codigo).Tables[0];
+            else
+                dgv.DataSource = personagensRepository.GetPersonagemCamapanha().Tables[0];
             //Cria os Cabeçalhos de cada coluna
             dgv.Columns[0].HeaderText = ("Codigo");
             dgv.Columns[1].HeaderText = ("Personagem");
@@ -66,6 +70,11 @@ namespace Gerenciador
             tb_Personagens.COD_CAMPANHA = Convert.ToInt32(LblCampanha.Text);
             tb_Personagens.COD = Convert.ToInt32(dgv.CurrentRow.Cells[0].Value);
             personagensBusiness.AdicionarCampanha(tb_Personagens);
+            CarregaDataGrid();
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
             CarregaDataGrid();
         }
     }

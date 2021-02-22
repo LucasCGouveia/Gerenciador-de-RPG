@@ -27,12 +27,12 @@ namespace DasmeOnline.Controllers
         }
         public ActionResult Index()
         {
-            int Cod = base.RecuperarValorCookie("IdUsuario");
+            string Cod = base.RecuperarValorCookie("IdUsuario");
 
-            TabUsuarios tabUsuarios = usuarioBusiness.Listar(Cod);
+            TabUsuarios tabUsuarios = usuarioBusiness.Listar(Convert.ToInt32(Cod));
             ViewBag.TabUsuarios = tabUsuarios;
 
-            TabJogadores tabJogadores = jogadoresBusiness.ListarJogadorPorCodUsuario(Cod);
+            TabJogadores tabJogadores = jogadoresBusiness.ListarJogadorPorCodUsuario(Convert.ToInt32(Cod));
             ViewBag.TabJogadores = tabJogadores;
 
             if (tabJogadores == null)
@@ -55,12 +55,12 @@ namespace DasmeOnline.Controllers
         [HttpGet]
         public ActionResult JogadoresNovo()
         {
-            int Cod = base.RecuperarValorCookie("IdUsuario");
+            string Cod = base.RecuperarValorCookie("IdUsuario");
 
-            TabUsuarios tabUsuarios = usuarioBusiness.Listar(Cod);
+            TabUsuarios tabUsuarios = usuarioBusiness.Listar(Convert.ToInt32(Cod));
             ViewBag.TabUsuarios = tabUsuarios;
 
-            List<TabPersonagens> listaTabPersonagens = personagensBusiness.ListarPersonagensJogador(Cod);
+            List<TabPersonagens> listaTabPersonagens = personagensBusiness.ListarPersonagensJogador(Convert.ToInt32(Cod));
             ViewBag.TabPersonagens = listaTabPersonagens;
 
             return View();
@@ -68,12 +68,12 @@ namespace DasmeOnline.Controllers
         [HttpGet]
         public ActionResult JogadorEditar()
         {
-            int Cod = base.RecuperarValorCookie("IdUsuario");
+            string Cod = base.RecuperarValorCookie("IdUsuario");
 
-            TabUsuarios tabUsuarios = usuarioBusiness.Listar(Cod);
+            TabUsuarios tabUsuarios = usuarioBusiness.Listar(Convert.ToInt32(Cod));
             ViewBag.TabUsuarios = tabUsuarios;
 
-            TabJogadores tabJogadores = jogadoresBusiness.ListarJogadorPorCodUsuario(Cod);
+            TabJogadores tabJogadores = jogadoresBusiness.ListarJogadorPorCodUsuario(Convert.ToInt32(Cod));
             ViewBag.TabJogadores = tabJogadores;
 
             if (tabJogadores == null)
@@ -102,12 +102,12 @@ namespace DasmeOnline.Controllers
         [HttpGet]
         public ActionResult JogadorExcluir()
         {
-            int Cod = base.RecuperarValorCookie("IdUsuario");
+            string Cod = base.RecuperarValorCookie("COD");
 
-            TabUsuarios tabUsuarios = usuarioBusiness.Listar(Cod);
+            TabUsuarios tabUsuarios = usuarioBusiness.Listar(Convert.ToInt32(Cod));
             ViewBag.TabUsuarios = tabUsuarios;
 
-            TabJogadores tabJogadores = jogadoresBusiness.ListarJogadorPorCodUsuario(Cod);
+            TabJogadores tabJogadores = jogadoresBusiness.ListarJogadorPorCodUsuario(Convert.ToInt32(Cod));
             ViewBag.TabJogadores = tabJogadores;
 
             if (tabJogadores == null)
@@ -129,10 +129,10 @@ namespace DasmeOnline.Controllers
         [HttpPost]
         public ActionResult JogadorExcluir(TabJogadores tabJogadores)
         {
-            int Cod = base.RecuperarValorCookie("IdUsuario");
+            string Cod = base.RecuperarValorCookie("IdUsuario");
 
             jogadoresBusiness.Excluir(tabJogadores.COD);
-            usuarioBusiness.Excluir(Cod);
+            usuarioBusiness.Excluir(Convert.ToInt32(Cod));
 
             return RedirectToAction("LogOut", "Login");
         }
@@ -141,9 +141,9 @@ namespace DasmeOnline.Controllers
         {
             ViewBag.TabRacas = racasBusiness.GetAll();
             ViewBag.TabClasses = classesBusiness.GetAll();
-            int COD_USUARIO = base.RecuperarValorCookie("IdUsuario");
+            string COD_USUARIO = base.RecuperarValorCookie("COD");
 
-            TabUsuarios tabUsuarios = usuarioBusiness.Listar(COD_USUARIO);
+            TabUsuarios tabUsuarios = usuarioBusiness.Listar(Convert.ToInt32(COD_USUARIO));
             ViewBag.TabUsuarios = tabUsuarios;
 
             ViewBag.COD_JOGADOR = Cod;

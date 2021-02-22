@@ -39,10 +39,19 @@ namespace Gerenciador
                 if (resultado.sucesso)
                 {
                     MessageBox.Show("Gravado. ", "Item Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    FrmCadJogador frmCadJogador = new FrmCadJogador();
-                    frmCadJogador.txtUsuario.Text = txtLogin.Text;
-                    frmCadJogador.Show();
-                    Close();
+                    if (TipoUser == "J")
+                    {
+                        FrmCadJogador frmCadJogador = new FrmCadJogador();
+                        frmCadJogador.txtUsuario.Text = txtLogin.Text;
+                        frmCadJogador.Show();
+                        Close();
+                    }
+                    else
+                    {
+                        FrmLogin frmLogin = new FrmLogin();
+                        frmLogin.Show();
+                        Close();
+                    }
                 }
                 else
                 {
@@ -52,6 +61,11 @@ namespace Gerenciador
         }
 
         private void FrmCadUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
         {
 
         }

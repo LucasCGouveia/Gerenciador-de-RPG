@@ -1,4 +1,5 @@
-﻿using Gerenciador.Repository;
+﻿using Gerenciador.Entities;
+using Gerenciador.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,12 @@ namespace Gerenciador.Business
     public class BusinessBase<T> : IDisposable where T : class
     {
         private readonly RepositoryBase<T> _repository;
+        private readonly Resultado resultado;
+
         public BusinessBase()
         {
             this._repository = new RepositoryBase<T>();
+            this.resultado = new Resultado();
         }
         public void Adicionar(T pObj)
         {
@@ -43,13 +47,17 @@ namespace Gerenciador.Business
             return
                 this._repository.Listar(asNoTracking);
         }
-        public void Editar(T pObj)
+        public Resultado Editar(T pObj)
         {
             this._repository.Editar(pObj);
+            resultado.sucesso = true;
+            return resultado;
         }
-        public void Excluir(int pId)
+        public Resultado Excluir(int pId)
         {
             this._repository.Excluir(pId);
+            resultado.sucesso = true;
+            return resultado;
         }
         public void Dispose()
         {

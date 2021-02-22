@@ -38,7 +38,12 @@ namespace Gerenciador.Business
             resultado = atributosRepository.Editar(tb_Atributos);
             return resultado;
         }
-
+        public Resultado Excluir(int codigo)
+        {
+            tb_Atributos.COD_PERSONAGEM = codigo;
+            resultado = atributosRepository.Excluir(tb_Atributos);
+            return resultado;
+        }
         public List<int> GetCodAtributos(int Codigo)
         {
             try

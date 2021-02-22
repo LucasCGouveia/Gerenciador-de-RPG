@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace DasmeOnline.Controllers
 {
-    public class UsuariosController : Controller
+    public class PersonagensController : Controller
     {
-        [HttpGet]
+        // GET: Personagens
         public ActionResult Index()
         {
             return View();

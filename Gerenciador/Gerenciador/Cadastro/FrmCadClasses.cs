@@ -17,32 +17,29 @@ namespace Gerenciador
         }
         public void CarregaDataGrid()
         {
-            //dgv.DataSource = ObjUsuario.ListarUsuariosCadUsuario(txtPesquisa.Text).Tables[0]; //Método Listar que passa o parâmetro do texto digitado para o Grid
-            dgv.DataSource = classesRepository.ListarDataGrid().Tables[0]; //Método Listar que passa o parâmetro do texto digitado para o Grid
-            //Cria os Cabeçalhos de cada coluna
+            dgv.DataSource = classesRepository.ListarDataGrid().Tables[0];
             dgv.Columns[0].HeaderText = ("Codigo");
             dgv.Columns[1].HeaderText = ("Classe");
             dgv.Columns[2].HeaderText = ("Descrição");
-            dgv.AutoResizeColumns(); //Tamanho exato da maior coluna
-            if (dgv.RowCount == 0) //Se não houver dados no DGV, os botão serão desativados
+            dgv.Columns[3].HeaderText = ("Ativo");
+            dgv.AutoResizeColumns();
+            if (dgv.RowCount == 0) 
             {
                 BtnEditar.Enabled = false;
                 BtnExcluir.Enabled = false;
-                //MessageBox.Show("NÃO FORAM ENCONTRADOS DADOS COM A INFORMAÇÃO: " + txtPesquisa.Text, "Verificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MessageBox.Show("NÃO FORAM ENCONTRADOS DADOS COM A INFORMAÇÃO: ", "Verificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dgv.DataSource = null; //Limpa o cabeçalho
-                //txtPesquisa.Text = "";
-                //txtPesquisa.Focus();
+                dgv.DataSource = null;
             }
             else
             {
                 BtnEditar.Enabled = true;
                 BtnExcluir.Enabled = true;
+                int Quantidade = Convert.ToInt32(dgv.RowCount)-1;
+                txtQuantidade.Text = Quantidade.ToString();
             }
         }
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            //Verifica se os campos obrigatórios estão preenchidos
             if (txtClasse.Text == "" && txtDescricao.Text == "")
             {
                 MessageBox.Show("Opa!!! algum Campo ficou em branco. ", "Item Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);

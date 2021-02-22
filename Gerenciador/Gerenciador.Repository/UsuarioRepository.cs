@@ -95,17 +95,17 @@ namespace Gerenciador.Repository
 
             return resultado;
         }
-        public Resultado Excluir(int _COD)
-        {
-            string strQuery;
-            strQuery = ("DELETE FROM TabUsuarios ");
-            strQuery += (" WHERE ");
-            strQuery += (" cod = '" + _COD + "' ;");
-            ConexaoDB ObjCldBancoDados = new ConexaoDB();
-            resultado = ObjCldBancoDados.Executar(strQuery);
+        //public Resultado Excluir(int _COD)
+        //{
+        //    string strQuery;
+        //    strQuery = ("DELETE FROM TabUsuarios ");
+        //    strQuery += (" WHERE ");
+        //    strQuery += (" cod = '" + _COD + "' ;");
+        //    ConexaoDB ObjCldBancoDados = new ConexaoDB();
+        //    resultado = ObjCldBancoDados.Executar(strQuery);
 
-            return resultado;
-        }
+        //    return resultado;
+        //}
         public Resultado Gravar(TabUsuarios tb_Usuarios)
         {
             string strQuery; //Criar a String para inserir
@@ -127,20 +127,20 @@ namespace Gerenciador.Repository
 
             return resultado;
         }
-        public Resultado Editar(TabUsuarios tb_Usuarios)
-        {
-            string strQuery; //Criar a String para alterar
-            strQuery = (" UPDATE TabUsuarios ");
-            strQuery += (" SET ");
-            strQuery += (" LOGIN = '" + tb_Usuarios.LOGIN + "' ");
-            strQuery += (" ,SENHA = '" + tb_Usuarios.SENHA + "' ");
-            strQuery += (" ,TIPOUSER = '" + tb_Usuarios.SENHA + "' ");
-            strQuery += (" WHERE ");
-            strQuery += (" COD = " + tb_Usuarios.COD + " ");
-            ConexaoDB ObjCldBancoDados = new ConexaoDB();
-            resultado = ObjCldBancoDados.Executar(strQuery);
-            return resultado;
-        }
+        //public Resultado Editar(TabUsuarios tb_Usuarios)
+        //{
+        //    string strQuery; //Criar a String para alterar
+        //    strQuery = (" UPDATE TabUsuarios ");
+        //    strQuery += (" SET ");
+        //    strQuery += (" LOGIN = '" + tb_Usuarios.LOGIN + "' ");
+        //    strQuery += (" ,SENHA = '" + tb_Usuarios.SENHA + "' ");
+        //    strQuery += (" ,TIPOUSER = '" + tb_Usuarios.SENHA + "' ");
+        //    strQuery += (" WHERE ");
+        //    strQuery += (" COD = " + tb_Usuarios.COD + " ");
+        //    ConexaoDB ObjCldBancoDados = new ConexaoDB();
+        //    resultado = ObjCldBancoDados.Executar(strQuery);
+        //    return resultado;
+        //}
 
         //=============================================================================================================================================================================
         //=============================================================================================================================================================================

@@ -1,6 +1,6 @@
 ﻿namespace Gerenciador
 {
-    partial class FrmBuscaPersonagem
+    partial class FrmBuscaMissoes
     {
         /// <summary>
         /// Required designer variable.
@@ -38,11 +38,11 @@
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.lblPsquisaRapida = new System.Windows.Forms.Label();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.LblCampanha = new System.Windows.Forms.Label();
             this.LblUser = new System.Windows.Forms.Label();
             this.BtnAtivar = new System.Windows.Forms.Button();
             this.lblTituloFormulario = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
-            this.LblCampanha = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.gbResultadoDaPesquisa.SuspendLayout();
             this.gbPesquisa.SuspendLayout();
@@ -89,10 +89,10 @@
             this.gbResultadoDaPesquisa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.gbResultadoDaPesquisa.Controls.Add(this.dgv);
             this.gbResultadoDaPesquisa.Controls.Add(this.lblResultadoDaPesquisa);
-            this.gbResultadoDaPesquisa.Location = new System.Drawing.Point(33, 160);
+            this.gbResultadoDaPesquisa.Location = new System.Drawing.Point(32, 162);
             this.gbResultadoDaPesquisa.Name = "gbResultadoDaPesquisa";
             this.gbResultadoDaPesquisa.Size = new System.Drawing.Size(718, 394);
-            this.gbResultadoDaPesquisa.TabIndex = 141;
+            this.gbResultadoDaPesquisa.TabIndex = 150;
             this.gbResultadoDaPesquisa.TabStop = false;
             // 
             // lblResultadoDaPesquisa
@@ -116,10 +116,10 @@
             this.gbPesquisa.Controls.Add(this.btnPesquisar);
             this.gbPesquisa.Controls.Add(this.lblPsquisaRapida);
             this.gbPesquisa.Controls.Add(this.txtPesquisa);
-            this.gbPesquisa.Location = new System.Drawing.Point(33, 88);
+            this.gbPesquisa.Location = new System.Drawing.Point(32, 90);
             this.gbPesquisa.Name = "gbPesquisa";
             this.gbPesquisa.Size = new System.Drawing.Size(718, 66);
-            this.gbPesquisa.TabIndex = 140;
+            this.gbPesquisa.TabIndex = 149;
             this.gbPesquisa.TabStop = false;
             // 
             // btnPesquisar
@@ -160,6 +160,19 @@
             this.txtPesquisa.Size = new System.Drawing.Size(394, 20);
             this.txtPesquisa.TabIndex = 0;
             // 
+            // LblCampanha
+            // 
+            this.LblCampanha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblCampanha.AutoSize = true;
+            this.LblCampanha.BackColor = System.Drawing.Color.Transparent;
+            this.LblCampanha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCampanha.ForeColor = System.Drawing.Color.Black;
+            this.LblCampanha.Location = new System.Drawing.Point(688, 41);
+            this.LblCampanha.Name = "LblCampanha";
+            this.LblCampanha.Size = new System.Drawing.Size(81, 15);
+            this.LblCampanha.TabIndex = 154;
+            this.LblCampanha.Text = "CAMPANHA";
+            // 
             // LblUser
             // 
             this.LblUser.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -167,10 +180,10 @@
             this.LblUser.BackColor = System.Drawing.Color.Transparent;
             this.LblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUser.ForeColor = System.Drawing.Color.Black;
-            this.LblUser.Location = new System.Drawing.Point(702, 14);
+            this.LblUser.Location = new System.Drawing.Point(701, 16);
             this.LblUser.Name = "LblUser";
             this.LblUser.Size = new System.Drawing.Size(68, 15);
-            this.LblUser.TabIndex = 139;
+            this.LblUser.TabIndex = 148;
             this.LblUser.Text = "USUARIO";
             this.LblUser.Visible = false;
             // 
@@ -182,11 +195,11 @@
             this.BtnAtivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAtivar.ForeColor = System.Drawing.Color.Black;
             this.BtnAtivar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnAtivar.Location = new System.Drawing.Point(33, 570);
+            this.BtnAtivar.Location = new System.Drawing.Point(32, 572);
             this.BtnAtivar.Name = "BtnAtivar";
             this.BtnAtivar.Size = new System.Drawing.Size(171, 47);
-            this.BtnAtivar.TabIndex = 146;
-            this.BtnAtivar.Text = "&Adicionar";
+            this.BtnAtivar.TabIndex = 153;
+            this.BtnAtivar.Text = "&Aceitar";
             this.BtnAtivar.UseVisualStyleBackColor = false;
             this.BtnAtivar.Click += new System.EventHandler(this.BtnAtivar_Click);
             // 
@@ -198,11 +211,11 @@
             this.lblTituloFormulario.Font = new System.Drawing.Font("Goudy Old Style", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloFormulario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblTituloFormulario.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblTituloFormulario.Location = new System.Drawing.Point(195, 25);
+            this.lblTituloFormulario.Location = new System.Drawing.Point(194, 27);
             this.lblTituloFormulario.Name = "lblTituloFormulario";
-            this.lblTituloFormulario.Size = new System.Drawing.Size(373, 46);
-            this.lblTituloFormulario.TabIndex = 143;
-            this.lblTituloFormulario.Text = "Busca de Personagens";
+            this.lblTituloFormulario.Size = new System.Drawing.Size(326, 46);
+            this.lblTituloFormulario.TabIndex = 152;
+            this.lblTituloFormulario.Text = "Quadro de Missões";
             // 
             // btnSair
             // 
@@ -211,45 +224,32 @@
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSair.Location = new System.Drawing.Point(580, 570);
+            this.btnSair.Location = new System.Drawing.Point(579, 572);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(171, 47);
-            this.btnSair.TabIndex = 142;
+            this.btnSair.TabIndex = 151;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // LblCampanha
-            // 
-            this.LblCampanha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LblCampanha.AutoSize = true;
-            this.LblCampanha.BackColor = System.Drawing.Color.Transparent;
-            this.LblCampanha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCampanha.ForeColor = System.Drawing.Color.Black;
-            this.LblCampanha.Location = new System.Drawing.Point(689, 39);
-            this.LblCampanha.Name = "LblCampanha";
-            this.LblCampanha.Size = new System.Drawing.Size(81, 15);
-            this.LblCampanha.TabIndex = 147;
-            this.LblCampanha.Text = "CAMPANHA";
-            // 
-            // FrmBuscaPersonagem
+            // FrmBuscaMissoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 630);
-            this.Controls.Add(this.LblCampanha);
+            this.ClientSize = new System.Drawing.Size(800, 635);
             this.Controls.Add(this.gbResultadoDaPesquisa);
             this.Controls.Add(this.gbPesquisa);
+            this.Controls.Add(this.LblCampanha);
             this.Controls.Add(this.LblUser);
             this.Controls.Add(this.BtnAtivar);
             this.Controls.Add(this.lblTituloFormulario);
             this.Controls.Add(this.btnSair);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmBuscaPersonagem";
+            this.Name = "FrmBuscaMissoes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmBuscaPersonagemCampanha";
+            this.Text = "FrmQuadroMissoes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmBuscaPersonagem_Load);
+            this.Load += new System.EventHandler(this.FrmQuadroMissoes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.gbResultadoDaPesquisa.ResumeLayout(false);
             this.gbResultadoDaPesquisa.PerformLayout();
@@ -269,10 +269,10 @@
         internal System.Windows.Forms.Button btnPesquisar;
         internal System.Windows.Forms.Label lblPsquisaRapida;
         internal System.Windows.Forms.TextBox txtPesquisa;
+        public System.Windows.Forms.Label LblCampanha;
         internal System.Windows.Forms.Label LblUser;
         internal System.Windows.Forms.Button BtnAtivar;
         internal System.Windows.Forms.Label lblTituloFormulario;
         internal System.Windows.Forms.Button btnSair;
-        public System.Windows.Forms.Label LblCampanha;
     }
 }

@@ -13,6 +13,16 @@ namespace Gerenciador.Repository
     {
         Resultado resultado = new Resultado();
         TabPersonagens tb_Personagens = new TabPersonagens();
+        public DataTable GetDadosPersonagem(TabPersonagens tb_Personagens)//Recebe a string do campo descrição, enviado por parâmetro, porém com retorno
+        {
+            string strQuery;
+            strQuery = ("Select P.COD,NOME,RACA,CLASSE,ALINHAMENTO,CA,PVTOTAL,PVATUAL,PATAQUE,INICIATIVA,DINHEIRO,EXPERIENCIA,NIVEL,A.FORC,A.DEST,A.CONS,A.INTE,A.SABE,A.CARI,HISTORIA ");
+            strQuery += (" From TabPersonagens as P");
+            strQuery += (" INNER JOIN TabAtributos as A on A.COD_PERSONAGEM = P.COD");
+            strQuery += (" WHERE P.ATIVO = 1 and COD_PERSONAGEM = " + tb_Personagens.COD + " ORDER BY INICIATIVA DESC");
+            ConexaoDB ObjBancoDados = new ConexaoDB();//Instancia/cria objeto do BancoDeDados
+            return ObjBancoDados.GetTable(strQuery);//Envia a consulta por parâmetro para objeto e aguarda o retorno
+        }
         public DataSet ListarDataGrid(int Codigo)
         {
             string strQuery;
@@ -50,17 +60,17 @@ namespace Gerenciador.Repository
             return resultado;
 
         }
-        public Resultado Excluir(int COD)
-        {
-            string strQuery;
-            strQuery = ("DELETE FROM TabPersonagens ");
-            strQuery += (" WHERE ");
-            strQuery += (" COD = '" + COD + "' ;");
-            ConexaoDB ObjCldBancoDados = new ConexaoDB();
-            resultado = ObjCldBancoDados.Executar(strQuery);
-            return resultado;
+        //public Resultado Excluir(int COD)
+        //{
+        //    string strQuery;
+        //    strQuery = ("DELETE FROM TabPersonagens ");
+        //    strQuery += (" WHERE ");
+        //    strQuery += (" COD = '" + COD + "' ;");
+        //    ConexaoDB ObjCldBancoDados = new ConexaoDB();
+        //    resultado = ObjCldBancoDados.Executar(strQuery);
+        //    return resultado;
 
-        }
+        //}
         public Resultado Gravar(TabPersonagens tb_Personagens)
         {
             string strQuery; //Criar a String para inserir
@@ -173,6 +183,19 @@ namespace Gerenciador.Repository
             resultado = ObjCldBancoDados.Executar(strQuery);
             return resultado;
 
+        }
+        public Resultado VenderItem(TabPersonagens tb_Personagens)
+        {
+            string strQuery; //Criar a String para alterar
+            strQuery = (" UPDATE TabPersonagens ");
+            strQuery += (" SET ");
+            strQuery += (" DINHEIRO = " + tb_Personagens.DINHEIRO + " ");
+            strQuery += (" WHERE ");
+            strQuery += (" COD = " + tb_Personagens.COD + " ");
+            ConexaoDB ObjCldBancoDados = new ConexaoDB();
+            resultado = ObjCldBancoDados.Executar(strQuery);
+
+            return resultado;
         }
         //============================================================================================================
         //============================================================================================================

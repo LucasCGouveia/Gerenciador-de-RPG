@@ -25,14 +25,14 @@ namespace DasmeOnline
         /// <param name="pNomeCookie">Nome do Cookie que será salvo no navegador.</param>
         /// <param name="pValorCookie">Valor do Cookie que será salvo no navegador.</param>
         /// <param name="DataExpiriacao">Data em que o cookie expirará. Após isto, é necessário efetuar o login novamente. (OPCIONAL).</param>
-        protected virtual void SalvarCookie(string pNomeCookie, string idUsuario, DateTime? DataExpiracao = null)
+        protected virtual void SalvarCookie(string pNomeCookie,string nome, DateTime? DataExpiracao = null)
         {
             try
             {
                 var identity = new ClaimsIdentity(new[]
                     {
                     //new Claim(ClaimTypes.Name,item.NomLogin),
-                    new Claim(ClaimTypes.Name,Convert.ToString(idUsuario))
+                    new Claim(ClaimTypes.Name,Convert.ToString(nome)),
                     },
                     "ApplicationCookie");
 
@@ -42,14 +42,12 @@ namespace DasmeOnline
                 authManager.SignIn(identity);
 
                 pNomeCookie = pNomeCookie.Encrypt().Substring(0, 10);
-                idUsuario = idUsuario.Encrypt();
+                nome = nome.Encrypt();
                 DataExpiracao = !DataExpiracao.HasValue ? DateTime.Now.AddMonths(30) : DataExpiracao.Value;
-                var _httpCookie = new HttpCookie(pNomeCookie, idUsuario);
+                var _httpCookie = new HttpCookie(pNomeCookie, Convert.ToString(nome));
                 _httpCookie.Expires = DataExpiracao.Value;
                 _httpCookie.Domain = Convert.ToString(ConfigurationManager.AppSettings["DOMAIN"]);
                 Response.Cookies.Add(_httpCookie);
-
-
             }
             catch (Exception ex)
             {
@@ -121,14 +119,13 @@ namespace DasmeOnline
         {
             try
             {
-                var _httpCookie = this.RecuperarValorCookie("IdUsuario");
-                if (_httpCookie != null)
-                {
+                var _httpCookie = this.RecuperarValorCookie("COD");
+                
                     if (this._usuarioApp != null)
                     {
                         return this._usuarioApp.Listar(int.Parse(_httpCookie.ToString()));
                     }
-                }
+                
                 throw new Exception("Nenhum usuário logado. Efetue o login novamente.");
             }
             catch (Exception ex)
@@ -141,28 +138,29 @@ namespace DasmeOnline
         /// </summary>
         /// <param name="pNomeCookie">Nome do cookie a ser recuperado.</param>
         /// <returns>Objeto do tipo HttpCookie.</returns>
-        protected int RecuperarValorCookie(string pNomeCookie)
-        {
-            try
-            {
-                pNomeCookie = pNomeCookie.Encrypt().Substring(0, 10);
-                if (Request != null)
-                {
-                    var cookie = Request.Cookies[pNomeCookie];
-                    if (cookie != null)
-                    {
-                        int Value = Convert.ToInt32(cookie.Value.Decrypt());
-                        return Value;
-                    }
-                }
-                return 0;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        protected string RecuperarStringCookie(string pNomeCookie)
+        //protected int RecuperarValorCookie(string pNomeCookie)
+        //{
+        //    try
+        //    {
+        //        pNomeCookie = pNomeCookie.Encrypt().Substring(0, 10);
+        //        if (Request != null)
+        //        {
+        //            var cookie = Request.Cookies[pNomeCookie];
+        //            if (cookie != null)
+        //            {
+        //                string Value = cookie.Value.Decrypt();
+        //                int Valor = Convert.ToInt32(Value);
+        //                return Valor;
+        //            }
+        //        }
+        //        return 0;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
+        protected string RecuperarValorCookie(string pNomeCookie)
         {
             try
             {
@@ -211,11 +209,10 @@ namespace DasmeOnline
         {
             try
             {
-                var _httpCookie = this.RecuperarValorCookie("IdUsuario");
+                var _httpCookie = this.RecuperarValorCookie("COD");
                 if (_httpCookie == null)
                 {
-                    return
-                        false;
+                    return false;
                 }
                 return true;
             }
@@ -302,7 +299,7 @@ namespace DasmeOnline
                     return base.View(viewName);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return
                     base.View("~/Views/Login/Index.cshtml");

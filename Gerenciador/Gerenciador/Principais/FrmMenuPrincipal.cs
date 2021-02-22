@@ -1,4 +1,5 @@
 ﻿using Gerenciador.Business;
+using Gerenciador.Entities;
 using Gerenciador.Repository;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,9 @@ namespace Gerenciador
             InitializeComponent();
         }
         UsuarioBusiness usuarioBusiness = new UsuarioBusiness();
+        CampanhasBusiness campanhasBusiness = new CampanhasBusiness();
         CampanhasRepository campanhasRepository = new CampanhasRepository();
+        Resultado resultado = new Resultado();
         public void CarregaDataGrid()
         {
             try
@@ -65,14 +68,6 @@ namespace Gerenciador
             ObjfrmCadFuncionarios.Show();
             this.Close();
         }
-
-        private void btnBuscaDeCliente_Click(object sender, EventArgs e)
-        {
-            FrmBuscaJogador ObjBF = new FrmBuscaJogador();
-            ObjBF.Show();
-            this.Close();
-        }
-
         private void BtnGerencia_Click_1(object sender, EventArgs e)
         {
             FrmGerenciamento ObjFrmGerenciamento = new FrmGerenciamento();
@@ -87,12 +82,14 @@ namespace Gerenciador
         private void btnSkills_Click(object sender, EventArgs e)
         {
             FrmSkills frmSkills = new FrmSkills();
+            frmSkills.LblUser.Text = LblUser.Text;
             frmSkills.Show();
             Close();
         }
         private void btnItens_Click(object sender, EventArgs e)
         {
             FrmItens frmItens = new FrmItens();
+            frmItens.LblUser.Text = LblUser.Text;
             frmItens.Show();
             Close();
         }
@@ -112,5 +109,55 @@ namespace Gerenciador
             frmGerenciarMesa.Show();
             Close();
         }
+
+        private void btnCadastroDeCliente_Click_1(object sender, EventArgs e)
+        {
+            FrmCadPersongem frmCadPersongem = new FrmCadPersongem();
+            frmCadPersongem.LblVoltar.Text = "MenuPrincipal";
+            frmCadPersongem.LblUser.Text = LblUser.Text;
+            frmCadPersongem.Show();
+            Close();
+        }
+
+        private void btnCadastroDeProduto_Click(object sender, EventArgs e)
+        {
+            FrmMissoes frmMissoes = new FrmMissoes();
+            frmMissoes.LblMestre.Text = LblUser.Text;
+            frmMissoes.Show();
+            Close();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            FrmCampanhas frmCampanhas = new FrmCampanhas();
+            frmCampanhas.LblMestre.Text = LblUser.Text;
+            frmCampanhas.gbResultadoDaPesquisa.Visible = false;
+            frmCampanhas.btnLimpar.Visible = false;
+            frmCampanhas.BtnEditar.Visible = true;
+            frmCampanhas.btnGravar.Visible = false;
+            frmCampanhas.BtnEditar.Text = "Alterar";
+            frmCampanhas.LblCodigo.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+            frmCampanhas.txtNomeCampanha.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
+            frmCampanhas.cBoxSistemaCampanha.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
+            frmCampanhas.txtDescricao.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
+            frmCampanhas.Show();
+            Close();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            int codigo = Convert.ToInt32(dgv.CurrentRow.Cells[0].Value);
+            resultado = campanhasBusiness.Desativar(codigo);
+            if (resultado.sucesso)
+            {
+                MessageBox.Show("Excluido com sucesso. ", "Item Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CarregaDataGrid();
+            }
+            else
+            {
+                MessageBox.Show("Falha na Gravação. Erro:" + resultado.exception, "Item Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+    
     }
 }

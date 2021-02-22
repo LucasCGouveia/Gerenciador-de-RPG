@@ -41,13 +41,14 @@
             this.dgv = new System.Windows.Forms.DataGridView();
             this.txtEnderco = new System.Windows.Forms.Label();
             this.gbResultadoDaPesquisa = new System.Windows.Forms.GroupBox();
-            this.lblResultadoDaPesquisa = new System.Windows.Forms.Label();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.BtnExcluir = new System.Windows.Forms.Button();
             this.lblDadosDoCadastro = new System.Windows.Forms.Label();
             this.gbtxts = new System.Windows.Forms.GroupBox();
             this.LblCodClasse = new System.Windows.Forms.Label();
             this.LblMestre = new System.Windows.Forms.Label();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.gbResultadoDaPesquisa.SuspendLayout();
             this.gbtxts.SuspendLayout();
@@ -154,18 +155,18 @@
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(6, 43);
+            this.dgv.Location = new System.Drawing.Point(6, 29);
             this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -200,25 +201,15 @@
             this.gbResultadoDaPesquisa.BackColor = System.Drawing.Color.Transparent;
             this.gbResultadoDaPesquisa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.gbResultadoDaPesquisa.Controls.Add(this.dgv);
-            this.gbResultadoDaPesquisa.Controls.Add(this.lblResultadoDaPesquisa);
+            this.gbResultadoDaPesquisa.Controls.Add(this.txtQuantidade);
+            this.gbResultadoDaPesquisa.Controls.Add(this.label1);
+            this.gbResultadoDaPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbResultadoDaPesquisa.Location = new System.Drawing.Point(35, 56);
             this.gbResultadoDaPesquisa.Name = "gbResultadoDaPesquisa";
             this.gbResultadoDaPesquisa.Size = new System.Drawing.Size(879, 255);
             this.gbResultadoDaPesquisa.TabIndex = 141;
             this.gbResultadoDaPesquisa.TabStop = false;
-            // 
-            // lblResultadoDaPesquisa
-            // 
-            this.lblResultadoDaPesquisa.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblResultadoDaPesquisa.AutoSize = true;
-            this.lblResultadoDaPesquisa.BackColor = System.Drawing.Color.Transparent;
-            this.lblResultadoDaPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultadoDaPesquisa.ForeColor = System.Drawing.Color.Black;
-            this.lblResultadoDaPesquisa.Location = new System.Drawing.Point(345, 16);
-            this.lblResultadoDaPesquisa.Name = "lblResultadoDaPesquisa";
-            this.lblResultadoDaPesquisa.Size = new System.Drawing.Size(141, 15);
-            this.lblResultadoDaPesquisa.TabIndex = 0;
-            this.lblResultadoDaPesquisa.Text = "Classes Cadastradas";
+            this.gbResultadoDaPesquisa.Text = "Classes Cadastradas";
             // 
             // BtnEditar
             // 
@@ -306,6 +297,30 @@
             this.LblMestre.Text = "MESTRE";
             this.LblMestre.Visible = false;
             // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtQuantidade.Enabled = false;
+            this.txtQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.txtQuantidade.Location = new System.Drawing.Point(93, 227);
+            this.txtQuantidade.MaxLength = 50;
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(80, 26);
+            this.txtQuantidade.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(6, 233);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Quantidade:";
+            // 
             // FrmCadClasses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,12 +363,13 @@
         internal System.Windows.Forms.DataGridView dgv;
         public System.Windows.Forms.Label txtEnderco;
         internal System.Windows.Forms.GroupBox gbResultadoDaPesquisa;
-        internal System.Windows.Forms.Label lblResultadoDaPesquisa;
         internal System.Windows.Forms.Button BtnEditar;
         internal System.Windows.Forms.Button BtnExcluir;
         internal System.Windows.Forms.Label lblDadosDoCadastro;
         public System.Windows.Forms.GroupBox gbtxts;
         private System.Windows.Forms.Label LblCodClasse;
         public System.Windows.Forms.Label LblMestre;
+        public System.Windows.Forms.TextBox txtQuantidade;
+        public System.Windows.Forms.Label label1;
     }
 }

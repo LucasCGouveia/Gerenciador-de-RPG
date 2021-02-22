@@ -109,5 +109,13 @@ namespace Gerenciador
         {
 
         }
+
+        private void BtnVerificarJogadores_Click(object sender, EventArgs e)
+        {
+            FrmBuscaJogadores frmBuscaJogadores = new FrmBuscaJogadores();
+            frmBuscaJogadores.LblMestre.Text = LblMestre.Text;
+            frmBuscaJogadores.Show();
+            Close();
+        }
     }
 }

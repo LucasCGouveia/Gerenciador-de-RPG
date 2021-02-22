@@ -49,11 +49,11 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.grbCadastros = new System.Windows.Forms.GroupBox();
-            this.btnCadastroDeCliente = new System.Windows.Forms.Button();
-            this.btnCadastroDeProduto = new System.Windows.Forms.Button();
-            this.grbBuscas = new System.Windows.Forms.GroupBox();
             this.btnItens = new System.Windows.Forms.Button();
             this.btnSkills = new System.Windows.Forms.Button();
+            this.grbBuscas = new System.Windows.Forms.GroupBox();
+            this.btnCadastroDeCliente = new System.Windows.Forms.Button();
+            this.btnCadastroDeProduto = new System.Windows.Forms.Button();
             this.btnNovaCampanha = new System.Windows.Forms.Button();
             this.GroupBox1.SuspendLayout();
             this.gboxTipoUser.SuspendLayout();
@@ -88,7 +88,7 @@
             this.BtnAlterarSenha.ForeColor = System.Drawing.Color.Black;
             this.BtnAlterarSenha.Image = ((System.Drawing.Image)(resources.GetObject("BtnAlterarSenha.Image")));
             this.BtnAlterarSenha.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnAlterarSenha.Location = new System.Drawing.Point(19, 77);
+            this.BtnAlterarSenha.Location = new System.Drawing.Point(19, 82);
             this.BtnAlterarSenha.Name = "BtnAlterarSenha";
             this.BtnAlterarSenha.Size = new System.Drawing.Size(138, 43);
             this.BtnAlterarSenha.TabIndex = 2;
@@ -104,7 +104,7 @@
             this.btnBuscaDeHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscaDeHorario.ForeColor = System.Drawing.Color.Black;
             this.btnBuscaDeHorario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscaDeHorario.Location = new System.Drawing.Point(19, 25);
+            this.btnBuscaDeHorario.Location = new System.Drawing.Point(19, 23);
             this.btnBuscaDeHorario.Name = "btnBuscaDeHorario";
             this.btnBuscaDeHorario.Size = new System.Drawing.Size(138, 45);
             this.btnBuscaDeHorario.TabIndex = 1;
@@ -294,6 +294,7 @@
             this.btnEditar.TabIndex = 24;
             this.btnEditar.Text = "&Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
@@ -310,6 +311,7 @@
             this.btnExcluir.TabIndex = 24;
             this.btnExcluir.Text = "&Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnSair
             // 
@@ -330,8 +332,8 @@
             // 
             this.grbCadastros.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grbCadastros.BackColor = System.Drawing.Color.Transparent;
-            this.grbCadastros.Controls.Add(this.btnCadastroDeCliente);
-            this.grbCadastros.Controls.Add(this.btnCadastroDeProduto);
+            this.grbCadastros.Controls.Add(this.btnItens);
+            this.grbCadastros.Controls.Add(this.btnSkills);
             this.grbCadastros.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbCadastros.ForeColor = System.Drawing.Color.Black;
             this.grbCadastros.Location = new System.Drawing.Point(27, 117);
@@ -339,56 +341,7 @@
             this.grbCadastros.Size = new System.Drawing.Size(176, 139);
             this.grbCadastros.TabIndex = 0;
             this.grbCadastros.TabStop = false;
-            this.grbCadastros.Text = "Cadastrar";
-            // 
-            // btnCadastroDeCliente
-            // 
-            this.btnCadastroDeCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCadastroDeCliente.BackColor = System.Drawing.Color.Transparent;
-            this.btnCadastroDeCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCadastroDeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastroDeCliente.ForeColor = System.Drawing.Color.Black;
-            this.btnCadastroDeCliente.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnCadastroDeCliente.Location = new System.Drawing.Point(19, 25);
-            this.btnCadastroDeCliente.Name = "btnCadastroDeCliente";
-            this.btnCadastroDeCliente.Size = new System.Drawing.Size(139, 46);
-            this.btnCadastroDeCliente.TabIndex = 1;
-            this.btnCadastroDeCliente.Text = "N/A";
-            this.btnCadastroDeCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCadastroDeCliente.UseVisualStyleBackColor = false;
-            // 
-            // btnCadastroDeProduto
-            // 
-            this.btnCadastroDeProduto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCadastroDeProduto.BackColor = System.Drawing.Color.Transparent;
-            this.btnCadastroDeProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCadastroDeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastroDeProduto.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCadastroDeProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastroDeProduto.Image")));
-            this.btnCadastroDeProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastroDeProduto.Location = new System.Drawing.Point(19, 83);
-            this.btnCadastroDeProduto.Name = "btnCadastroDeProduto";
-            this.btnCadastroDeProduto.Size = new System.Drawing.Size(139, 49);
-            this.btnCadastroDeProduto.TabIndex = 1;
-            this.btnCadastroDeProduto.Text = "N/A";
-            this.btnCadastroDeProduto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCadastroDeProduto.UseVisualStyleBackColor = false;
-            // 
-            // grbBuscas
-            // 
-            this.grbBuscas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.grbBuscas.BackColor = System.Drawing.Color.Transparent;
-            this.grbBuscas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.grbBuscas.Controls.Add(this.btnItens);
-            this.grbBuscas.Controls.Add(this.btnSkills);
-            this.grbBuscas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbBuscas.ForeColor = System.Drawing.Color.Black;
-            this.grbBuscas.Location = new System.Drawing.Point(209, 117);
-            this.grbBuscas.Name = "grbBuscas";
-            this.grbBuscas.Size = new System.Drawing.Size(178, 139);
-            this.grbBuscas.TabIndex = 0;
-            this.grbBuscas.TabStop = false;
-            this.grbBuscas.Text = "Buscar";
+            this.grbCadastros.Text = "Gerenciar";
             // 
             // btnItens
             // 
@@ -399,7 +352,7 @@
             this.btnItens.ForeColor = System.Drawing.Color.Black;
             this.btnItens.Image = ((System.Drawing.Image)(resources.GetObject("btnItens.Image")));
             this.btnItens.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnItens.Location = new System.Drawing.Point(19, 83);
+            this.btnItens.Location = new System.Drawing.Point(19, 81);
             this.btnItens.Name = "btnItens";
             this.btnItens.Size = new System.Drawing.Size(138, 47);
             this.btnItens.TabIndex = 1;
@@ -416,7 +369,7 @@
             this.btnSkills.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSkills.ForeColor = System.Drawing.Color.Black;
             this.btnSkills.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSkills.Location = new System.Drawing.Point(19, 25);
+            this.btnSkills.Location = new System.Drawing.Point(19, 23);
             this.btnSkills.Name = "btnSkills";
             this.btnSkills.Size = new System.Drawing.Size(138, 46);
             this.btnSkills.TabIndex = 1;
@@ -424,6 +377,57 @@
             this.btnSkills.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSkills.UseVisualStyleBackColor = false;
             this.btnSkills.Click += new System.EventHandler(this.btnSkills_Click);
+            // 
+            // grbBuscas
+            // 
+            this.grbBuscas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grbBuscas.BackColor = System.Drawing.Color.Transparent;
+            this.grbBuscas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.grbBuscas.Controls.Add(this.btnCadastroDeCliente);
+            this.grbBuscas.Controls.Add(this.btnCadastroDeProduto);
+            this.grbBuscas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbBuscas.ForeColor = System.Drawing.Color.Black;
+            this.grbBuscas.Location = new System.Drawing.Point(209, 117);
+            this.grbBuscas.Name = "grbBuscas";
+            this.grbBuscas.Size = new System.Drawing.Size(178, 139);
+            this.grbBuscas.TabIndex = 0;
+            this.grbBuscas.TabStop = false;
+            this.grbBuscas.Text = "Criar";
+            // 
+            // btnCadastroDeCliente
+            // 
+            this.btnCadastroDeCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCadastroDeCliente.BackColor = System.Drawing.Color.Transparent;
+            this.btnCadastroDeCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCadastroDeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastroDeCliente.ForeColor = System.Drawing.Color.Black;
+            this.btnCadastroDeCliente.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnCadastroDeCliente.Location = new System.Drawing.Point(20, 23);
+            this.btnCadastroDeCliente.Name = "btnCadastroDeCliente";
+            this.btnCadastroDeCliente.Size = new System.Drawing.Size(139, 46);
+            this.btnCadastroDeCliente.TabIndex = 1;
+            this.btnCadastroDeCliente.Text = "NPC\'s";
+            this.btnCadastroDeCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCadastroDeCliente.UseVisualStyleBackColor = false;
+            this.btnCadastroDeCliente.Click += new System.EventHandler(this.btnCadastroDeCliente_Click_1);
+            // 
+            // btnCadastroDeProduto
+            // 
+            this.btnCadastroDeProduto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCadastroDeProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnCadastroDeProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCadastroDeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastroDeProduto.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCadastroDeProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastroDeProduto.Image")));
+            this.btnCadastroDeProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCadastroDeProduto.Location = new System.Drawing.Point(20, 80);
+            this.btnCadastroDeProduto.Name = "btnCadastroDeProduto";
+            this.btnCadastroDeProduto.Size = new System.Drawing.Size(139, 49);
+            this.btnCadastroDeProduto.TabIndex = 1;
+            this.btnCadastroDeProduto.Text = "Missões";
+            this.btnCadastroDeProduto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCadastroDeProduto.UseVisualStyleBackColor = false;
+            this.btnCadastroDeProduto.Click += new System.EventHandler(this.btnCadastroDeProduto_Click);
             // 
             // btnNovaCampanha
             // 

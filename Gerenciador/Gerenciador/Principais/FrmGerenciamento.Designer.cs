@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGerenciamento));
             this.gpGerencia = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -37,7 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnCadastroDeUsuario = new System.Windows.Forms.Button();
             this.btnCadRacas = new System.Windows.Forms.Button();
-            this.BtnBuscaDeFuncionario = new System.Windows.Forms.Button();
+            this.BtnVerificarJogadores = new System.Windows.Forms.Button();
             this.bntCadClasses = new System.Windows.Forms.Button();
             this.BtnSair = new System.Windows.Forms.Button();
             this.btnAdicionarExcluirServico = new System.Windows.Forms.Button();
@@ -58,7 +57,7 @@
             this.gpGerencia.Controls.Add(this.label1);
             this.gpGerencia.Controls.Add(this.btnCadastroDeUsuario);
             this.gpGerencia.Controls.Add(this.btnCadRacas);
-            this.gpGerencia.Controls.Add(this.BtnBuscaDeFuncionario);
+            this.gpGerencia.Controls.Add(this.BtnVerificarJogadores);
             this.gpGerencia.Controls.Add(this.bntCadClasses);
             this.gpGerencia.Controls.Add(this.BtnSair);
             this.gpGerencia.Controls.Add(this.btnAdicionarExcluirServico);
@@ -79,7 +78,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(163, 57);
             this.button1.TabIndex = 33;
-            this.button1.Text = "Verificar Personagens excluidos";
+            this.button1.Text = "N/A";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -90,7 +89,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(163, 57);
             this.button2.TabIndex = 33;
-            this.button2.Text = "Verificar Jogadores excluidos";
+            this.button2.Text = "N/A";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -101,7 +100,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(163, 57);
             this.button3.TabIndex = 31;
-            this.button3.Text = "Verificar Jogadores";
+            this.button3.Text = "N/A";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // BtnDesbloquearUsuario
@@ -112,7 +111,7 @@
             this.BtnDesbloquearUsuario.Name = "BtnDesbloquearUsuario";
             this.BtnDesbloquearUsuario.Size = new System.Drawing.Size(163, 57);
             this.BtnDesbloquearUsuario.TabIndex = 31;
-            this.BtnDesbloquearUsuario.Text = "Verificar Personagens";
+            this.BtnDesbloquearUsuario.Text = "N/A";
             this.BtnDesbloquearUsuario.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -141,7 +140,6 @@
             this.btnCadastroDeUsuario.Size = new System.Drawing.Size(163, 57);
             this.btnCadastroDeUsuario.TabIndex = 29;
             this.btnCadastroDeUsuario.Text = "Verificar Usuario";
-            this.btnCadastroDeUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCadastroDeUsuario.UseVisualStyleBackColor = false;
             this.btnCadastroDeUsuario.Click += new System.EventHandler(this.btnCadastroDeUsuario_Click);
             // 
@@ -161,21 +159,21 @@
             this.btnCadRacas.UseVisualStyleBackColor = false;
             this.btnCadRacas.Click += new System.EventHandler(this.btnCadRacas_Click);
             // 
-            // BtnBuscaDeFuncionario
+            // BtnVerificarJogadores
             // 
-            this.BtnBuscaDeFuncionario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnBuscaDeFuncionario.BackColor = System.Drawing.Color.Transparent;
-            this.BtnBuscaDeFuncionario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnBuscaDeFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBuscaDeFuncionario.ForeColor = System.Drawing.Color.Black;
-            this.BtnBuscaDeFuncionario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnBuscaDeFuncionario.Location = new System.Drawing.Point(203, 198);
-            this.BtnBuscaDeFuncionario.Name = "BtnBuscaDeFuncionario";
-            this.BtnBuscaDeFuncionario.Size = new System.Drawing.Size(163, 57);
-            this.BtnBuscaDeFuncionario.TabIndex = 28;
-            this.BtnBuscaDeFuncionario.Text = "Verificar Usuario Excluidos";
-            this.BtnBuscaDeFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnBuscaDeFuncionario.UseVisualStyleBackColor = false;
+            this.BtnVerificarJogadores.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnVerificarJogadores.BackColor = System.Drawing.Color.Transparent;
+            this.BtnVerificarJogadores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnVerificarJogadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVerificarJogadores.ForeColor = System.Drawing.Color.Black;
+            this.BtnVerificarJogadores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnVerificarJogadores.Location = new System.Drawing.Point(203, 198);
+            this.BtnVerificarJogadores.Name = "BtnVerificarJogadores";
+            this.BtnVerificarJogadores.Size = new System.Drawing.Size(163, 57);
+            this.BtnVerificarJogadores.TabIndex = 28;
+            this.BtnVerificarJogadores.Text = "Verificar Jogadores";
+            this.BtnVerificarJogadores.UseVisualStyleBackColor = false;
+            this.BtnVerificarJogadores.Click += new System.EventHandler(this.BtnVerificarJogadores_Click);
             // 
             // bntCadClasses
             // 
@@ -214,14 +212,12 @@
             this.btnAdicionarExcluirServico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdicionarExcluirServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionarExcluirServico.ForeColor = System.Drawing.Color.Black;
-            this.btnAdicionarExcluirServico.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionarExcluirServico.Image")));
             this.btnAdicionarExcluirServico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdicionarExcluirServico.Location = new System.Drawing.Point(203, 123);
             this.btnAdicionarExcluirServico.Name = "btnAdicionarExcluirServico";
             this.btnAdicionarExcluirServico.Size = new System.Drawing.Size(163, 57);
             this.btnAdicionarExcluirServico.TabIndex = 7;
             this.btnAdicionarExcluirServico.Text = "N/A";
-            this.btnAdicionarExcluirServico.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdicionarExcluirServico.UseVisualStyleBackColor = false;
             // 
             // btnCadastroDeFuncionario
@@ -231,14 +227,12 @@
             this.btnCadastroDeFuncionario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCadastroDeFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastroDeFuncionario.ForeColor = System.Drawing.Color.Black;
-            this.btnCadastroDeFuncionario.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastroDeFuncionario.Image")));
             this.btnCadastroDeFuncionario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCadastroDeFuncionario.Location = new System.Drawing.Point(18, 123);
             this.btnCadastroDeFuncionario.Name = "btnCadastroDeFuncionario";
             this.btnCadastroDeFuncionario.Size = new System.Drawing.Size(163, 57);
             this.btnCadastroDeFuncionario.TabIndex = 6;
             this.btnCadastroDeFuncionario.Text = "N/A";
-            this.btnCadastroDeFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCadastroDeFuncionario.UseVisualStyleBackColor = false;
             // 
             // LblMestre
@@ -282,7 +276,7 @@
         private System.Windows.Forms.Label label1;
         internal System.Windows.Forms.Button btnCadastroDeUsuario;
         internal System.Windows.Forms.Button btnCadRacas;
-        internal System.Windows.Forms.Button BtnBuscaDeFuncionario;
+        internal System.Windows.Forms.Button BtnVerificarJogadores;
         internal System.Windows.Forms.Button bntCadClasses;
         internal System.Windows.Forms.Button BtnSair;
         internal System.Windows.Forms.Button btnAdicionarExcluirServico;
