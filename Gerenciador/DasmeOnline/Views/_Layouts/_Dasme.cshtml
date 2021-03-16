@@ -14,26 +14,29 @@
     <link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body id="top">
-
     <!-- Header -->
     <header id="header" class="skel-layers-fixed">
         <h2>Dasme Online</h2>
         <nav id="nav">
             <ul>
-                @if (ViewBag.TabUsuarios.TIPOUSER == "M")
+                @if (Request.Cookies["rSWP0kiYHZ"] != null)
                 {
-                    <li><a href="@Url.Action("Index", "Campanhas")">Inicio</a></li>
-                    <li><a href="@Url.Action("Index", "Personagens")">NPC's</a></li>
+                    if (Request.Cookies["rSWP0kiYHZ"].Value.Decrypt() == "M")
+                    {
+                        <li><a href="@Url.Action("Index", "Campanhas")">Inicio</a></li>
+                        <li><a href="@Url.Action("PersonagemMestre", "Personagens")">NPC's</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="@Url.Action("Index", "Jogadores")">Inicio</a></li>
+                    }
                 }
-                else
-                {
-                    <li><a href="@Url.Action("Index", "Jogadores")">Inicio</a></li>
-                }
+
                 <li><a href="~/Itens/Index">Itens</a></li>
                 <li><a href="~/Skills/Index">Skills</a></li>
                 <li><a href="~/Missoes/Index">Missões</a></li>
                 <li><a href="~/Mobs/Index">Monstros</a></li>
-                @if (ViewBag.LOGIN == "ADM")
+                @if (Request.Cookies["CV2XA4qmN+"].Value.Decrypt() == "ADM")
                 {
                     <li>
                         <button class="button special dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
@@ -50,11 +53,11 @@
                 }
                 <li>
                     <button class="button special dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
-                        @ViewBag.TabUsuarios.LOGIN
+                        @Request.Cookies["CV2XA4qmN+"].Value.Decrypt()
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item details" href="#">Configurações</a></li>
+                        <li><a class="dropdown-item details" href="@Url.Action("JogadorEditar","Jogadores")">Configurações</a></li>
                         <li><a class="dropdown-item" href="@Url.Action("LogOut","Login")">LogOut</a></li>
                     </ul>
                 </li>

@@ -188,9 +188,9 @@
     <Content Include="Views\Campanhas\CampanhaEditar.cshtml" />
     <Content Include="Views\Campanhas\CampanhaExcluir.cshtml" />
     <Content Include="Views\Campanhas\CampanhaGerenciar.cshtml" />
-    <Content Include="Views\Campanhas\PersonagemEditar.cshtml" />
-    <Content Include="Views\Campanhas\PersonagemBuscar.cshtml" />
-    <Content Include="Views\Jogadores\PersonagemNovo.cshtml" />
+    <Content Include="Views\Personagens\PersonagemEditar.cshtml" />
+    <Content Include="Views\Personagens\PersonagemBuscar.cshtml" />
+    <Content Include="Views\Personagens\PersonagemNovo.cshtml" />
     <Content Include="Views\Login\UsuarioNovo.cshtml" />
     <Content Include="Views\Login\JogadorNovo.cshtml" />
     <Content Include="Views\Jogadores\JogadorEditar.cshtml" />
@@ -205,6 +205,8 @@
     <Content Include="Views\Classes\Delete.cshtml" />
     <Content Include="Views\Itens\Index.cshtml" />
     <Content Include="Views\_Layouts\_NewMight.cshtml" />
+    <Content Include="Views\Personagens\PersonagemMestre.cshtml" />
+    <Content Include="Views\Personagens\PersonagemExcluir.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -214,7 +216,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Personagens\" />
     <Folder Include="Views\Skills\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Views/_Layouts/_Dasme.cshtml";
+}
+
+<header class="major">
+    <h2> Excluir personagem: @ViewBag.TabPersonagens.NOME</h2>
+</header>
+
+<form action="~/Personagens/PersonagemExcluir" method="post">
+    <!-- CAMPOS OCULTOS -->    
+    <input type="text" class="form-control" name="COD" value="@ViewBag.TabPersonagens.COD" style="display:none"/>
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label>Raça</label>
+            <input type="text" class="form-control" value="@ViewBag.TabPersonagens.RACA" />
+        </div>
+        <div class="form-group col-md-3">
+            <label>Classe</label>
+            <input type="text" class="form-control" value="@ViewBag.TabPersonagens.CLASSE" />
+        </div>
+        <div class="form-group col-md-3">
+            <label>Nivel</label>
+            <input type="text" class="form-control" value="@ViewBag.TabPersonagens.NIVEL" />
+        </div>
+        <div class="form-group col-md-3">
+            <label>Experiencia</label>
+            <input type="text" class="form-control" value="@ViewBag.TabPersonagens.EXPERIENCIA" />
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <input type="submit" value="Confirmar Exclusão"/>
+        </div>
+    </div>
+</form>
+

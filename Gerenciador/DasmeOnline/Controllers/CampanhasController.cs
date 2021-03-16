@@ -99,60 +99,7 @@ namespace DasmeOnline.Controllers
         //======================================================================================================================================================
         //======================================================================================================================================================
         //======================================================================================================================================================
-        [HttpGet]
-        public ActionResult PersonagemAdicionar(int cod)
-        {
-            string Campanha = base.RecuperarValorCookie("Campanha");
-            TabPersonagens tabPersonagens = personagensBusiness.Listar(cod);
-            tabPersonagens.COD_CAMPANHA = Convert.ToInt32(Campanha);
-
-            personagensBusiness.Editar(tabPersonagens);
-
-            return RedirectToAction("CampanhaGerenciar/" + Campanha);
-        }
-        [HttpGet]
-        public ActionResult PersonagemRemover(int cod)
-        {
-            string Campanha = base.RecuperarValorCookie("Campanha");
-            TabPersonagens tabPersonagens = personagensBusiness.Listar(cod);
-            tabPersonagens.COD_CAMPANHA = 0;
-
-            personagensBusiness.Editar(tabPersonagens);
-
-            return RedirectToAction("CampanhaGerenciar/" + Campanha);
-        }
-        [HttpGet]
-        public ActionResult PersonagemBuscar(int cod)
-        {
-            base.SalvarCookie("CAMPANHA", Convert.ToString(cod));
-            ViewBag.listaTabPersonagens = "";
-            return View();
-        }
-        [HttpPost]
-        public ActionResult PersonagemBuscar(TabPersonagens tabPersonagens)
-        {
-            List<TabPersonagens> listaTabPersonagens = personagensBusiness.BuscarPersonagensSemCampanha(tabPersonagens.NOME);
-
-            ViewBag.COD_CAMPANHA = tabPersonagens.COD_CAMPANHA;
-
-            ViewBag.listaTabPersonagens = listaTabPersonagens;
-            return View();
-        }
-        [HttpGet]
-        public ActionResult PersonagemEditar(int cod)
-        {
-            TabPersonagens tabPersonagens = personagensBusiness.Listar(cod);
-
-            ViewBag.TabPersonagens = tabPersonagens;
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult PersonagemEditar(TabPersonagens tabPersonagens)
-        {
-            personagensBusiness.Editar(tabPersonagens);
-            return RedirectToAction("CampanhaGerenciar/" + tabPersonagens.COD_CAMPANHA);
-        }
+        
         //======================================================================================================================================================
         //======================================================================================================================================================
         //======================================================================================================================================================

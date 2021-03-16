@@ -27,7 +27,7 @@ namespace DasmeOnline.Controllers
         }
         public ActionResult Index()
         {
-            string Cod = base.RecuperarValorCookie("IdUsuario");
+            string Cod = base.RecuperarValorCookie("COD");
 
             TabUsuarios tabUsuarios = usuarioBusiness.Listar(Convert.ToInt32(Cod));
             ViewBag.TabUsuarios = tabUsuarios;
@@ -55,7 +55,7 @@ namespace DasmeOnline.Controllers
         [HttpGet]
         public ActionResult JogadoresNovo()
         {
-            string Cod = base.RecuperarValorCookie("IdUsuario");
+            string Cod = base.RecuperarValorCookie("COD");
 
             TabUsuarios tabUsuarios = usuarioBusiness.Listar(Convert.ToInt32(Cod));
             ViewBag.TabUsuarios = tabUsuarios;
@@ -68,7 +68,7 @@ namespace DasmeOnline.Controllers
         [HttpGet]
         public ActionResult JogadorEditar()
         {
-            string Cod = base.RecuperarValorCookie("IdUsuario");
+            string Cod = base.RecuperarValorCookie("COD");
 
             TabUsuarios tabUsuarios = usuarioBusiness.Listar(Convert.ToInt32(Cod));
             ViewBag.TabUsuarios = tabUsuarios;
@@ -97,7 +97,11 @@ namespace DasmeOnline.Controllers
             {
                 jogadoresBusiness.Editar(tabJogadores);
             }
-            return RedirectToAction("Index");
+            string TIPOUSER = base.RecuperarValorCookie("TIPOUSER");
+            if (TIPOUSER == "J")
+                return RedirectToAction("Index");
+            else
+                return RedirectToAction("Index", "Campanhas");
         }
         [HttpGet]
         public ActionResult JogadorExcluir()
@@ -129,39 +133,13 @@ namespace DasmeOnline.Controllers
         [HttpPost]
         public ActionResult JogadorExcluir(TabJogadores tabJogadores)
         {
-            string Cod = base.RecuperarValorCookie("IdUsuario");
+            string Cod = base.RecuperarValorCookie("COD");
 
             jogadoresBusiness.Excluir(tabJogadores.COD);
             usuarioBusiness.Excluir(Convert.ToInt32(Cod));
 
             return RedirectToAction("LogOut", "Login");
         }
-        [HttpGet]
-        public ActionResult PersonagemNovo(int Cod)
-        {
-            ViewBag.TabRacas = racasBusiness.GetAll();
-            ViewBag.TabClasses = classesBusiness.GetAll();
-            string COD_USUARIO = base.RecuperarValorCookie("COD");
-
-            TabUsuarios tabUsuarios = usuarioBusiness.Listar(Convert.ToInt32(COD_USUARIO));
-            ViewBag.TabUsuarios = tabUsuarios;
-
-            ViewBag.COD_JOGADOR = Cod;
-
-            return View();
-        }
-        [HttpPost]
-        public ActionResult PersonagemNovo(TabPersonagens tabPersonagens)
-        {
-            //int COD_USUARIO = base.RecuperarValorCookie("IdUsuario");
-
-            //TabUsuarios tabUsuarios = usuarioBusiness.Listar(COD_USUARIO);
-            //ViewBag.TabUsuarios = tabUsuarios;
-
-            personagensBusiness.Adicionar(tabPersonagens);
-            
-
-            return RedirectToAction("Index");
-        }
+        
     }
 }

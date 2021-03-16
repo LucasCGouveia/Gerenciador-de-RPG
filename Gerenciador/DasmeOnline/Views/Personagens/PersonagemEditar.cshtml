@@ -1,0 +1,186 @@
+﻿@{
+    Layout = "~/Views/_Layouts/_Dasme.cshtml";
+}
+<header class="major">
+    <h2>@ViewBag.TabPersonagens.NOME</h2>
+</header>
+<form action="/Personagens/PersonagemEditar" method="post">
+    <!-- AQUI COLOCO OS CAMPOS OCULTOS -->
+
+    <input type="text" class="form-control" name="COD" value="@ViewBag.TabPersonagens.COD" style="display:none" />
+    <input type="text" class="form-control" name="NOME" value="@ViewBag.TabPersonagens.NOME" style="display:none" />
+    <input type="text" class="form-control" name="COD_JOGADOR" value="@ViewBag.TabPersonagens.COD_JOGADOR" style="display:none" />
+    <input type="text" class="form-control" name="COD_CAMPANHA" value="@ViewBag.TabPersonagens.COD_CAMPANHA" style="display:none" />
+    <input type="text" class="form-control" name="DATAINCLUSAO" value="@ViewBag.TabPersonagens.DATAINCLUSAO" style="display:none" />
+    <input type="text" class="form-control" name="ATIVO" value="@ViewBag.TabPersonagens.ATIVO" style="display:none" />
+
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-personagens-tab" data-bs-toggle="pill" data-bs-target="#pills-personagens" type="button" role="tab" aria-controls="pills-personagens" aria-selected="true">Personagens</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-Atributos-tab" data-bs-toggle="pill" data-bs-target="#pills-Atributos" type="button" role="tab" aria-controls="pills-Atributos" aria-selected="false">Atributos</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-Itens-tab" data-bs-toggle="pill" data-bs-target="#pills-Itens" type="button" role="tab" aria-controls="pills-Itens" aria-selected="false">Itens Equipados</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-Skills-tab" data-bs-toggle="pill" data-bs-target="#pills-Skills" type="button" role="tab" aria-controls="pills-Skills" aria-selected="false">Skills/Magias</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-Inventario-tab" data-bs-toggle="pill" data-bs-target="#pills-Inventario" type="button" role="tab" aria-controls="pills-Inventario" aria-selected="false">Inventario</button>
+        </li>
+    </ul>
+    <!-- ================================================================================================================================================= -->
+    <!-- ================================================================================================================================================= -->
+    <!-- ================================================================================================================================================= -->
+    <!-- ================================================================================================================================================= -->
+    <!-- ================================================================================================================================================= -->
+    <!-- ================================================================================================================================================= -->
+    <!-- ================================================================================================================================================= -->
+    <!-- ================================================================================================================================================= -->
+    <!-- ================================================================================================================================================= -->
+    <!-- ================================================================================================================================================= -->
+    <!-- ================================================================================================================================================= -->
+    <!-- ================================================================================================================================================= -->
+    <!-- ================================================================================================================================================= -->
+    <!-- ================================================================================================================================================= -->
+    <!-- ================================================================================================================================================= -->
+    <div class="tab-content" id="pills-tabContent">
+
+        <div class="tab-pane fade show active" id="pills-personagens" role="tabpanel" aria-labelledby="pills-personagens-tab">
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label>Raça</label>
+                    <input type="text" class="form-control" name="RACA" value="@ViewBag.TabPersonagens.RACA" readonly />
+                </div>
+                <div class="form-group col-md-3">
+                    <label>Classe</label>
+                    <input type="text" class="form-control" name="CLASSE" value="@ViewBag.TabPersonagens.CLASSE" readonly />
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Alinhamento</label>
+                    <input type="text" class="form-control" name="ALINHAMENTO" value="@ViewBag.TabPersonagens.ALINHAMENTO" />
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Experiencia</label>
+                    <input type="number" class="form-control" name="EXPERIENCIA" value="@ViewBag.TabPersonagens.EXPERIENCIA" />
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Nivel do Personagem</label>
+                    <input type="number" class="form-control" name="NIVEL" value="@ViewBag.TabPersonagens.NIVEL" />
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label>Classe de Armadura</label>
+                    <input type="number" class="form-control" name="CA" value="@ViewBag.TabPersonagens.CA" />
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Pontos de Vida(Total)</label>
+                    <input type="number" class="form-control" name="PVTOTAL" value="@ViewBag.TabPersonagens.PVTOTAL" />
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Pontos de Vida(Atual)</label>
+                    <input type="number" class="form-control" name="PVATUAL" value="@ViewBag.TabPersonagens.PVATUAL" />
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Pontos de Ataque/Magia</label>
+                    <input type="number" class="form-control" name="PATAQUE" value="@ViewBag.TabPersonagens.PATAQUE" />
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Iniciativa</label>
+                    <input type="number" class="form-control" name="INICIATIVA" value="@ViewBag.TabPersonagens.INICIATIVA" />
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Dinheiro</label>
+                    <input type="number" class="form-control" name="DINHEIRO" value="@ViewBag.TabPersonagens.DINHEIRO" />
+                </div>
+
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label>Genero</label>
+                    <input type="text" class="form-control" name="GENERO" value="@ViewBag.TabPersonagens.GENERO" />
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Cabelo</label>
+                    <input type="text" class="form-control" name="CABELO" value="@ViewBag.TabPersonagens.CABELO" />
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Olhos</label>
+                    <input type="text" class="form-control" name="OLHOS" value="@ViewBag.TabPersonagens.OLHOS" />
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Tamanho</label>
+                    <input type="text" class="form-control" name="TAMANHO" value="@ViewBag.TabPersonagens.TAMANHO" />
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Altura</label>
+                    <input type="text" class="form-control" name="ALTURA" value="@ViewBag.TabPersonagens.ALTURA" />
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Peso</label>
+                    <input type="text" class="form-control" name="PESO" value="@ViewBag.TabPersonagens.PESO" />
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col md-12">
+                    <label>Historia</label>
+                    <input type="text" class="form-control" name="HISTORIA" value="@ViewBag.TabPersonagens.HISTORIA" />
+                </div>
+            </div>
+
+
+        </div>
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <div class="tab-pane fade" id="pills-Atributos" role="tabpanel" aria-labelledby="pills-Atributos-tab">
+            ...
+
+        </div>
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <div class="tab-pane fade" id="pills-Itens" role="tabpanel" aria-labelledby="pills-Itens-tab">
+            ...
+
+        </div>
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <div class="tab-pane fade" id="pills-Skills" role="tabpanel" aria-labelledby="pills-Skills-tab">
+            ...
+
+        </div>
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <div class="tab-pane fade" id="pills-Inventario" role="tabpanel" aria-labelledby="pills-Inventario-tab">
+            ...
+
+        </div>
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <!-- ================================================================================================================================================= -->
+        <div class="form-row">
+            <div class="form-group col md-12">
+                <input type="submit" class="form-control" name=" txtHistoria" value="Atualizar" />
+            </div>
+        </div>
+    </div>
+</form>
